@@ -1,0 +1,9 @@
+               <td width="45%"><strong>SCREENSHOTS<br>
+                        <font color="#003399" size="3" face="Verdana, Arial, Helvetica, sans-serif"><strong>&quot;Statistics&quot;</strong></font></strong></td>
+                      <td width="55%" valign="top"><div align="right"></div></td>
+                    </tr>
+                  </table>
+                  <p><img src="images/statistics.gif" width="522" height="372"></p>
+                  <p align="justify"><br>
+                  </p>
+                  </td>
