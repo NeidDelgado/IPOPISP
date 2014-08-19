@@ -21,6 +21,7 @@
                             <ul class="slides service_list">
                                 <li><?php echo $this->Html->image('headeee.png'); ?></li>
                                 <li><?php echo $this->Html->image('headee.png'); ?></li>
+                                <li><?php echo $this->Html->image('head.png'); ?></li>
                                 <li><?php echo $this->Html->image('headeeee.png'); ?></li>
                                 <li><?php echo $this->Html->image('heade.png'); ?></li>
                             </ul>	
