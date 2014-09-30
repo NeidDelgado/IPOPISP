@@ -2,8 +2,11 @@
 /**
  * ConsoleLogTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -75,6 +78,11 @@ class ConsoleLogTest extends CakeTestCase {
 
 /**
  * Test writing to ConsoleOutput
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testConsoleOutputWrites() {
 		TestCakeLog::config('test_console_log', array(
@@ -94,6 +102,11 @@ class ConsoleLogTest extends CakeTestCase {
 
 /**
  * Test logging to both ConsoleLog and FileLog
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testCombinedLogWriting() {
 		TestCakeLog::config('test_console_log', array(
@@ -130,6 +143,11 @@ class ConsoleLogTest extends CakeTestCase {
 
 /**
  * test default value of stream 'outputAs'
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testDefaultOutputAs() {
 		TestCakeLog::config('test_console_log', array(

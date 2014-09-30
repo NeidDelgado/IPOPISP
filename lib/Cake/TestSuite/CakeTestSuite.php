@@ -2,8 +2,11 @@
 /**
  * A class to contain test cases and run them with shared fixtures
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *

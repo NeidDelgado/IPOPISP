@@ -1,7 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -58,8 +61,13 @@ class ControllerAuthorize extends BaseAuthorize {
  * Checks user authorization using a controller callback.
  *
  * @param array $user Active user data
+<<<<<<< HEAD
  * @param CakeRequest $request
  * @return boolean
+=======
+ * @param CakeRequest $request Request instance.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function authorize($user, CakeRequest $request) {
 		return (bool)$this->_Controller->isAuthorized($user);

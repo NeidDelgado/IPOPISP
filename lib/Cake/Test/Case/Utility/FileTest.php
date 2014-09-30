@@ -2,8 +2,11 @@
 /**
  * FileTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -31,7 +34,11 @@ class FileTest extends CakeTestCase {
 /**
  * File property
  *
+<<<<<<< HEAD
  * @var mixed null
+=======
+ * @var mixed
+>>>>>>> origin/master
  */
 	public $File = null;
 
@@ -127,6 +134,11 @@ class FileTest extends CakeTestCase {
 
 /**
  * testPermission method
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testPermission() {
 		$this->skipIf(DIRECTORY_SEPARATOR === '\\', 'File permissions tests not supported on Windows.');
@@ -396,7 +408,11 @@ class FileTest extends CakeTestCase {
 	public function testWrite() {
 		if (!$tmpFile = $this->_getTmpFile()) {
 			return false;
+<<<<<<< HEAD
 		};
+=======
+		}
+>>>>>>> origin/master
 		if (file_exists($tmpFile)) {
 			unlink($tmpFile);
 		}
@@ -426,7 +442,11 @@ class FileTest extends CakeTestCase {
 	public function testAppend() {
 		if (!$tmpFile = $this->_getTmpFile()) {
 			return false;
+<<<<<<< HEAD
 		};
+=======
+		}
+>>>>>>> origin/master
 		if (file_exists($tmpFile)) {
 			unlink($tmpFile);
 		}
@@ -534,7 +554,11 @@ class FileTest extends CakeTestCase {
 		$path = CAKE . 'Test' . DS . 'test_app' . DS . 'webroot' . DS . 'img' . DS . 'cake.power.gif';
 		$file = new File($path);
 		$expected = 'image/gif';
+<<<<<<< HEAD
 		if (function_exists('mime_content_type') && false === mime_content_type($file->pwd())) {
+=======
+		if (function_exists('mime_content_type') && mime_content_type($file->pwd()) === false) {
+>>>>>>> origin/master
 			$expected = false;
 		}
 		$this->assertEquals($expected, $file->mime());
@@ -543,14 +567,22 @@ class FileTest extends CakeTestCase {
 /**
  * getTmpFile method
  *
+<<<<<<< HEAD
  * @param boolean $paintSkip
+=======
+ * @param bool $paintSkip
+>>>>>>> origin/master
  * @return void
  */
 	protected function _getTmpFile($paintSkip = true) {
 		$tmpFile = TMP . 'tests' . DS . 'cakephp.file.test.tmp';
 		if (is_writable(dirname($tmpFile)) && (!file_exists($tmpFile) || is_writable($tmpFile))) {
 			return $tmpFile;
+<<<<<<< HEAD
 		};
+=======
+		}
+>>>>>>> origin/master
 
 		if ($paintSkip) {
 			$trace = debug_backtrace();
@@ -562,4 +594,43 @@ class FileTest extends CakeTestCase {
 		}
 		return false;
 	}
+<<<<<<< HEAD
+=======
+
+/**
+ * testReplaceText method
+ *
+ * @return void
+ */
+	public function testReplaceText() {
+		$TestFile = new File(dirname(__FILE__) . '/../../test_app/Vendor/welcome.php');
+		$TmpFile = new File(TMP . 'tests' . DS . 'cakephp.file.test.tmp');
+
+		// Copy the test file to the temporary location
+		$TestFile->copy($TmpFile->path, true);
+
+		// Replace the contents of the tempory file
+		$result = $TmpFile->replaceText('welcome.php', 'welcome.tmp');
+		$this->assertTrue($result);
+
+		// Double check
+		$expected = 'This is the welcome.tmp file in vendors directory';
+		$contents = $TmpFile->read();
+		$this->assertContains($expected, $contents);
+
+		$search = array('This is the', 'welcome.php file', 'in tmp directory');
+		$replace = array('This should be a', 'welcome.tmp file', 'in the Lib directory');
+
+		// Replace the contents of the tempory file
+		$result = $TmpFile->replaceText($search, $replace);
+		$this->assertTrue($result);
+
+		// Double check
+		$expected = 'This should be a welcome.tmp file in vendors directory';
+		$contents = $TmpFile->read();
+		$this->assertContains($expected, $contents);
+
+		$TmpFile->delete();
+	}
+>>>>>>> origin/master
 }

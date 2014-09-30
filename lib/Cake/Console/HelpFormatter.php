@@ -2,8 +2,11 @@
 /**
  * HelpFormatter
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -35,14 +38,22 @@ class HelpFormatter {
 /**
  * The maximum number of arguments shown when generating usage.
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	protected $_maxArgs = 6;
 
 /**
  * The maximum number of options shown when generating usage.
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	protected $_maxOptions = 6;
 
@@ -58,7 +69,11 @@ class HelpFormatter {
 /**
  * Get the help as formatted text suitable for output on the command line.
  *
+<<<<<<< HEAD
  * @param integer $width The width of the help output.
+=======
+ * @param int $width The width of the help output.
+>>>>>>> origin/master
  * @return string
  */
 	public function text($width = 72) {
@@ -161,8 +176,13 @@ class HelpFormatter {
 /**
  * Iterate over a collection and find the longest named thing.
  *
+<<<<<<< HEAD
  * @param array $collection
  * @return integer
+=======
+ * @param array $collection The collection to find a max length of.
+ * @return int
+>>>>>>> origin/master
  */
 	protected function _getMaxLength($collection) {
 		$max = 0;
@@ -175,7 +195,11 @@ class HelpFormatter {
 /**
  * Get the help as an xml string.
  *
+<<<<<<< HEAD
  * @param boolean $string Return the SimpleXml object or a string. Defaults to true.
+=======
+ * @param bool $string Return the SimpleXml object or a string. Defaults to true.
+>>>>>>> origin/master
  * @return string|SimpleXmlElement See $string
  */
 	public function xml($string = true) {

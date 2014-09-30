@@ -4,8 +4,11 @@
  *
  * The Front Controller for handling every request
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.webroot
  * @since         CakePHP(tm) v 0.2.9

@@ -2,8 +2,11 @@
 /**
  * The FixtureTask handles creating and updating fixture files.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -62,6 +65,7 @@ class FixtureTask extends BakeTask {
 	}
 
 /**
+<<<<<<< HEAD
  * get the option parser.
  *
  * @return void
@@ -69,6 +73,16 @@ class FixtureTask extends BakeTask {
 	public function getOptionParser() {
 		$parser = parent::getOptionParser();
 		return $parser->description(
+=======
+ * Gets the option parser instance and configures it.
+ *
+ * @return ConsoleOptionParser
+ */
+	public function getOptionParser() {
+		$parser = parent::getOptionParser();
+
+		$parser->description(
+>>>>>>> origin/master
 			__d('cake_console', 'Generate fixtures for use with the test suite. You can use `bake fixture all` to bake all fixtures.')
 		)->addArgument('name', array(
 			'help' => __d('cake_console', 'Name of the fixture to bake. Can use Plugin.name to bake plugin fixtures.')
@@ -82,7 +96,11 @@ class FixtureTask extends BakeTask {
 			'default' => 'default'
 		))->addOption('plugin', array(
 			'help' => __d('cake_console', 'CamelCased name of the plugin to bake fixtures for.'),
+<<<<<<< HEAD
 			'short' => 'p',
+=======
+			'short' => 'p'
+>>>>>>> origin/master
 		))->addOption('schema', array(
 			'help' => __d('cake_console', 'Importing schema for fixtures rather than hardcoding it.'),
 			'short' => 's',
@@ -94,10 +112,22 @@ class FixtureTask extends BakeTask {
 			'short' => 'f',
 			'help' => __d('cake_console', 'Force overwriting existing files without prompting.')
 		))->addOption('records', array(
+<<<<<<< HEAD
 			'help' => __d('cake_console', 'Used with --count and <name>/all commands to pull [n] records from the live tables, where [n] is either --count or the default of 10.'),
 			'short' => 'r',
 			'boolean' => true
 		))->epilog(__d('cake_console', 'Omitting all arguments and options will enter into an interactive mode.'));
+=======
+			'help' => __d('cake_console', 'Used with --count and <name>/all commands to pull [n] records from the live tables, ' .
+				'where [n] is either --count or the default of 10.'),
+			'short' => 'r',
+			'boolean' => true
+		))->epilog(
+			__d('cake_console', 'Omitting all arguments and options will enter into an interactive mode.')
+		);
+
+		return $parser;
+>>>>>>> origin/master
 	}
 
 /**
@@ -312,7 +342,11 @@ class FixtureTask extends BakeTask {
  * Generate String representation of Records
  *
  * @param array $tableInfo Table schema array
+<<<<<<< HEAD
  * @param integer $recordCount
+=======
+ * @param int $recordCount The number of records to generate.
+>>>>>>> origin/master
  * @return array Array of records to use in the fixture.
  */
 	protected function _generateRecords($tableInfo, $recordCount = 1) {

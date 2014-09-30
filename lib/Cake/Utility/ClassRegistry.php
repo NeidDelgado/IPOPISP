@@ -86,9 +86,16 @@ class ClassRegistry {
  *		array('class' => 'ClassName', 'alias' => 'AliasNameStoredInTheRegistry')
  * );
  * }}}
+<<<<<<< HEAD
  * @param string|array $class as a string or a single key => value array instance will be created,
  *  stored in the registry and returned.
  * @param boolean $strict if set to true it will return false if the class was not found instead
+=======
+ *
+ * @param string|array $class as a string or a single key => value array instance will be created,
+ *  stored in the registry and returned.
+ * @param bool $strict if set to true it will return false if the class was not found instead
+>>>>>>> origin/master
  *	of trying to create an AppModel
  * @return object instance of ClassName.
  * @throws CakeException when you try to construct an interface or abstract class.
@@ -119,7 +126,11 @@ class ClassRegistry {
 
 			if (is_array($settings)) {
 				$pluginPath = null;
+<<<<<<< HEAD
 				$settings = array_merge($defaults, $settings);
+=======
+				$settings += $defaults;
+>>>>>>> origin/master
 				$class = $settings['class'];
 
 				list($plugin, $class) = pluginSplit($class);
@@ -205,7 +216,11 @@ class ClassRegistry {
  *
  * @param string $key Key for the object in registry
  * @param object $object Object to store
+<<<<<<< HEAD
  * @return boolean True if the object was written, false if $key already exists
+=======
+ * @return bool True if the object was written, false if $key already exists
+>>>>>>> origin/master
  */
 	public static function addObject($key, $object) {
 		$_this = ClassRegistry::getInstance();
@@ -235,7 +250,11 @@ class ClassRegistry {
  * Returns true if given key is present in the ClassRegistry.
  *
  * @param string $key Key to look for
+<<<<<<< HEAD
  * @return boolean true if key exists in registry, false otherwise
+=======
+ * @return bool true if key exists in registry, false otherwise
+>>>>>>> origin/master
  */
 	public static function isKeySet($key) {
 		$_this = ClassRegistry::getInstance();
@@ -303,9 +322,15 @@ class ClassRegistry {
 /**
  * Checks to see if $alias is a duplicate $class Object
  *
+<<<<<<< HEAD
  * @param string $alias
  * @param string $class
  * @return boolean
+=======
+ * @param string $alias Alias to check.
+ * @param string $class Class name.
+ * @return bool
+>>>>>>> origin/master
  */
 	protected function &_duplicate($alias, $class) {
 		$duplicate = false;

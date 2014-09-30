@@ -2,8 +2,11 @@
 /**
  * Short description for file.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -33,6 +36,10 @@ class DatatypeFixture extends CakeTestFixture {
 	public $fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => 0, 'key' => 'primary'),
 		'float_field' => array('type' => 'float', 'length' => '5,2', 'null' => false, 'default' => null),
+<<<<<<< HEAD
+=======
+		'decimal_field' => array('type' => 'decimal', 'length' => '6,3', 'default' => '0.000'),
+>>>>>>> origin/master
 		'huge_int' => array('type' => 'biginteger'),
 		'bool' => array('type' => 'boolean', 'null' => false, 'default' => false),
 	);

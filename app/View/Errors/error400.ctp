@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -17,7 +20,11 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
+<<<<<<< HEAD
 <h2><?php echo $name; ?></h2>
+=======
+<h2><?php echo $message; ?></h2>
+>>>>>>> origin/master
 <p class="error">
 	<strong><?php echo __d('cake', 'Error'); ?>: </strong>
 	<?php printf(

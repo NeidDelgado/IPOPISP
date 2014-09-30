@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 <div class="container"> <br><br><br><br><br><br><br><br>
     <span class="title sixteen columns">
         <h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?></h1>
         <strong><h3>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('INVENTIONS THAT MODIFIED OUR LIFE'); ?> </h3></strong></span><br>
     <div class="row section_featured_texts section_featured_texts_no_m">
         <div class="nine columns">
+=======
+<div class="container">
+    <span class="title sixteen columns"><h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?> </h1>
+        <strong><h3>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('INVENTIONS THAT MODIFIED OUR LIFE'); ?> </h3></strong></span><br>
+    <div class="row section_featured_texts section_featured_texts_no_m">
+        <div class="sixteen columns">
+>>>>>>> origin/master
 <table border=1 width=100% bordercolor="#000000">
                     <tr bgcolor="#1a4d80"> 
                       <th colspan="8"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Warfare</font></th>
@@ -258,6 +266,7 @@
                     </tr>
                   </table>
         </div>
+<<<<<<< HEAD
         <div class="destaq">
             <h4><?php echo $this->Html->link('&nbsp; &nbsp; Pricing/Quotation', '/pricing', array('escape'=> false)); ?></h4>
             <h4><?php echo $this->Html->link('&nbsp; &nbsp; Marks Of Esteem', '/marksofesteem', array('escape'=> false)); ?></h4>
@@ -270,5 +279,7 @@
                 <?php echo $this->Html->link('&nbsp; &nbsp; * IPOPEDU', '/ipopedu', array('escape'=> false)); ?></br>
             </h5>
         </div>
+=======
+>>>>>>> origin/master
     </div><!--FIM DE CONTEUDO -->
 </div>   

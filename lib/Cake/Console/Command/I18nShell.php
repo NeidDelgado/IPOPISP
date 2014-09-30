@@ -2,8 +2,11 @@
 /**
  * Internationalization Management Shell
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -102,12 +105,17 @@ class I18nShell extends AppShell {
 	}
 
 /**
+<<<<<<< HEAD
  * Get and configure the Option parser
+=======
+ * Gets the option parser instance and configures it.
+>>>>>>> origin/master
  *
  * @return ConsoleOptionParser
  */
 	public function getOptionParser() {
 		$parser = parent::getOptionParser();
+<<<<<<< HEAD
 		return $parser->description(
 			__d('cake_console', 'I18n Shell initializes i18n database table for your application and generates .pot files(s) with translations.')
 			)->addSubcommand('initdb', array(
@@ -116,6 +124,19 @@ class I18nShell extends AppShell {
 				'help' => __d('cake_console', 'Extract the po translations from your application'),
 				'parser' => $this->Extract->getOptionParser()
 			));
+=======
+
+		$parser->description(
+			__d('cake_console', 'I18n Shell initializes i18n database table for your application and generates .pot files(s) with translations.')
+		)->addSubcommand('initdb', array(
+			'help' => __d('cake_console', 'Initialize the i18n table.')
+		))->addSubcommand('extract', array(
+			'help' => __d('cake_console', 'Extract the po translations from your application'),
+			'parser' => $this->Extract->getOptionParser()
+		));
+
+		return $parser;
+>>>>>>> origin/master
 	}
 
 }

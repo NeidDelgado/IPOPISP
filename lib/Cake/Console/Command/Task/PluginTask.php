@@ -2,8 +2,11 @@
 /**
  * The Plugin Task handles creating an empty plugin, ready to be used
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -75,7 +78,11 @@ class PluginTask extends AppShell {
 /**
  * Interactive interface
  *
+<<<<<<< HEAD
  * @param string $plugin
+=======
+ * @param string $plugin The plugin name.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _interactive($plugin = null) {
@@ -92,7 +99,11 @@ class PluginTask extends AppShell {
  * Bake the plugin, create directories and files
  *
  * @param string $plugin Name of the plugin in CamelCased format
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	public function bake($plugin) {
 		$pathOptions = App::path('plugins');
@@ -186,16 +197,28 @@ class PluginTask extends AppShell {
 /**
  * find and change $this->path to the user selection
  *
+<<<<<<< HEAD
  * @param array $pathOptions
+=======
+ * @param array $pathOptions The list of paths to look in.
+>>>>>>> origin/master
  * @return void
  */
 	public function findPath($pathOptions) {
 		$valid = false;
 		foreach ($pathOptions as $i => $path) {
 			if (!is_dir($path)) {
+<<<<<<< HEAD
 				array_splice($pathOptions, $i, 1);
 			}
 		}
+=======
+				unset($pathOptions[$i]);
+			}
+		}
+		$pathOptions = array_values($pathOptions);
+
+>>>>>>> origin/master
 		$max = count($pathOptions);
 		while (!$valid) {
 			foreach ($pathOptions as $i => $option) {
@@ -211,6 +234,7 @@ class PluginTask extends AppShell {
 	}
 
 /**
+<<<<<<< HEAD
  * get the option parser for the plugin task
  *
  * @return void
@@ -223,6 +247,23 @@ class PluginTask extends AppShell {
 		))->addArgument('name', array(
 			'help' => __d('cake_console', 'CamelCased name of the plugin to create.')
 		));
+=======
+ * Gets the option parser instance and configures it.
+ *
+ * @return ConsoleOptionParser
+ */
+	public function getOptionParser() {
+		$parser = parent::getOptionParser();
+
+		$parser->description(
+			__d('cake_console',	'Create the directory structure, AppModel and AppController classes for a new plugin. ' .
+			'Can create plugins in any of your bootstrapped plugin paths.')
+		)->addArgument('name', array(
+			'help' => __d('cake_console', 'CamelCased name of the plugin to create.')
+		));
+
+		return $parser;
+>>>>>>> origin/master
 	}
 
 }

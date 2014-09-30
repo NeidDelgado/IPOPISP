@@ -4,8 +4,11 @@
  *
  * Provides management and interface for interacting with collections of behaviors.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -56,8 +59,13 @@ class BehaviorCollection extends ObjectCollection implements CakeEventListener {
 /**
  * Attaches a model object and loads a list of behaviors
  *
+<<<<<<< HEAD
  * @param string $modelName
  * @param array $behaviors
+=======
+ * @param string $modelName Model name.
+ * @param array $behaviors Behaviors list.
+>>>>>>> origin/master
  * @return void
  */
 	public function init($modelName, $behaviors = array()) {
@@ -73,8 +81,13 @@ class BehaviorCollection extends ObjectCollection implements CakeEventListener {
 /**
  * Backwards compatible alias for load()
  *
+<<<<<<< HEAD
  * @param string $behavior
  * @param array $config
+=======
+ * @param string $behavior Behavior name.
+ * @param array $config Configuration options.
+>>>>>>> origin/master
  * @return void
  * @deprecated Will be removed in 3.0. Replaced with load().
  */
@@ -99,7 +112,11 @@ class BehaviorCollection extends ObjectCollection implements CakeEventListener {
  *
  * @param string $behavior CamelCased name of the behavior to load
  * @param array $config Behavior configuration parameters
+<<<<<<< HEAD
  * @return boolean True on success, false on failure
+=======
+ * @return bool True on success, false on failure
+>>>>>>> origin/master
  * @throws MissingBehaviorException when a behavior could not be found.
  */
 	public function load($behavior, $config = array()) {
@@ -132,9 +149,12 @@ class BehaviorCollection extends ObjectCollection implements CakeEventListener {
 			} else {
 				$this->_loaded[$alias] = new $class();
 				ClassRegistry::addObject($class, $this->_loaded[$alias]);
+<<<<<<< HEAD
 				if (!empty($plugin)) {
 					ClassRegistry::addObject($plugin . '.' . $class, $this->_loaded[$alias]);
 				}
+=======
+>>>>>>> origin/master
 			}
 		} elseif (isset($this->_loaded[$alias]->settings) && isset($this->_loaded[$alias]->settings[$this->modelName])) {
 			if ($config !== null && $config !== false) {
@@ -195,7 +215,11 @@ class BehaviorCollection extends ObjectCollection implements CakeEventListener {
 			parent::unload($name);
 		}
 		foreach ($this->_methods as $m => $callback) {
+<<<<<<< HEAD
 			if (is_array($callback) && $callback[0] == $name) {
+=======
+			if (is_array($callback) && $callback[0] === $name) {
+>>>>>>> origin/master
 				unset($this->_methods[$m]);
 			}
 		}
@@ -221,7 +245,11 @@ class BehaviorCollection extends ObjectCollection implements CakeEventListener {
  * @param Model $model The model the method was originally called on.
  * @param string $method The method called.
  * @param array $params Parameters for the called method.
+<<<<<<< HEAD
  * @param boolean $strict If methods are not found, trigger an error.
+=======
+ * @param bool $strict If methods are not found, trigger an error.
+>>>>>>> origin/master
  * @return array All methods for all behaviors attached to this object
  */
 	public function dispatchMethod($model, $method, $params = array(), $strict = false) {
@@ -259,7 +287,11 @@ class BehaviorCollection extends ObjectCollection implements CakeEventListener {
  * also check mappedMethods.
  *
  * @param string $method The method to find.
+<<<<<<< HEAD
  * @param boolean $callback Return the callback for the method.
+=======
+ * @param bool $callback Return the callback for the method.
+>>>>>>> origin/master
  * @return mixed If $callback is false, a boolean will be returned, if its true, an array
  *   containing callback information will be returned. For mapped methods the array will have 3 elements.
  */

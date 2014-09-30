@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -17,8 +20,18 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 ?>
+<<<<<<< HEAD
 <html>
     <body>
       <?php echo $this->fetch('content'); ?>
     </body>
 </html>
+=======
+<?php
+$content = explode("\n", $content);
+
+foreach ($content as $line):
+	echo '<p> ' . $line . "</p>\n";
+endforeach;
+?>
+>>>>>>> origin/master

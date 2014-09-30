@@ -2,8 +2,11 @@
 /**
  * CakeTestCase file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -50,7 +53,11 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * between each test method. Tables will still be dropped at the
  * end of each test runner execution.
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $dropTables = true;
 
@@ -73,7 +80,11 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * If no TestResult object is passed a new one will be created.
  * This method is run for each test method in this class
  *
+<<<<<<< HEAD
  * @param PHPUnit_Framework_TestResult $result
+=======
+ * @param PHPUnit_Framework_TestResult $result The test result object
+>>>>>>> origin/master
  * @return PHPUnit_Framework_TestResult
  * @throws InvalidArgumentException
  */
@@ -109,9 +120,15 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 /**
  * Overrides SimpleTestCase::skipIf to provide a boolean return value
  *
+<<<<<<< HEAD
  * @param boolean $shouldSkip
  * @param string $message
  * @return boolean
+=======
+ * @param bool $shouldSkip Whether or not the test should be skipped.
+ * @param string $message The message to display.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function skipIf($shouldSkip, $message = '') {
 		if ($shouldSkip) {
@@ -198,8 +215,13 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 /**
  * Chooses which fixtures to load for a given test
  *
+<<<<<<< HEAD
  * @param string $fixture Each parameter is a model name that corresponds to a
  *                        fixture, i.e. 'Post', 'Author', etc.
+=======
+ * Each parameter is a model name that corresponds to a fixture, i.e. 'Post', 'Author', etc.
+ *
+>>>>>>> origin/master
  * @return void
  * @see CakeTestCase::$autoFixtures
  * @throws Exception when no fixture manager is available.
@@ -220,8 +242,13 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  *
  * @param string $expected The expected value.
  * @param string $result The actual value.
+<<<<<<< HEAD
  * @param message The message to use for failure.
  * @return boolean
+=======
+ * @param string $message The message to use for failure.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function assertTextNotEquals($expected, $result, $message = '') {
 		$expected = str_replace(array("\r\n", "\r"), "\n", $expected);
@@ -235,8 +262,13 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  *
  * @param string $expected The expected value.
  * @param string $result The actual value.
+<<<<<<< HEAD
  * @param message The message to use for failure.
  * @return boolean
+=======
+ * @param string $message message The message to use for failure.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function assertTextEquals($expected, $result, $message = '') {
 		$expected = str_replace(array("\r\n", "\r"), "\n", $expected);
@@ -248,10 +280,17 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * Asserts that a string starts with a given prefix, ignoring differences in newlines.
  * Helpful for doing cross platform tests of blocks of text.
  *
+<<<<<<< HEAD
  * @param string $prefix
  * @param string $string
  * @param string $message
  * @return boolean
+=======
+ * @param string $prefix The prefix to check for.
+ * @param string $string The string to search in.
+ * @param string $message The message to use for failure.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function assertTextStartsWith($prefix, $string, $message = '') {
 		$prefix = str_replace(array("\r\n", "\r"), "\n", $prefix);
@@ -263,10 +302,17 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * Asserts that a string starts not with a given prefix, ignoring differences in newlines.
  * Helpful for doing cross platform tests of blocks of text.
  *
+<<<<<<< HEAD
  * @param string $prefix
  * @param string $string
  * @param string $message
  * @return boolean
+=======
+ * @param string $prefix The prefix to not find.
+ * @param string $string The string to search.
+ * @param string $message The message to use for failure.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function assertTextStartsNotWith($prefix, $string, $message = '') {
 		$prefix = str_replace(array("\r\n", "\r"), "\n", $prefix);
@@ -278,10 +324,17 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * Asserts that a string ends with a given prefix, ignoring differences in newlines.
  * Helpful for doing cross platform tests of blocks of text.
  *
+<<<<<<< HEAD
  * @param string $suffix
  * @param string $string
  * @param string $message
  * @return boolean
+=======
+ * @param string $suffix The suffix to find.
+ * @param string $string The string to search.
+ * @param string $message The message to use for failure.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function assertTextEndsWith($suffix, $string, $message = '') {
 		$suffix = str_replace(array("\r\n", "\r"), "\n", $suffix);
@@ -293,10 +346,17 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * Asserts that a string ends not with a given prefix, ignoring differences in newlines.
  * Helpful for doing cross platform tests of blocks of text.
  *
+<<<<<<< HEAD
  * @param string $suffix
  * @param string $string
  * @param string $message
  * @return boolean
+=======
+ * @param string $suffix The suffix to not find.
+ * @param string $string The string to search.
+ * @param string $message The message to use for failure.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function assertTextEndsNotWith($suffix, $string, $message = '') {
 		$suffix = str_replace(array("\r\n", "\r"), "\n", $suffix);
@@ -308,11 +368,19 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * Assert that a string contains another string, ignoring differences in newlines.
  * Helpful for doing cross platform tests of blocks of text.
  *
+<<<<<<< HEAD
  * @param string $needle
  * @param string $haystack
  * @param string $message
  * @param boolean $ignoreCase
  * @return boolean
+=======
+ * @param string $needle The string to search for.
+ * @param string $haystack The string to search through.
+ * @param string $message The message to display on failure.
+ * @param bool $ignoreCase Whether or not the search should be case-sensitive.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function assertTextContains($needle, $haystack, $message = '', $ignoreCase = false) {
 		$needle = str_replace(array("\r\n", "\r"), "\n", $needle);
@@ -324,11 +392,19 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * Assert that a text doesn't contain another text, ignoring differences in newlines.
  * Helpful for doing cross platform tests of blocks of text.
  *
+<<<<<<< HEAD
  * @param string $needle
  * @param string $haystack
  * @param string $message
  * @param boolean $ignoreCase
  * @return boolean
+=======
+ * @param string $needle The string to search for.
+ * @param string $haystack The string to search through.
+ * @param string $message The message to display on failure.
+ * @param bool $ignoreCase Whether or not the search should be case-sensitive.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function assertTextNotContains($needle, $haystack, $message = '', $ignoreCase = false) {
 		$needle = str_replace(array("\r\n", "\r"), "\n", $needle);
@@ -342,6 +418,7 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  *
  * Checks for an input tag with a name attribute (contains any non-empty value) and an id
  * attribute that contains 'my-input':
+<<<<<<< HEAD
  * 	array('input' => array('name', 'id' => 'my-input'))
  *
  * Checks for two p elements with some text in them:
@@ -360,14 +437,48 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  *  	array('input' => array('name', 'id' => 'preg:/FieldName\d+/')),
  *  	'preg:/My\s+field/'
  *	)
+=======
+ *
+ * {{{
+ * array('input' => array('name', 'id' => 'my-input'))
+ * }}}
+ *
+ * Checks for two p elements with some text in them:
+ *
+ * {{{
+ * array(
+ *   array('p' => true),
+ *   'textA',
+ *   '/p',
+ *   array('p' => true),
+ *   'textB',
+ *   '/p'
+ * )
+ * }}}
+ *
+ * You can also specify a pattern expression as part of the attribute values, or the tag
+ * being defined, if you prepend the value with preg: and enclose it with slashes, like so:
+ *
+ * {{{
+ * array(
+ *   array('input' => array('name', 'id' => 'preg:/FieldName\d+/')),
+ *   'preg:/My\s+field/'
+ * )
+ * }}}
+>>>>>>> origin/master
  *
  * Important: This function is very forgiving about whitespace and also accepts any
  * permutation of attribute order. It will also allow whitespace between specified tags.
  *
  * @param string $string An HTML/XHTML/XML string
  * @param array $expected An array, see above
+<<<<<<< HEAD
  * @param string $message SimpleTest failure output string
  * @return boolean
+=======
+ * @param string $fullDebug Whether or not more verbose output should be used.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function assertTags($string, $expected, $fullDebug = false) {
 		$regex = array();
@@ -441,8 +552,18 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 							$val = '.+?';
 							$explanations[] = sprintf('Attribute "%s" present', $attr);
 						} elseif (!empty($val) && preg_match('/^preg\:\/(.+)\/$/i', $val, $matches)) {
+<<<<<<< HEAD
 							$quotes = '["\']?';
 							$val = $matches[1];
+=======
+							$val = str_replace(
+								array('.*', '.+'),
+								array('.*?', '.+?'),
+								$matches[1]
+							);
+							$quotes = $val !== $matches[1] ? '["\']' : '["\']?';
+
+>>>>>>> origin/master
 							$explanations[] = sprintf('Attribute "%s" matches "%s"', $attr, $val);
 						} else {
 							$explanations[] = sprintf('Attribute "%s" == "%s"', $attr, $val);
@@ -453,6 +574,7 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 					$i++;
 				}
 				if ($attrs) {
+<<<<<<< HEAD
 					$permutations = $this->_arrayPermute($attrs);
 
 					$permutationTokens = array();
@@ -463,6 +585,11 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 						sprintf('%s', implode(', ', $explanations)),
 						$permutationTokens,
 						$i,
+=======
+					$regex[] = array(
+						'explains' => $explanations,
+						'attrs' => $attrs,
+>>>>>>> origin/master
 					);
 				}
 				$regex[] = array(
@@ -472,9 +599,20 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 				);
 			}
 		}
+<<<<<<< HEAD
 		foreach ($regex as $i => $assertation) {
 			list($description, $expressions, $itemNum) = $assertation;
 			$matches = false;
+=======
+		foreach ($regex as $i => $assertion) {
+			$matches = false;
+			if (isset($assertion['attrs'])) {
+				$string = $this->_assertAttributes($assertion, $string);
+				continue;
+			}
+
+			list($description, $expressions, $itemNum) = $assertion;
+>>>>>>> origin/master
 			foreach ((array)$expressions as $expression) {
 				if (preg_match(sprintf('/^%s/s', $expression), $string, $match)) {
 					$matches = true;
@@ -497,6 +635,7 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 	}
 
 /**
+<<<<<<< HEAD
  * Generates all permutation of an array $items and returns them in a new array.
  *
  * @param array $items An array of items
@@ -522,6 +661,35 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 			}
 			return $permuted;
 		}
+=======
+ * Check the attributes as part of an assertTags() check.
+ *
+ * @param array $assertions Assertions to run.
+ * @param string $string The HTML string to check.
+ * @return void
+ */
+	protected function _assertAttributes($assertions, $string) {
+		$asserts = $assertions['attrs'];
+		$explains = $assertions['explains'];
+		$len = count($asserts);
+		do {
+			$matches = false;
+			foreach ($asserts as $j => $assert) {
+				if (preg_match(sprintf('/^%s/s', $assert), $string, $match)) {
+					$matches = true;
+					$string = substr($string, strlen($match[0]));
+					array_splice($asserts, $j, 1);
+					array_splice($explains, $j, 1);
+					break;
+				}
+			}
+			if ($matches === false) {
+				$this->assertTrue(false, 'Attribute did not match. Was expecting ' . $explains[$j]);
+			}
+			$len = count($asserts);
+		} while ($len > 0);
+		return $string;
+>>>>>>> origin/master
 	}
 
 // @codingStandardsIgnoreStart
@@ -529,10 +697,17 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 /**
  * Compatibility wrapper function for assertEquals
  *
+<<<<<<< HEAD
  *
  * @param mixed $result
  * @param mixed $expected
  * @param string $message the text to display if the assertion is not correct
+=======
+ * @param mixed $result
+ * @param mixed $expected
+ * @param string $message the text to display if the assertion is not correct
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected static function assertEqual($result, $expected, $message = '') {
@@ -545,6 +720,10 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * @param mixed $result
  * @param mixed $expected
  * @param string $message the text to display if the assertion is not correct
+<<<<<<< HEAD
+=======
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected static function assertNotEqual($result, $expected, $message = '') {
@@ -557,6 +736,10 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * @param mixed $pattern a regular expression
  * @param string $string the text to be matched
  * @param string $message the text to display if the assertion is not correct
+<<<<<<< HEAD
+=======
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected static function assertPattern($pattern, $string, $message = '') {
@@ -569,6 +752,10 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * @param mixed $actual
  * @param mixed $expected
  * @param string $message the text to display if the assertion is not correct
+<<<<<<< HEAD
+=======
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected static function assertIdentical($actual, $expected, $message = '') {
@@ -581,6 +768,10 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * @param mixed $actual
  * @param mixed $expected
  * @param string $message the text to display if the assertion is not correct
+<<<<<<< HEAD
+=======
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected static function assertNotIdentical($actual, $expected, $message = '') {
@@ -593,6 +784,10 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * @param mixed $pattern a regular expression
  * @param string $string the text to be matched
  * @param string $message the text to display if the assertion is not correct
+<<<<<<< HEAD
+=======
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected static function assertNoPattern($pattern, $string, $message = '') {
@@ -601,6 +796,12 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 
 /**
  * assert no errors
+<<<<<<< HEAD
+=======
+ *
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+ * @return void
+>>>>>>> origin/master
  */
 	protected function assertNoErrors() {
 	}
@@ -610,6 +811,10 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  *
  * @param mixed $expected the name of the Exception or error
  * @param string $message the text to display if the assertion is not correct
+<<<<<<< HEAD
+=======
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected function expectError($expected = false, $message = '') {
@@ -624,6 +829,10 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  *
  * @param mixed $expected the name of the Exception
  * @param string $message the text to display if the assertion is not correct
+<<<<<<< HEAD
+=======
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected function expectException($name = 'Exception', $message = '') {
@@ -636,6 +845,10 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * @param mixed $first
  * @param mixed $second
  * @param string $message the text to display if the assertion is not correct
+<<<<<<< HEAD
+=======
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected static function assertReference(&$first, &$second, $message = '') {
@@ -648,6 +861,10 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
  * @param string $object
  * @param string $type
  * @param string $message
+<<<<<<< HEAD
+=======
+ * @deprecated This is a compatiblity wrapper for 1.x. It will be removed in 3.0
+>>>>>>> origin/master
  * @return void
  */
 	protected static function assertIsA($object, $type, $message = '') {
@@ -672,9 +889,15 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 /**
  * Compatibility function for skipping.
  *
+<<<<<<< HEAD
  * @param boolean $condition Condition to trigger skipping
  * @param string $message Message for skip
  * @return boolean
+=======
+ * @param bool $condition Condition to trigger skipping
+ * @param string $message Message for skip
+ * @return bool
+>>>>>>> origin/master
  */
 	protected function skipUnless($condition, $message = '') {
 		if (!$condition) {
@@ -687,9 +910,15 @@ abstract class CakeTestCase extends PHPUnit_Framework_TestCase {
 /**
  * Mock a model, maintain fixtures and table association
  *
+<<<<<<< HEAD
  * @param string $model
  * @param mixed $methods
  * @param array $config
+=======
+ * @param string $model The model to get a mock for.
+ * @param mixed $methods The list of methods to mock
+ * @param array $config The config data for the mock's constructor.
+>>>>>>> origin/master
  * @throws MissingModelException
  * @return Model
  */

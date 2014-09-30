@@ -74,7 +74,11 @@ class ControllerPost extends CakeTestModel {
 /**
  * lastQuery property
  *
+<<<<<<< HEAD
  * @var mixed null
+=======
+ * @var mixed
+>>>>>>> origin/master
  */
 	public $lastQuery = null;
 
@@ -605,7 +609,10 @@ class ControllerTest extends CakeTestCase {
 
 		$Controller->set('title', 'someTitle');
 		$this->assertSame($Controller->viewVars['title'], 'someTitle');
+<<<<<<< HEAD
 		$this->assertTrue(empty($Controller->pageTitle));
+=======
+>>>>>>> origin/master
 
 		$Controller->viewVars = array();
 		$expected = array('ModelName' => 'name', 'ModelName2' => 'name2');

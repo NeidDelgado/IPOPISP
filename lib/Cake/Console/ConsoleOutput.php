@@ -2,8 +2,11 @@
 /**
  * ConsoleOutput file.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -48,21 +51,41 @@ class ConsoleOutput {
 
 /**
  * Raw output constant - no modification of output text.
+<<<<<<< HEAD
+=======
+ *
+ * @var int
+>>>>>>> origin/master
  */
 	const RAW = 0;
 
 /**
  * Plain output - tags will be stripped.
+<<<<<<< HEAD
+=======
+ *
+ * @var int
+>>>>>>> origin/master
  */
 	const PLAIN = 1;
 
 /**
  * Color output - Convert known tags in to ANSI color escape codes.
+<<<<<<< HEAD
+=======
+ *
+ * @var int
+>>>>>>> origin/master
  */
 	const COLOR = 2;
 
 /**
  * Constant for a newline.
+<<<<<<< HEAD
+=======
+ *
+ * @var string
+>>>>>>> origin/master
  */
 	const LF = PHP_EOL;
 
@@ -76,7 +99,11 @@ class ConsoleOutput {
 /**
  * The current output type. Manipulated with ConsoleOutput::outputAs();
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	protected $_outputAs = self::COLOR;
 
@@ -165,8 +192,13 @@ class ConsoleOutput {
  * are passed, outputs just a newline.
  *
  * @param string|array $message A string or a an array of strings to output
+<<<<<<< HEAD
  * @param integer $newlines Number of newlines to append
  * @return integer Returns the number of bytes returned from writing to stdout.
+=======
+ * @param int $newlines Number of newlines to append
+ * @return int Returns the number of bytes returned from writing to stdout.
+>>>>>>> origin/master
  */
 	public function write($message, $newlines = 1) {
 		if (is_array($message)) {
@@ -197,7 +229,11 @@ class ConsoleOutput {
 /**
  * Replace tags with color codes.
  *
+<<<<<<< HEAD
  * @param array $matches.
+=======
+ * @param array $matches An array of matches to replace.
+>>>>>>> origin/master
  * @return string
  */
 	protected function _replaceTags($matches) {
@@ -226,7 +262,11 @@ class ConsoleOutput {
  * Writes a message to the output stream.
  *
  * @param string $message Message to write.
+<<<<<<< HEAD
  * @return boolean success
+=======
+ * @return bool success
+>>>>>>> origin/master
  */
 	protected function _write($message) {
 		return fwrite($this->_output, $message);
@@ -275,7 +315,11 @@ class ConsoleOutput {
 /**
  * Get/Set the output type to use. The output type how formatting tags are treated.
  *
+<<<<<<< HEAD
  * @param integer $type The output type to use. Should be one of the class constants.
+=======
+ * @param int $type The output type to use. Should be one of the class constants.
+>>>>>>> origin/master
  * @return mixed Either null or the value if getting.
  */
 	public function outputAs($type = null) {
@@ -286,11 +330,20 @@ class ConsoleOutput {
 	}
 
 /**
+<<<<<<< HEAD
  * clean up and close handles
  *
  */
 	public function __destruct() {
 		fclose($this->_output);
+=======
+ * Clean up and close handles
+ */
+	public function __destruct() {
+		if (is_resource($this->_output)) {
+			fclose($this->_output);
+		}
+>>>>>>> origin/master
 	}
 
 }

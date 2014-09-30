@@ -2,8 +2,11 @@
 /**
  * Short description for file.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -28,7 +31,11 @@ class TranslateArticleFixture extends CakeTestFixture {
 /**
  * table property
  *
+<<<<<<< HEAD
  * @var string 'i18n'
+=======
+ * @var string
+>>>>>>> origin/master
  */
 	public $table = 'article_i18n';
 

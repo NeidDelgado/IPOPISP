@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -51,7 +54,11 @@ foreach (${$pluralVar} as ${$singularVar}):
 		echo ' ' . $this->Form->postLink(
 			__d('cake', 'Delete'),
 			array('action' => 'delete', ${$singularVar}[$modelClass][$primaryKey]),
+<<<<<<< HEAD
 			null,
+=======
+			array(),
+>>>>>>> origin/master
 			__d('cake', 'Are you sure you want to delete # %s?', ${$singularVar}[$modelClass][$primaryKey])
 		);
 		echo '</td>';

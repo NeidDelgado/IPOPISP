@@ -2,8 +2,11 @@
 /**
  * Schema database management for CakePHP.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -134,7 +137,11 @@ class CakeSchema extends Object {
  * Before callback to be implemented in subclasses
  *
  * @param array $event schema object properties
+<<<<<<< HEAD
  * @return boolean Should process continue
+=======
+ * @return bool Should process continue
+>>>>>>> origin/master
  */
 	public function before($event = array()) {
 		return true;
@@ -232,7 +239,11 @@ class CakeSchema extends Object {
 				}
 
 				if (isset($this->plugin)) {
+<<<<<<< HEAD
 					if ($model == $this->plugin . 'AppModel') {
+=======
+					if ($model === $this->plugin . 'AppModel') {
+>>>>>>> origin/master
 						continue;
 					}
 					$importModel = $model;
@@ -601,7 +612,11 @@ class CakeSchema extends Object {
 /**
  * Formats Schema columns from Model Object
  *
+<<<<<<< HEAD
  * @param array $Obj model object
+=======
+ * @param array &$Obj model object
+>>>>>>> origin/master
  * @return array Formatted columns
  */
 	protected function _columns(&$Obj) {
@@ -610,7 +625,11 @@ class CakeSchema extends Object {
 
 		$columns = array();
 		foreach ($fields as $name => $value) {
+<<<<<<< HEAD
 			if ($Obj->primaryKey == $name) {
+=======
+			if ($Obj->primaryKey === $name) {
+>>>>>>> origin/master
 				$value['key'] = 'primary';
 			}
 			if (!isset($db->columns[$value['type']])) {

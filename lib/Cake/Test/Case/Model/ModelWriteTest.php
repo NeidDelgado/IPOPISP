@@ -2,8 +2,11 @@
 /**
  * ModelWriteTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -26,6 +29,85 @@ App::uses('MockAssociatedTransactionDboSource', 'Model/Datasource');
 require_once dirname(__FILE__) . DS . 'ModelTestBase.php';
 
 /**
+<<<<<<< HEAD
+=======
+ * Helper class for testing with mocked datasources
+ */
+class TestAuthor extends Author {
+
+	public $hasMany = array(
+		'Post' => array(
+			'className' => 'TestPost'
+		)
+	);
+
+	protected $_dataSourceObject;
+
+/**
+ * Helper method to set a datasource object
+ *
+ * @param Object $object The datasource object
+ * @return void
+ */
+	public function setDataSourceObject($object) {
+		$this->_dataSourceObject = $object;
+	}
+
+/**
+ * Overwritten in order to return the directly set datasource object if
+ * available
+ *
+ * @return DataSource
+ */
+	public function getDataSource() {
+		if ($this->_dataSourceObject !== null) {
+			return $this->_dataSourceObject;
+		}
+		return parent::getDataSource();
+	}
+
+}
+
+/**
+ * Helper class for testing with mocked datasources
+ */
+class TestPost extends Post {
+
+	public $belongsTo = array(
+		'Author' => array(
+			'className' => 'TestAuthor'
+		)
+	);
+
+	protected $_dataSourceObject;
+
+/**
+ * Helper method to set a datasource object
+ *
+ * @param Object $object The datasource object
+ * @return void
+ */
+	public function setDataSourceObject($object) {
+		$this->_dataSourceObject = $object;
+	}
+
+/**
+ * Overwritten in order to return the directly set datasource object if
+ * available
+ *
+ * @return DataSource
+ */
+	public function getDataSource() {
+		if ($this->_dataSourceObject !== null) {
+			return $this->_dataSourceObject;
+		}
+		return parent::getDataSource();
+	}
+
+}
+
+/**
+>>>>>>> origin/master
  * ModelWriteTest
  *
  * @package       Cake.Test.Case.Model
@@ -293,6 +375,11 @@ class ModelWriteTest extends BaseModelTest {
 
 /**
  * test that save() resets whitelist on failed save
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testSaveFieldListResetsWhitelistOnFailedSave() {
 		$this->loadFixtures('Bidding');
@@ -4048,17 +4135,26 @@ class ModelWriteTest extends BaseModelTest {
 	public function testSaveAllManyRowsTransactionNoRollback() {
 		$this->loadFixtures('Post');
 
+<<<<<<< HEAD
 		$this->getMock('DboSource', array('connect', 'rollback', 'describe'), array(), 'MockTransactionDboSource');
 		$db = ConnectionManager::create('mock_transaction', array(
 			'datasource' => 'MockTransactionDboSource',
 		));
+=======
+		$db = $this->getMock('DboSource', array('begin', 'connect', 'rollback', 'describe'));
+>>>>>>> origin/master
 
 		$db->expects($this->once())
 			->method('describe')
 			->will($this->returnValue(array()));
 		$db->expects($this->once())->method('rollback');
 
+<<<<<<< HEAD
 		$Post = new Post('mock_transaction');
+=======
+		$Post = new TestPost();
+		$Post->setDataSourceObject($db);
+>>>>>>> origin/master
 
 		$Post->validate = array(
 			'title' => array('rule' => array('notEmpty'))
@@ -4068,7 +4164,11 @@ class ModelWriteTest extends BaseModelTest {
 			array('author_id' => 1, 'title' => 'New Fourth Post'),
 			array('author_id' => 1, 'title' => '')
 		);
+<<<<<<< HEAD
 		$Post->saveAll($data, array('atomic' => true));
+=======
+		$Post->saveAll($data, array('atomic' => true, 'validate' => true));
+>>>>>>> origin/master
 	}
 
 /**
@@ -4079,6 +4179,7 @@ class ModelWriteTest extends BaseModelTest {
 	public function testSaveAllAssociatedTransactionNoRollback() {
 		$testDb = ConnectionManager::getDataSource('test');
 
+<<<<<<< HEAD
 		$this->getMock(
 			'DboSource',
 			array('connect', 'rollback', 'describe', 'create', 'update', 'begin'),
@@ -4089,6 +4190,9 @@ class ModelWriteTest extends BaseModelTest {
 			'datasource' => 'MockTransactionAssociatedDboSource',
 		));
 		$this->mockObjects[] = $db;
+=======
+		$db = $this->getMock('DboSource', array('connect', 'rollback', 'describe', 'create', 'update', 'begin'));
+>>>>>>> origin/master
 		$db->columns = $testDb->columns;
 
 		$db->expects($this->once())->method('rollback');
@@ -4100,9 +4204,15 @@ class ModelWriteTest extends BaseModelTest {
 				'published' => array('type' => 'string')
 			)));
 
+<<<<<<< HEAD
 		$Post = new Post();
 		$Post->useDbConfig = 'mock_transaction_assoc';
 		$Post->Author->useDbConfig = 'mock_transaction_assoc';
+=======
+		$Post = new TestPost();
+		$Post->setDataSourceObject($db);
+		$Post->Author->setDataSourceObject($db);
+>>>>>>> origin/master
 
 		$Post->Author->validate = array(
 			'user' => array('rule' => array('notEmpty'))
@@ -5030,6 +5140,26 @@ class ModelWriteTest extends BaseModelTest {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * Test SaveMany with validate=false.
+ *
+ * @return void
+ */
+	public function testSaveManyValidateFalse() {
+		$this->loadFixtures('Post');
+		$TestModel = new Post();
+		$TestModel->deleteAll(true);
+		$data = array(
+			array('id' => 1, 'author_id' => 1, 'title' => 'hi'),
+			array('id' => 2, 'author_id' => 1, 'title' => 'bye')
+		);
+		$result = $TestModel->saveAll($data, array('validate' => false));
+		$this->assertTrue($result);
+	}
+
+/**
+>>>>>>> origin/master
  * Test SaveAssociated with Habtm relations
  *
  * @return void
@@ -5475,17 +5605,26 @@ class ModelWriteTest extends BaseModelTest {
 	public function testSaveManyTransactionNoRollback() {
 		$this->loadFixtures('Post');
 
+<<<<<<< HEAD
 		$this->getMock('DboSource', array('connect', 'rollback', 'describe'), array(), 'MockManyTransactionDboSource');
 		$db = ConnectionManager::create('mock_many_transaction', array(
 			'datasource' => 'MockManyTransactionDboSource',
 		));
+=======
+		$db = $this->getMock('DboSource', array('begin', 'connect', 'rollback', 'describe'));
+>>>>>>> origin/master
 
 		$db->expects($this->once())
 			->method('describe')
 			->will($this->returnValue(array()));
 		$db->expects($this->once())->method('rollback');
 
+<<<<<<< HEAD
 		$Post = new Post('mock_many_transaction');
+=======
+		$Post = new TestPost();
+		$Post->setDataSourceObject($db);
+>>>>>>> origin/master
 
 		$Post->validate = array(
 			'title' => array('rule' => array('notEmpty'))
@@ -5495,7 +5634,11 @@ class ModelWriteTest extends BaseModelTest {
 			array('author_id' => 1, 'title' => 'New Fourth Post'),
 			array('author_id' => 1, 'title' => '')
 		);
+<<<<<<< HEAD
 		$Post->saveMany($data);
+=======
+		$Post->saveMany($data, array('validate' => true));
+>>>>>>> origin/master
 	}
 
 /**
@@ -5506,6 +5649,7 @@ class ModelWriteTest extends BaseModelTest {
 	public function testSaveAssociatedTransactionNoRollback() {
 		$testDb = ConnectionManager::getDataSource('test');
 
+<<<<<<< HEAD
 		$this->getMock(
 			'DboSource',
 			array('connect', 'rollback', 'describe', 'create', 'begin'),
@@ -5517,6 +5661,9 @@ class ModelWriteTest extends BaseModelTest {
 			'datasource' => 'MockAssociatedTransactionDboSource',
 		));
 		$this->mockObjects[] = $db;
+=======
+		$db = $this->getMock('DboSource', array('connect', 'rollback', 'describe', 'create', 'begin'));
+>>>>>>> origin/master
 		$db->columns = $testDb->columns;
 
 		$db->expects($this->once())->method('rollback');
@@ -5528,9 +5675,15 @@ class ModelWriteTest extends BaseModelTest {
 				'published' => array('type' => 'string')
 			)));
 
+<<<<<<< HEAD
 		$Post = new Post();
 		$Post->useDbConfig = 'mock_assoc_transaction';
 		$Post->Author->useDbConfig = 'mock_assoc_transaction';
+=======
+		$Post = new TestPost();
+		$Post->setDataSourceObject($db);
+		$Post->Author->setDataSourceObject($db);
+>>>>>>> origin/master
 
 		$Post->Author->validate = array(
 			'user' => array('rule' => array('notEmpty'))
@@ -6247,6 +6400,35 @@ class ModelWriteTest extends BaseModelTest {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * Test that saveAssociated will accept expression object values when saving.
+ *
+ * @return void
+ */
+	public function testSaveAssociatedExpressionObjects() {
+		$this->loadFixtures('Post', 'Author', 'Comment', 'Attachment', 'Article', 'User');
+		$TestModel = new Post();
+		$db = $TestModel->getDataSource();
+
+		$TestModel->saveAssociated(array(
+			'Post' => array(
+				'title' => $db->expression("(SELECT 'Post with Author')"),
+				'body' => 'This post will be saved with an author'
+			),
+			'Author' => array(
+				'user' => 'bob',
+				'password' => '5f4dcc3b5aa765d61d8327deb882cf90'
+		)), array('atomic' => false));
+
+		$result = $TestModel->find('first', array(
+			'order' => array('Post.id ' => 'DESC')
+		));
+		$this->assertEquals('Post with Author', $result['Post']['title']);
+	}
+
+/**
+>>>>>>> origin/master
  * testUpdateWithCalculation method
  *
  * @return void
@@ -6275,6 +6457,14 @@ class ModelWriteTest extends BaseModelTest {
 		$this->assertEquals(array(6, 4, 5, 2), $result);
 	}
 
+<<<<<<< HEAD
+=======
+/**
+ * testToggleBoolFields method
+ *
+ * @return void
+ */
+>>>>>>> origin/master
 	public function testToggleBoolFields() {
 		$this->loadFixtures('CounterCacheUser', 'CounterCachePost');
 		$Post = new CounterCachePost();
@@ -6692,7 +6882,11 @@ class ModelWriteTest extends BaseModelTest {
 /**
  * testSaveAllFieldListHasMany method
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testSaveAllFieldListHasMany() {
 		$this->loadFixtures('Article', 'Comment');
@@ -6879,7 +7073,11 @@ class ModelWriteTest extends BaseModelTest {
 /**
  * testSaveAllDeepFieldListHasMany method
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testSaveAllDeepFieldListHasMany() {
 		$this->loadFixtures('Article', 'Comment', 'User');
@@ -6922,7 +7120,11 @@ class ModelWriteTest extends BaseModelTest {
 /**
  * testSaveAllDeepHasManyBelongsTo method
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testSaveAllDeepHasManyBelongsTo() {
 		$this->loadFixtures('Article', 'Comment', 'User');
@@ -6974,7 +7176,11 @@ class ModelWriteTest extends BaseModelTest {
 /**
  * testSaveAllDeepHasManyhasMany method
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testSaveAllDeepHasManyHasMany() {
 		$this->loadFixtures('Article', 'Comment', 'User', 'Attachment');
@@ -7030,7 +7236,11 @@ class ModelWriteTest extends BaseModelTest {
 /**
  * testSaveAllDeepOrderHasManyHasMany method
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testSaveAllDeepOrderHasManyHasMany() {
 		$this->loadFixtures('Article', 'Comment', 'User', 'Attachment');
@@ -7067,7 +7277,11 @@ class ModelWriteTest extends BaseModelTest {
 /**
  * testSaveAllDeepEmptyHasManyHasMany method
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testSaveAllDeepEmptyHasManyHasMany() {
 		$this->skipIf(!$this->db instanceof Mysql, 'This test is only compatible with Mysql.');
@@ -7105,7 +7319,11 @@ class ModelWriteTest extends BaseModelTest {
 /**
  * testUpdateAllBoolean
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testUpdateAllBoolean() {
 		$this->loadFixtures('Item', 'Syfile', 'Portfolio', 'Image', 'ItemsPortfolio');
@@ -7120,7 +7338,11 @@ class ModelWriteTest extends BaseModelTest {
 /**
  * testUpdateAllBooleanConditions
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testUpdateAllBooleanConditions() {
 		$this->loadFixtures('Item', 'Syfile', 'Portfolio', 'Image', 'ItemsPortfolio');
@@ -7137,7 +7359,11 @@ class ModelWriteTest extends BaseModelTest {
 /**
  * testUpdateBoolean
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testUpdateBoolean() {
 		$this->loadFixtures('Item', 'Syfile', 'Portfolio', 'Image', 'ItemsPortfolio');
@@ -7165,4 +7391,56 @@ class ModelWriteTest extends BaseModelTest {
 		$this->assertFalse(isset($model->data['Bid']['name']));
 		$this->assertFalse(isset($model->data['Bid']['message_id']));
 	}
+<<<<<<< HEAD
+=======
+
+/**
+ * Test that Model::save() doesn't generate a query with WHERE 1 = 1 on race condition.
+ *
+ * @link https://github.com/cakephp/cakephp/issues/3857
+ * @return void
+ */
+	public function testSafeUpdateMode() {
+		$this->loadFixtures('User');
+
+		$User = ClassRegistry::init('User');
+		$this->assertFalse($User->__safeUpdateMode);
+
+		$User->getEventManager()->attach(array($this, 'deleteMe'), 'Model.beforeSave');
+
+		$User->id = 1;
+		$User->set(array('user' => 'nobody'));
+		$User->save();
+
+		$users = $User->find('list', array('fields' => 'User.user'));
+
+		$expected = array(
+			2 => 'nate',
+			3 => 'larry',
+			4 => 'garrett',
+		);
+		$this->assertEquals($expected, $users);
+		$this->assertFalse($User->__safeUpdateMode);
+
+		$User->id = 2;
+		$User->set(array('user' => $User->getDataSource()->expression('PDO_EXCEPTION()')));
+		try {
+			$User->save(null, false);
+			$this->fail('No exception thrown');
+		} catch (PDOException $e) {
+			$this->assertFalse($User->__safeUpdateMode);
+		}
+	}
+
+/**
+ * Emulates race condition
+ *
+ * @param CakeEvent $event containing the Model
+ * @return void
+ */
+	public function deleteMe($event) {
+		$Model = $event->subject;
+		$Model->getDataSource()->delete($Model, array($Model->alias . '.' . $Model->primaryKey => $Model->id));
+	}
+>>>>>>> origin/master
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container"> <br><br><br><br><br><br><br><br>
     <span class="title sixteen columns">
         <h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?></h1>
@@ -8,6 +9,16 @@
                 <tr bgcolor="#1a4d80"> 
                   <th colspan="4"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Calculating Machines and Computing </font></th>
                 <tr bgcolor="#0099ff"> 
+=======
+
+                <td valign="top"> <p align="justify"><strong>MARKS OF ESTEEM<br>
+                    <font color="#CC9900" size="2" face="Verdana, Arial, Helvetica, sans-serif">INVENTIONS THAT MODIFIED OUR LIFE</font></strong></p>
+                  <table border=1 width=100% bordercolor="#000000">
+                    <tr bgcolor="#004C97"> 
+                      <th colspan="4"> <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Calculating 
+                          Machines and Computing </font></div></th>
+                    <tr bgcolor="#666666"> 
+>>>>>>> origin/master
                       <th width="156"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Invention</font></th>
                       <th width="52"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Date</font></th>
                       <th width="131"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Inventor</font></th>
@@ -130,6 +141,7 @@
                         patents listing</font></b> <font color="#000000"><a href="javascript:if(confirm('http://www.lib.lsu.edu/sci/chem/patent/srs136_cray.html  \n\nThis file was not retrieved by BackStreet browser, because it is addressed on a domain or path outside the boundaries set for its Project.  \n\nDo you want to open it from the server?'))window.location='http://www.lib.lsu.edu/sci/chem/patent/srs136_cray.html'" target=_blank>Seymour 
                         R. Cray, Jr. </a>as an (co)inventor.</font></font></td>
                     </tr>
+<<<<<<< HEAD
             </table>
         </div>
         <div class="destaq">
@@ -146,3 +158,14 @@
         </div>
     </div><!--FIM DE CONTEUDO -->
 </div>   
+=======
+                  </table>
+                  <p align="justify">&nbsp;</p>
+                  </td>
+                <td>&nbsp;</td>
+              </tr>
+            </table></td>
+          <td width="1" bgcolor="#999999"></td>
+        </tr>
+      </table></td>
+>>>>>>> origin/master

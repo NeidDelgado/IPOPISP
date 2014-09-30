@@ -2,8 +2,11 @@
 /**
  * A factory class to manage the life cycle of test fixtures
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -31,7 +34,11 @@ class CakeFixtureManager {
 /**
  * Was this class already initialized?
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	protected $_initialized = false;
 
@@ -98,6 +105,26 @@ class CakeFixtureManager {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * Parse the fixture path included in test cases, to get the fixture class name, and the
+ * real fixture path including sub-directories
+ * 
+ * @param string $fixturePath the fixture path to parse
+ * @return array containing fixture class name and optional additional path
+ */
+	protected function _parseFixturePath($fixturePath) {
+		$pathTokenArray = explode('/', $fixturePath);
+		$fixture = array_pop($pathTokenArray);
+		$additionalPath = '';
+		foreach ($pathTokenArray as $pathToken) {
+			$additionalPath .= DS . $pathToken;
+		}
+		return array('fixture' => $fixture, 'additionalPath' => $additionalPath);
+	}
+
+/**
+>>>>>>> origin/master
  * Looks for fixture files and instantiates the classes accordingly
  *
  * @param array $fixtures the fixture names to load using the notation {type}.{name}
@@ -116,6 +143,7 @@ class CakeFixtureManager {
 				$fixture = substr($fixture, strlen('core.'));
 				$fixturePaths[] = CAKE . 'Test' . DS . 'Fixture';
 			} elseif (strpos($fixture, 'app.') === 0) {
+<<<<<<< HEAD
 				$fixture = substr($fixture, strlen('app.'));
 				$fixturePaths = array(
 					TESTS . 'Fixture'
@@ -127,6 +155,22 @@ class CakeFixtureManager {
 				$fixturePaths = array(
 					CakePlugin::path(Inflector::camelize($pluginName)) . 'Test' . DS . 'Fixture',
 					TESTS . 'Fixture'
+=======
+				$fixturePrefixLess = substr($fixture, strlen('app.'));
+				$fixtureParsedPath = $this->_parseFixturePath($fixturePrefixLess);
+				$fixture = $fixtureParsedPath['fixture'];
+				$fixturePaths = array(
+					TESTS . 'Fixture' . $fixtureParsedPath['additionalPath']
+				);
+			} elseif (strpos($fixture, 'plugin.') === 0) {
+				$explodedFixture = explode('.', $fixture, 3);
+				$pluginName = $explodedFixture[1];
+				$fixtureParsedPath = $this->_parseFixturePath($explodedFixture[2]);
+				$fixture = $fixtureParsedPath['fixture'];
+				$fixturePaths = array(
+					CakePlugin::path(Inflector::camelize($pluginName)) . 'Test' . DS . 'Fixture' . $fixtureParsedPath['additionalPath'],
+					TESTS . 'Fixture' . $fixtureParsedPath['additionalPath']
+>>>>>>> origin/master
 				);
 			} else {
 				$fixturePaths = array(
@@ -161,7 +205,11 @@ class CakeFixtureManager {
  *
  * @param CakeTestFixture $fixture the fixture object to create
  * @param DataSource $db the datasource instance to use
+<<<<<<< HEAD
  * @param boolean $drop whether drop the fixture if it is already created or not
+=======
+ * @param bool $drop whether drop the fixture if it is already created or not
+>>>>>>> origin/master
  * @return void
  */
 	protected function _setupTable($fixture, $db = null, $drop = true) {
@@ -211,6 +259,10 @@ class CakeFixtureManager {
 				$db = ConnectionManager::getDataSource($fixture->useDbConfig);
 				$db->begin();
 				$this->_setupTable($fixture, $db, $test->dropTables);
+<<<<<<< HEAD
+=======
+				$fixture->truncate($db);
+>>>>>>> origin/master
 				$fixture->insert($db);
 				$db->commit();
 			}
@@ -243,7 +295,11 @@ class CakeFixtureManager {
  *
  * @param string $name of the fixture
  * @param DataSource $db DataSource instance or leave null to get DataSource from the fixture
+<<<<<<< HEAD
  * @param boolean $dropTables Whether or not tables should be dropped and re-created.
+=======
+ * @param bool $dropTables Whether or not tables should be dropped and re-created.
+>>>>>>> origin/master
  * @return void
  * @throws UnexpectedValueException if $name is not a previously loaded class
  */

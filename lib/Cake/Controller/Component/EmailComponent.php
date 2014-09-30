@@ -2,8 +2,11 @@
 /**
  * Email Component
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -284,7 +287,11 @@ class EmailComponent extends Component {
  *  If you are rendering a template this variable will be sent to the templates as `$content`
  * @param string $template Template to use when sending email
  * @param string $layout Layout to use to enclose email body
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function send($content = null, $template = null, $layout = null) {
 		$lib = new CakeEmail();
@@ -425,7 +432,11 @@ class EmailComponent extends Component {
 /**
  * Format addresses to be an array with email as key and alias as value
  *
+<<<<<<< HEAD
  * @param array $addresses
+=======
+ * @param array $addresses Address to format.
+>>>>>>> origin/master
  * @return array
  */
 	protected function _formatAddresses($addresses) {
@@ -446,7 +457,11 @@ class EmailComponent extends Component {
  * Helps prevent header injection / manipulation on user content.
  *
  * @param string $value Value to strip
+<<<<<<< HEAD
  * @param boolean $message Set to true to indicate main message content
+=======
+ * @param bool $message Set to true to indicate main message content
+>>>>>>> origin/master
  * @return string Stripped value
  */
 	protected function _strip($value, $message = false) {

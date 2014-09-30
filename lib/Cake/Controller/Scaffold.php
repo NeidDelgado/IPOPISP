@@ -4,8 +4,11 @@
  *
  * Automatic forms and actions generation for rapid web application development.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -20,8 +23,11 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
+<<<<<<< HEAD
 App::uses('Scaffold', 'View');
 
+=======
+>>>>>>> origin/master
 /**
  * Scaffolding is a set of automatic actions for starting web development work faster.
  *
@@ -30,7 +36,12 @@ App::uses('Scaffold', 'View');
  * and afford the web developer an early look at the data, and the possibility to over-ride
  * scaffolded actions with custom-made ones.
  *
+<<<<<<< HEAD
  * @package       Cake.Controller
+=======
+ * @package Cake.Controller
+ * @deprecated Dynamic scaffolding will be removed and replaced in 3.0
+>>>>>>> origin/master
  */
 class Scaffold {
 
@@ -79,7 +90,11 @@ class Scaffold {
 /**
  * Valid session.
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	protected $_validSession = null;
 

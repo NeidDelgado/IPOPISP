@@ -1,7 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -19,10 +22,16 @@ App::uses('BaseAuthenticate', 'Controller/Component/Auth');
 /**
  * Basic Authentication adapter for AuthComponent.
  *
+<<<<<<< HEAD
  * Provides Basic HTTP authentication support for AuthComponent. Basic Auth will authenticate users
  * against the configured userModel and verify the username and passwords match. Clients using Basic Authentication
  * must support cookies. Since AuthComponent identifies users based on Session contents, clients using Basic
  * Auth must support cookies.
+=======
+ * Provides Basic HTTP authentication support for AuthComponent. Basic Auth will
+ * authenticate users against the configured userModel and verify the username
+ * and passwords match.
+>>>>>>> origin/master
  *
  * ### Using Basic auth
  *
@@ -35,8 +44,23 @@ App::uses('BaseAuthenticate', 'Controller/Component/Auth');
  *	);
  * }}}
  *
+<<<<<<< HEAD
  * In your login function just call `$this->Auth->login()` without any checks for POST data. This
  * will send the authentication headers, and trigger the login dialog in the browser/client.
+=======
+ * You should also set `AuthComponent::$sessionKey = false;` in your AppController's
+ * beforeFilter() to prevent CakePHP from sending a session cookie to the client.
+ *
+ * Since HTTP Basic Authentication is stateless you don't need a login() action
+ * in your controller. The user credentials will be checked on each request. If
+ * valid credentials are not provided, required authentication headers will be sent
+ * by this authentication provider which triggers the login dialog in the browser/client.
+ *
+ * You may also want to use `$this->Auth->unauthorizedRedirect = false;`.
+ * By default, unauthorized users are redirected to the referrer URL,
+ * `AuthComponent::$loginAction`, or '/'. If unauthorizedRedirect is set to
+ * false, a ForbiddenException exception is thrown instead of redirecting.
+>>>>>>> origin/master
  *
  * @package       Cake.Controller.Component.Auth
  * @since 2.0
@@ -78,7 +102,11 @@ class BasicAuthenticate extends BaseAuthenticate {
 		$username = env('PHP_AUTH_USER');
 		$pass = env('PHP_AUTH_PW');
 
+<<<<<<< HEAD
 		if (empty($username) || empty($pass)) {
+=======
+		if (!is_string($username) || $username === '' || !is_string($pass) || $pass === '') {
+>>>>>>> origin/master
 			return false;
 		}
 		return $this->_findUser($username, $pass);

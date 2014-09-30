@@ -2,8 +2,11 @@
 /**
  * PhpAclTest file.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -31,6 +34,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * Setup
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function setUp() {
 		parent::setUp();
@@ -46,6 +54,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * Test role inheritance
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testRoleInheritance() {
 		$roles = $this->Acl->Aro->roles('User/peter');
@@ -60,7 +73,13 @@ class PhpAclTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
  * Tst adding a role
+=======
+ * Test adding a role
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testAddRole() {
 		$this->assertEquals(array(array(PhpAro::DEFAULT_ROLE)), $this->Acl->Aro->roles('foobar'));
@@ -70,6 +89,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * Test resolving ARO
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testAroResolve() {
 		$this->Acl->Aro->map = array(
@@ -94,6 +118,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * test correct resolution of defined aliases
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testAroAliases() {
 		$this->Acl->Aro->map = array(
@@ -195,6 +224,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * lhs of defined rules are case insensitive
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testCheckIsCaseInsensitive() {
 		$this->assertTrue($this->Acl->check('hardy', 'controllers/forms/new'));
@@ -205,6 +239,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * allow should work in-memory
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testAllow() {
 		$this->assertFalse($this->Acl->check('jeff', 'foo/bar'));
@@ -225,6 +264,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * deny should work in-memory
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testDeny() {
 		$this->assertTrue($this->Acl->check('stan', 'controllers/baz/manager_foo'));
@@ -239,6 +283,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * test that a deny rule wins over an equally specific allow rule
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testDenyRuleIsStrongerThanAllowRule() {
 		$this->assertFalse($this->Acl->check('peter', 'baz/bam'));
@@ -263,6 +312,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * test that an invalid configuration throws exception
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testInvalidConfigWithAroMissing() {
 		$this->setExpectedException(
@@ -288,6 +342,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * test resolving of ACOs
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testAcoResolve() {
 		$this->assertEquals(array('foo', 'bar'), $this->Acl->Aco->resolve('foo/bar'));
@@ -307,6 +366,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * test that declaring cyclic dependencies should give an error when building the tree
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testAroDeclarationContainsCycles() {
 		$config = array(
@@ -330,6 +394,11 @@ class PhpAclTest extends CakeTestCase {
 
 /**
  * test that with policy allow, only denies count
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testPolicy() {
 		// allow by default
@@ -346,4 +415,8 @@ class PhpAclTest extends CakeTestCase {
 		$this->assertFalse($this->Acl->check('Role/sales', 'controllers/bar/delete'));
 		$this->assertFalse($this->Acl->check('Role/sales', 'controllers/bar', 'delete'));
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 }

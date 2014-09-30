@@ -1,7 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * Generates code coverage reports in HTML from data obtained from PHPUnit
  *
+=======
+>>>>>>> origin/master
  * PHP5
  *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
@@ -28,9 +31,29 @@ App::uses('BaseCoverageReport', 'TestSuite/Coverage');
 class HtmlCoverageReport extends BaseCoverageReport {
 
 /**
+<<<<<<< HEAD
  * Generates report html to display.
  *
  * @return string compiled html report.
+=======
+ * Holds the total number of processed rows.
+ *
+ * @var int
+ */
+	protected $_total = 0;
+
+/**
+ * Holds the total number of covered rows.
+ *
+ * @var int
+ */
+	protected $_covered = 0;
+
+/**
+ * Generates report HTML to display.
+ *
+ * @return string Compiled HTML report.
+>>>>>>> origin/master
  */
 	public function report() {
 		$pathFilter = $this->getPathFilter();
@@ -48,6 +71,15 @@ HTML;
 			$fileData = file($file);
 			$output .= $this->generateDiff($file, $fileData, $coverageData);
 		}
+<<<<<<< HEAD
+=======
+
+		$percentCovered = 100;
+		if ($this->_total > 0) {
+			$percentCovered = round(100 * $this->_covered / $this->_total, 2);
+		}
+		$output .= '<div class="total">Overall coverage: <span class="coverage">' . $percentCovered . '%</span></div>';
+>>>>>>> origin/master
 		return $output;
 	}
 
@@ -69,6 +101,11 @@ HTML;
 		$diff = array();
 
 		list($covered, $total) = $this->_calculateCoveredLines($fileLines, $coverageData);
+<<<<<<< HEAD
+=======
+		$this->_covered += $covered;
+		$this->_total += $total;
+>>>>>>> origin/master
 
 		//shift line numbers forward one;
 		array_unshift($fileLines, ' ');
@@ -105,9 +142,15 @@ HTML;
 	}
 
 /**
+<<<<<<< HEAD
  * Guess the classname the test was for based on the test case filename.
  *
  * @param ReflectionClass $testReflection.
+=======
+ * Guess the class name the test was for based on the test case filename.
+ *
+ * @param ReflectionClass $testReflection The class to reflect
+>>>>>>> origin/master
  * @return string Possible test subject name.
  */
 	protected function _guessSubjectName($testReflection) {
@@ -121,6 +164,7 @@ HTML;
 	}
 
 /**
+<<<<<<< HEAD
  * Renders the html for a single line in the html diff.
  *
  * @param string $line
@@ -128,6 +172,15 @@ HTML;
  * @param string $class
  * @param array $coveringTests
  * @return void
+=======
+ * Renders the HTML for a single line in the HTML diff.
+ *
+ * @param string $line The line content.
+ * @param int $linenumber The line number
+ * @param string $class The classname to use.
+ * @param array $coveringTests The tests covering the line.
+ * @return string
+>>>>>>> origin/master
  */
 	protected function _paintLine($line, $linenumber, $class, $coveringTests) {
 		$coveredBy = '';
@@ -150,7 +203,11 @@ HTML;
 /**
  * generate some javascript for the coverage report.
  *
+<<<<<<< HEAD
  * @return void
+=======
+ * @return string
+>>>>>>> origin/master
  */
 	public function coverageScript() {
 		return <<<HTML
@@ -175,6 +232,7 @@ HTML;
 /**
  * Generate an HTML snippet for coverage headers
  *
+<<<<<<< HEAD
  * @param string $filename
  * @param string $percent
  * @return void
@@ -182,6 +240,15 @@ HTML;
 	public function coverageHeader($filename, $percent) {
 		$filename = basename($filename);
 		list($file, $ext) = explode('.', $filename);
+=======
+ * @param string $filename The file name being covered
+ * @param string $percent The percentage covered
+ * @return string
+ */
+	public function coverageHeader($filename, $percent) {
+		$filename = basename($filename);
+		list($file) = explode('.', $filename);
+>>>>>>> origin/master
 		$display = in_array($file, $this->_testNames) ? 'block' : 'none';
 		$primary = $display === 'block' ? 'primary' : '';
 		return <<<HTML

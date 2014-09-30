@@ -2,8 +2,11 @@
 /**
  * DbAclTest file.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -42,7 +45,11 @@ class AclNodeTwoTestBase extends AclNode {
 /**
  * cacheSources property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $cacheSources = false;
 }
@@ -129,7 +136,11 @@ class PermissionTwoTest extends Permission {
 /**
  * cacheQueries property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $cacheQueries = false;
 
@@ -143,7 +154,11 @@ class PermissionTwoTest extends Permission {
 /**
  * actsAs property
  *
+<<<<<<< HEAD
  * @var mixed null
+=======
+ * @var mixed
+>>>>>>> origin/master
  */
 	public $actsAs = null;
 }
@@ -258,7 +273,10 @@ class DbAclTest extends CakeTestCase {
 /**
  * testDbAclAllow method
  *
+<<<<<<< HEAD
  * @expectedException PHPUnit_Framework_Error_Warning
+=======
+>>>>>>> origin/master
  * @return void
  */
 	public function testAllow() {
@@ -299,17 +317,28 @@ class DbAclTest extends CakeTestCase {
  * @return void
  */
 	public function testAllowInvalidPermission() {
+<<<<<<< HEAD
 		$this->Acl->allow('Micheal', 'tpsReports', 'derp');
+=======
+		$this->assertFalse($this->Acl->allow('Micheal', 'tpsReports', 'derp'));
+>>>>>>> origin/master
 	}
 
 /**
  * testAllowInvalidNode method
  *
+<<<<<<< HEAD
  * @expectedException PHPUnit_Framework_Error_Warning
  * @return void
  */
 	public function testAllowInvalidNode() {
 		$this->Acl->allow('Homer', 'tpsReports', 'create');
+=======
+ * @return void
+ */
+	public function testAllowInvalidNode() {
+		$this->assertFalse($this->Acl->allow('Homer', 'tpsReports', 'create'));
+>>>>>>> origin/master
 	}
 
 /**
@@ -335,7 +364,10 @@ class DbAclTest extends CakeTestCase {
 /**
  * testCheckInvalidNode method
  *
+<<<<<<< HEAD
  * @expectedException PHPUnit_Framework_Error_Warning
+=======
+>>>>>>> origin/master
  * @return void
  */
 	public function testCheckInvalidNode() {
@@ -345,21 +377,35 @@ class DbAclTest extends CakeTestCase {
 /**
  * testCheckInvalidPermission method
  *
+<<<<<<< HEAD
  * @expectedException PHPUnit_Framework_Error_Notice
  * @return void
  */
 	public function testCheckInvalidPermission() {
 		$this->Acl->check('Lumbergh', 'smash', 'foobar');
+=======
+ * @return void
+ */
+	public function testCheckInvalidPermission() {
+		$this->assertFalse($this->Acl->check('Lumbergh', 'smash', 'foobar'));
+>>>>>>> origin/master
 	}
 
 /**
  * testCheckMissingPermission method
  *
+<<<<<<< HEAD
  * @expectedException PHPUnit_Framework_Error_Warning
  * @return void
  */
 	public function testCheckMissingPermission() {
 		$this->Acl->check('users', 'NonExistent', 'read');
+=======
+ * @return void
+ */
+	public function testCheckMissingPermission() {
+		$this->assertFalse($this->Acl->check('users', 'NonExistent', 'read'));
+>>>>>>> origin/master
 	}
 
 /**
@@ -382,7 +428,10 @@ class DbAclTest extends CakeTestCase {
 /**
  * testDbAclDeny method
  *
+<<<<<<< HEAD
  * @expectedException PHPUnit_Framework_Error_Warning
+=======
+>>>>>>> origin/master
  * @return void
  */
 	public function testDeny() {
@@ -452,7 +501,10 @@ class DbAclTest extends CakeTestCase {
 /**
  * testDbGrant method
  *
+<<<<<<< HEAD
  * @expectedException PHPUnit_Framework_Error_Warning
+=======
+>>>>>>> origin/master
  * @return void
  */
 	public function testGrant() {
@@ -473,7 +525,10 @@ class DbAclTest extends CakeTestCase {
 /**
  * testDbRevoke method
  *
+<<<<<<< HEAD
  * @expectedException PHPUnit_Framework_Error_Warning
+=======
+>>>>>>> origin/master
  * @return void
  */
 	public function testRevoke() {
@@ -497,7 +552,11 @@ class DbAclTest extends CakeTestCase {
  * Generates a list of the current aro and aco structures and a grid dump of the permissions that are defined
  * Only designed to work with the db based ACL
  *
+<<<<<<< HEAD
  * @param boolean $treesToo
+=======
+ * @param bool $treesToo
+>>>>>>> origin/master
  * @return void
  */
 	protected function _debug($printTreesToo = false) {
@@ -544,7 +603,11 @@ class DbAclTest extends CakeTestCase {
  * Used by debug to format strings used in the data dump
  *
  * @param string $string
+<<<<<<< HEAD
  * @param integer $len
+=======
+ * @param int $len
+>>>>>>> origin/master
  * @return void
  */
 	protected function _pad($string = '', $len = 14) {

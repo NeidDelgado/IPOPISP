@@ -4,8 +4,11 @@
  *
  * This file will render views from views/pages/
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.Controller
  * @since         CakePHP(tm) v 0.2.9
@@ -33,10 +36,16 @@ class PagesController extends AppController {
 /**
  * Displays a view
  *
+<<<<<<< HEAD
  * @param mixed What page to display
  * @return void
  * @throws NotFoundException When the view file could not be found
  *	or MissingViewException in debug mode.
+=======
+ * @return void
+ * @throws NotFoundException When the view file could not be found
+ *   or MissingViewException in debug mode.
+>>>>>>> origin/master
  */
 	public function display() {
 		$path = func_get_args();

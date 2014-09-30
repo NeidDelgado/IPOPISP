@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -51,11 +54,19 @@ foreach ($scaffoldFields as $_field) {
 	<ul>
 <?php
 	echo "\t\t<li>";
+<<<<<<< HEAD
 	echo $this->Html->link(__d('cake', 'Edit %s', $singularHumanName),   array('action' => 'edit', ${$singularVar}[$modelClass][$primaryKey]));
 	echo " </li>\n";
 
 	echo "\t\t<li>";
 	echo $this->Form->postLink(__d('cake', 'Delete %s', $singularHumanName), array('action' => 'delete', ${$singularVar}[$modelClass][$primaryKey]), null, __d('cake', 'Are you sure you want to delete # %s?', ${$singularVar}[$modelClass][$primaryKey]));
+=======
+	echo $this->Html->link(__d('cake', 'Edit %s', $singularHumanName), array('action' => 'edit', ${$singularVar}[$modelClass][$primaryKey]));
+	echo " </li>\n";
+
+	echo "\t\t<li>";
+	echo $this->Form->postLink(__d('cake', 'Delete %s', $singularHumanName), array('action' => 'delete', ${$singularVar}[$modelClass][$primaryKey]), array(), __d('cake', 'Are you sure you want to delete # %s?', ${$singularVar}[$modelClass][$primaryKey]));
+>>>>>>> origin/master
 	echo " </li>\n";
 
 	echo "\t\t<li>";
@@ -175,7 +186,11 @@ $otherSingularVar = Inflector::variable($_alias);
 			echo $this->Form->postLink(
 				__d('cake', 'Delete'),
 				array('plugin' => $_details['plugin'], 'controller' => $_details['controller'], 'action' => 'delete', ${$otherSingularVar}[$_details['primaryKey']]),
+<<<<<<< HEAD
 				null,
+=======
+				array(),
+>>>>>>> origin/master
 				__d('cake', 'Are you sure you want to delete # %s?', ${$otherSingularVar}[$_details['primaryKey']])
 			);
 			echo "\n";

@@ -4,8 +4,11 @@
  *
  * Adds methods and automagic functionality to CakePHP Models.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -117,7 +120,11 @@ class ModelBehavior extends Object {
  *
  * @param Model $model Model using this behavior
  * @param array $query Data used to execute this query, i.e. conditions, order, etc.
+<<<<<<< HEAD
  * @return boolean|array False or null will abort the operation. You can return an array to replace the
+=======
+ * @return bool|array False or null will abort the operation. You can return an array to replace the
+>>>>>>> origin/master
  *   $query that will be eventually run.
  */
 	public function beforeFind(Model $model, $query) {
@@ -129,7 +136,11 @@ class ModelBehavior extends Object {
  *
  * @param Model $model Model using this behavior
  * @param mixed $results The results of the find operation
+<<<<<<< HEAD
  * @param boolean $primary Whether this model is being queried directly (vs. being queried as an association)
+=======
+ * @param bool $primary Whether this model is being queried directly (vs. being queried as an association)
+>>>>>>> origin/master
  * @return mixed An array value will replace the value of $results - any other value will be ignored.
  */
 	public function afterFind(Model $model, $results, $primary = false) {
@@ -177,9 +188,15 @@ class ModelBehavior extends Object {
  * afterSave is called after a model is saved.
  *
  * @param Model $model Model using this behavior
+<<<<<<< HEAD
  * @param boolean $created True if this save created a new record
  * @param array $options Options passed from Model::save().
  * @return boolean
+=======
+ * @param bool $created True if this save created a new record
+ * @param array $options Options passed from Model::save().
+ * @return bool
+>>>>>>> origin/master
  * @see Model::save()
  */
 	public function afterSave(Model $model, $created, $options = array()) {
@@ -191,7 +208,11 @@ class ModelBehavior extends Object {
  * beforeDelete is called. Returning false from a beforeDelete will abort the delete.
  *
  * @param Model $model Model using this behavior
+<<<<<<< HEAD
  * @param boolean $cascade If true records that depend on this record will also be deleted
+=======
+ * @param bool $cascade If true records that depend on this record will also be deleted
+>>>>>>> origin/master
  * @return mixed False if the operation should abort. Any other result will continue.
  */
 	public function beforeDelete(Model $model, $cascade = true) {

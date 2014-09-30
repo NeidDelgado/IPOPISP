@@ -25,6 +25,16 @@ App::uses('Inflector', 'Utility');
 class CommandListShell extends AppShell {
 
 /**
+<<<<<<< HEAD
+=======
+ * Contains tasks to load and instantiate
+ *
+ * @var array
+ */
+	public $tasks = array('Command');
+
+/**
+>>>>>>> origin/master
  * startup
  *
  * @return void
@@ -55,7 +65,11 @@ class CommandListShell extends AppShell {
 			$this->out(__d('cake_console', "<info>Available Shells:</info>"), 2);
 		}
 
+<<<<<<< HEAD
 		$shellList = $this->_getShellList();
+=======
+		$shellList = $this->Command->getShellList();
+>>>>>>> origin/master
 		if (empty($shellList)) {
 			return;
 		}
@@ -68,6 +82,7 @@ class CommandListShell extends AppShell {
 	}
 
 /**
+<<<<<<< HEAD
  * Gets the shell command listing.
  *
  * @return array
@@ -113,6 +128,11 @@ class CommandListShell extends AppShell {
  * Output text.
  *
  * @param array $shellList
+=======
+ * Output text.
+ *
+ * @param array $shellList The shell list.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _asText($shellList) {
@@ -130,7 +150,11 @@ class CommandListShell extends AppShell {
 /**
  * Output as XML
  *
+<<<<<<< HEAD
  * @param array $shellList
+=======
+ * @param array $shellList The shell list.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _asXml($shellList) {
@@ -155,6 +179,7 @@ class CommandListShell extends AppShell {
 	}
 
 /**
+<<<<<<< HEAD
  * get the option parser
  *
  * @return void
@@ -170,6 +195,26 @@ class CommandListShell extends AppShell {
 				'help' => __d('cake_console', 'Get the listing as XML.'),
 				'boolean' => true
 			));
+=======
+ * Gets the option parser instance and configures it.
+ *
+ * @return ConsoleOptionParser
+ */
+	public function getOptionParser() {
+		$parser = parent::getOptionParser();
+
+		$parser->description(
+			__d('cake_console', 'Get the list of available shells for this CakePHP application.')
+		)->addOption('sort', array(
+			'help' => __d('cake_console', 'Does nothing (deprecated)'),
+			'boolean' => true
+		))->addOption('xml', array(
+			'help' => __d('cake_console', 'Get the listing as XML.'),
+			'boolean' => true
+		));
+
+		return $parser;
+>>>>>>> origin/master
 	}
 
 }

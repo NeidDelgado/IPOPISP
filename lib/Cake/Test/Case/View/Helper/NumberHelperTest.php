@@ -2,8 +2,11 @@
 /**
  * NumberHelperTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -71,6 +74,11 @@ class NumberHelperTest extends CakeTestCase {
 
 /**
  * test CakeNumber class methods are called correctly
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testNumberHelperProxyMethodCalls() {
 		$methods = array(
@@ -88,6 +96,11 @@ class NumberHelperTest extends CakeTestCase {
 
 /**
  * test engine override
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testEngineOverride() {
 		App::build(array(

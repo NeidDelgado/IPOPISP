@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 <?php
 App::uses('Debugger', 'Utility');
 ?>
 <h2><?php echo __d('cake_dev', 'Release Notes for CakePHP %s.', Configure::version()); ?></h2>
 <a href="http://cakephp.org/changelogs/1.3.6"><?php echo __d('cake_dev', 'Read the changelog'); ?> </a>
+=======
+>>>>>>> origin/master
 <p>
 	<?php
 		if (is_writable(TMP)):
@@ -70,6 +73,7 @@ if (isset($filePresent)):
 	?>
 </p>
 <?php endif; ?>
+<<<<<<< HEAD
 <?php
 	App::uses('Validation', 'Utility');
 	if (!Validation::alphaNumeric('cakephp')) {
@@ -82,10 +86,14 @@ if (isset($filePresent)):
 ?>
 <h3><?php echo __d('cake_dev', 'Editing this Page'); ?></h3>
 <p>
+=======
+<h3><?php echo __d('cake_dev', 'Editing this Page'); ?></h3>
+>>>>>>> origin/master
 <?php
 echo __d('cake_dev', 'To change the content of this page, create: APP/views/pages/home.ctp.<br />
 To change its layout, create: APP/views/layouts/default.ctp.<br />
 You can also add some CSS styles for your pages at: APP/webroot/css.');
+<<<<<<< HEAD
 ?>
 </p>
 
@@ -145,3 +153,5 @@ You can also add some CSS styles for your pages at: APP/webroot/css.');
 	<li><a href="http://www.cafepress.com/cakefoundation"><?php echo __d('cake_dev', 'CakePHP gear'); ?> </a>
 	<ul><li><?php echo __d('cake_dev', 'Get your own CakePHP gear - Doughnate to Cake'); ?></li></ul></li>
 </ul>
+=======
+>>>>>>> origin/master

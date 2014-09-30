@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 <div class="container"> <br><br><br><br><br><br><br><br>
     <span class="title sixteen columns">
         <h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?></h1>
         <strong><h3>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('History of the Microcomputer Revolution'); ?> </h3></strong></span><br>
     <div class="row section_featured_texts section_featured_texts_no_m">
         <div class="nine columns">
+=======
+<div class="container">
+    <span class="title sixteen columns"><h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?> </h1>
+        <strong><h3>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('History of the Microcomputer Revolution'); ?> </h3></strong></span><br>
+    <div class="row section_featured_texts section_featured_texts_no_m">
+        <div class="sixteen columns">
+>>>>>>> origin/master
             <h5>
                 <strong>&nbsp; &nbsp; &nbsp; &nbsp; <?php echo __('The Revolution Begins'); ?></strong><br>
                 &nbsp; &nbsp; &nbsp; &nbsp; <?php echo __('Computers began to get smaller in the 1960&CloseCurlyQuote;s with the introduction of 
@@ -47,6 +55,10 @@
                     computer on a tiny chip had as much computing power as its ancient great-grandfather, the room-sized ENIAC. Intel decided 
                     to buy the rights to this product back from the Japanese company,  which had run into financial problems - and the rest - as 
                     they say - is history.'); ?><br><br> 
+<<<<<<< HEAD
+=======
+                    
+>>>>>>> origin/master
                 &nbsp; &nbsp; &nbsp; &nbsp;  <?php echo __('The Intel 4004 was introduced by the end of 1971, sold for $ 200, 
                     and was followed less than a year later by the 8008, an 8-bit microprocessor which sold for $ 360. For the first time, affordable 
                     computer power was available to everyone.  '); ?><br><br>    
@@ -74,6 +86,7 @@
                     <?php echo $this->Html->image('setinha.png'); ?><?php echo $this->Html->link(__('Bibliographye.'),'/http://www.old-computers.com/', array('escape' => false)); ?></p>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="destaq">
             <h4><?php echo $this->Html->link('&nbsp; &nbsp; Pricing/Quotation', '/pricing', array('escape'=> false)); ?></h4>
             <h4><?php echo $this->Html->link('&nbsp; &nbsp; Marks Of Esteem', '/marksofesteem', array('escape'=> false)); ?></h4>
@@ -86,5 +99,7 @@
                 <?php echo $this->Html->link('&nbsp; &nbsp; * IPOPEDU', '/ipopedu', array('escape'=> false)); ?></br>
             </h5>
         </div>
+=======
+>>>>>>> origin/master
     </div><!--FIM DE CONTEUDO -->
 </div>  

@@ -2,8 +2,11 @@
 /**
  * CakePlugin class
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -110,6 +113,7 @@ class CakePlugin {
  * {{{
  * 	CakePlugin::loadAll(array(
  *		array('bootstrap' => true),
+<<<<<<< HEAD
  * 		'DebugKit' => array('routes' => true),
  * 	))
  * }}}
@@ -118,16 +122,34 @@ class CakePlugin {
  * and will not look for any bootstrap script.
  *
  * @param array $options
+=======
+ * 		'DebugKit' => array('routes' => true, 'bootstrap' => false),
+ * 	))
+ * }}}
+ *
+ * The above example will load the bootstrap file for all plugins, but for DebugKit it will only load
+ * the routes file and will not look for any bootstrap script.
+ *
+ * @param array $options Options list. See CakePlugin::load() for valid options.
+>>>>>>> origin/master
  * @return void
  */
 	public static function loadAll($options = array()) {
 		$plugins = App::objects('plugins');
 		foreach ($plugins as $p) {
+<<<<<<< HEAD
 			$opts = isset($options[$p]) ? $options[$p] : null;
 			if ($opts === null && isset($options[0])) {
 				$opts = $options[0];
 			}
 			self::load($p, (array)$opts);
+=======
+			$opts = isset($options[$p]) ? (array)$options[$p] : array();
+			if (isset($options[0])) {
+				$opts += $options[0];
+			}
+			self::load($p, $opts);
+>>>>>>> origin/master
 		}
 	}
 
@@ -185,7 +207,11 @@ class CakePlugin {
  *
  * @param string $plugin name of the plugin, if null will operate on all plugins having enabled the
  * loading of routes files
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	public static function routes($plugin = null) {
 		if ($plugin === null) {
@@ -208,7 +234,11 @@ class CakePlugin {
  * Returns true if the plugin $plugin is already loaded
  * If plugin is null, it will return a list of all loaded plugins
  *
+<<<<<<< HEAD
  * @param string $plugin
+=======
+ * @param string $plugin Plugin name to check.
+>>>>>>> origin/master
  * @return mixed boolean true if $plugin is already loaded.
  * If $plugin is null, returns a list of plugins that have been loaded
  */
@@ -239,7 +269,11 @@ class CakePlugin {
  * Include file, ignoring include error if needed if file is missing
  *
  * @param string $file File to include
+<<<<<<< HEAD
  * @param boolean $ignoreMissing Whether to ignore include error for missing files
+=======
+ * @param bool $ignoreMissing Whether to ignore include error for missing files
+>>>>>>> origin/master
  * @return mixed
  */
 	protected static function _includeFile($file, $ignoreMissing = false) {

@@ -43,7 +43,11 @@ class IniAcl extends Object implements AclInterface {
 /**
  * Initialize method
  *
+<<<<<<< HEAD
  * @param AclBase $component
+=======
+ * @param Component $component The AclComponent instance.
+>>>>>>> origin/master
  * @return void
  */
 	public function initialize(Component $component) {
@@ -55,7 +59,11 @@ class IniAcl extends Object implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function allow($aro, $aco, $action = "*") {
 	}
@@ -66,7 +74,11 @@ class IniAcl extends Object implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function deny($aro, $aco, $action = "*") {
 	}
@@ -77,7 +89,11 @@ class IniAcl extends Object implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function inherit($aro, $aco, $action = "*") {
 	}
@@ -90,7 +106,11 @@ class IniAcl extends Object implements AclInterface {
  * @param string $aro ARO
  * @param string $aco ACO
  * @param string $action Action
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function check($aro, $aco, $action = null) {
 		if (!$this->config) {

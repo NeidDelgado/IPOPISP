@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container"> <br><br><br><br><br><br><br><br>
     <span class="title sixteen columns">
         <h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?></h1>
@@ -8,6 +9,15 @@
                 <tr bgcolor="#1a4d80"> 
                   <th colspan="4"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Construction</font></th>
                 <tr bgcolor="#0099ff"> 
+=======
+
+                <td valign="top"> <p align="justify"><strong>MARKS OF ESTEEM<br>
+                    <font color="#CC9900" size="2" face="Verdana, Arial, Helvetica, sans-serif">INVENTIONS THAT MODIFIED OUR LIFE</font></strong></p>
+                  <table border=1 width=100% bordercolor="#000000">
+                    <tr bgcolor="#004C97"> 
+                      <th colspan="4"> <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"><font size="2"><b><font color="#FFFFFF" size="1">Construction</font></b></font><font size="1"></a></font></font></div></th>
+                    <tr bordercolor="#000000" bgcolor="#666666"> 
+>>>>>>> origin/master
                       <th><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Invention</font></th>
                       <th><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Date</font></th>
                       <th><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Inventor</font></th>
@@ -82,6 +92,7 @@
                       <td bordercolor="#CCCCCC"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
                         American</font></td>
                     </tr>
+<<<<<<< HEAD
             </table>
         </div>
         <div class="destaq">
@@ -98,3 +109,11 @@
         </div>
     </div><!--FIM DE CONTEUDO -->
 </div>   
+=======
+                  </table>
+                  <p align="justify">&nbsp;</p>
+                  </td>
+                <td>&nbsp;</td>
+              </tr>
+            </table></td>
+>>>>>>> origin/master

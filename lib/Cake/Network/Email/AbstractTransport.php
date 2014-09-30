@@ -2,8 +2,11 @@
 /**
  * Abstract send email
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -35,7 +38,11 @@ abstract class AbstractTransport {
 /**
  * Send mail
  *
+<<<<<<< HEAD
  * @param CakeEmail $email
+=======
+ * @param CakeEmail $email CakeEmail instance.
+>>>>>>> origin/master
  * @return array
  */
 	abstract public function send(CakeEmail $email);
@@ -43,7 +50,11 @@ abstract class AbstractTransport {
 /**
  * Set the config
  *
+<<<<<<< HEAD
  * @param array $config
+=======
+ * @param array $config Configuration options.
+>>>>>>> origin/master
  * @return array Returns configs
  */
 	public function config($config = null) {
@@ -57,7 +68,11 @@ abstract class AbstractTransport {
  * Help to convert headers in string
  *
  * @param array $headers Headers in format key => value
+<<<<<<< HEAD
  * @param string $eol
+=======
+ * @param string $eol End of line string.
+>>>>>>> origin/master
  * @return string
  */
 	protected function _headersToString($headers, $eol = "\r\n") {

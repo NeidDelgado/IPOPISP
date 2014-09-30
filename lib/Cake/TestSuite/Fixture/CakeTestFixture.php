@@ -82,6 +82,18 @@ class CakeTestFixture {
 	public $primaryKey = null;
 
 /**
+<<<<<<< HEAD
+=======
+ * Fixture data can be stored in memory by default.
+ * When table is created for a fixture the MEMORY engine is used
+ * where possible. Set $canUseMemory to false if you don't want this.
+ *
+ * @var bool
+ */
+	public $canUseMemory = true;
+
+/**
+>>>>>>> origin/master
  * Instantiate the fixture.
  *
  * @throws CakeException on invalid datasource usage.
@@ -191,7 +203,11 @@ class CakeTestFixture {
  * Run before all tests execute, should return SQL statement to create table for this fixture could be executed successfully.
  *
  * @param DboSource $db An instance of the database object used to create the fixture table
+<<<<<<< HEAD
  * @return boolean True on success, false on failure
+=======
+ * @return bool True on success, false on failure
+>>>>>>> origin/master
  */
 	public function create($db) {
 		if (!isset($this->fields) || empty($this->fields)) {
@@ -199,7 +215,11 @@ class CakeTestFixture {
 		}
 
 		if (empty($this->fields['tableParameters']['engine'])) {
+<<<<<<< HEAD
 			$canUseMemory = true;
+=======
+			$canUseMemory = $this->canUseMemory;
+>>>>>>> origin/master
 			foreach ($this->fields as $args) {
 
 				if (is_string($args)) {
@@ -242,7 +262,11 @@ class CakeTestFixture {
  * Run after all tests executed, should return SQL statement to drop table for this fixture.
  *
  * @param DboSource $db An instance of the database object used to create the fixture table
+<<<<<<< HEAD
  * @return boolean True on success, false on failure
+=======
+ * @return bool True on success, false on failure
+>>>>>>> origin/master
  */
 	public function drop($db) {
 		if (empty($this->fields)) {
@@ -264,7 +288,12 @@ class CakeTestFixture {
  * of this fixture could be executed successfully.
  *
  * @param DboSource $db An instance of the database into which the records will be inserted
+<<<<<<< HEAD
  * @return boolean on success or if there are no records to insert, or false on failure
+=======
+ * @return bool on success or if there are no records to insert, or false on failure
+ * @throws CakeException if counts of values and fields do not match.
+>>>>>>> origin/master
  */
 	public function insert($db) {
 		if (!isset($this->_insert)) {
@@ -277,7 +306,15 @@ class CakeTestFixture {
 				$fields = array_unique($fields);
 				$default = array_fill_keys($fields, null);
 				foreach ($this->records as $record) {
+<<<<<<< HEAD
 					$values[] = array_values(array_merge($default, $record));
+=======
+					$merge = array_values(array_merge($default, $record));
+					if (count($fields) !== count($merge)) {
+						throw new CakeException('Fixture invalid: Count of fields does not match count of values in ' . get_class($this));
+					}
+					$values[] = $merge;
+>>>>>>> origin/master
 				}
 				$nested = $db->useNestedTransactions;
 				$db->useNestedTransactions = false;
@@ -301,7 +338,11 @@ class CakeTestFixture {
  * CakeFixture to trigger other events before / after truncate.
  *
  * @param DboSource $db A reference to a db instance
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	public function truncate($db) {
 		$fullDebug = $db->fullDebug;

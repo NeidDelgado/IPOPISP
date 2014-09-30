@@ -2,8 +2,11 @@
 /**
  * RedisEngineTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/view/1196/Testing>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -78,6 +81,10 @@ class RedisEngineTest extends CakeTestCase {
 			'timeout' => 0,
 			'persistent' => true,
 			'password' => false,
+<<<<<<< HEAD
+=======
+			'database' => 0,
+>>>>>>> origin/master
 		);
 		$this->assertEquals($expecting, $settings);
 	}
@@ -93,6 +100,54 @@ class RedisEngineTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * testMultiDatabaseOperations method
+ *
+ * @return void
+ */
+	public function testMultiDatabaseOperations() {
+		Cache::config('redisdb0', array(
+			'engine' => 'Redis',
+			'prefix' => 'cake2_',
+			'duration' => 3600,
+			'persistent' => false,
+		));
+
+		Cache::config('redisdb1', array(
+			'engine' => 'Redis',
+			'database' => 1,
+			'prefix' => 'cake2_',
+			'duration' => 3600,
+			'persistent' => false,
+		));
+
+		$result = Cache::write('save_in_0', true, 'redisdb0');
+		$exist = Cache::read('save_in_0', 'redisdb0');
+		$this->assertTrue($result);
+		$this->assertTrue($exist);
+
+		$result = Cache::write('save_in_1', true, 'redisdb1');
+		$this->assertTrue($result);
+		$exist = Cache::read('save_in_0', 'redisdb1');
+		$this->assertFalse($exist);
+		$exist = Cache::read('save_in_1', 'redisdb1');
+		$this->assertTrue($exist);
+
+		Cache::delete('save_in_0', 'redisdb0');
+		$exist = Cache::read('save_in_0', 'redisdb0');
+		$this->assertFalse($exist);
+
+		Cache::delete('save_in_1', 'redisdb1');
+		$exist = Cache::read('save_in_1', 'redisdb1');
+		$this->assertFalse($exist);
+
+		Cache::drop('redisdb0');
+		Cache::drop('redisdb1');
+	}
+
+/**
+>>>>>>> origin/master
  * testReadAndWriteCache method
  *
  * @return void

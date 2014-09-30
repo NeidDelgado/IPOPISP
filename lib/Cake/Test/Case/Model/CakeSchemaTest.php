@@ -2,9 +2,12 @@
 /**
  * Test for Schema database management
  *
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -174,6 +177,10 @@ class TestAppSchema extends CakeSchema {
 	public $datatypes = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => 0, 'key' => 'primary'),
 		'float_field' => array('type' => 'float', 'null' => false, 'length' => '5,2', 'default' => ''),
+<<<<<<< HEAD
+=======
+		'decimal_field' => array('type' => 'decimal', 'length' => '6,3', 'default' => '0.000'),
+>>>>>>> origin/master
 		'huge_int' => array('type' => 'biginteger'),
 		'bool' => array('type' => 'boolean', 'null' => false, 'default' => false),
 		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => true)),

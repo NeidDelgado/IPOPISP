@@ -2,8 +2,11 @@
 /**
  * String handling methods.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -21,7 +24,10 @@
 /**
  * String handling methods.
  *
+<<<<<<< HEAD
  *
+=======
+>>>>>>> origin/master
  * @package       Cake.Utility
  */
 class String {
@@ -101,6 +107,7 @@ class String {
 
 /**
  * Tokenizes a string using $separator, ignoring any instance of $separator that appears between
+<<<<<<< HEAD
  * $leftBound and $rightBound
  *
  * @param string $data The data to tokenize
@@ -112,6 +119,19 @@ class String {
 	public static function tokenize($data, $separator = ',', $leftBound = '(', $rightBound = ')') {
 		if (empty($data) || is_array($data)) {
 			return $data;
+=======
+ * $leftBound and $rightBound.
+ *
+ * @param string $data The data to tokenize.
+ * @param string $separator The token to split the data on.
+ * @param string $leftBound The left boundary to ignore separators in.
+ * @param string $rightBound The right boundary to ignore separators in.
+ * @return mixed Array of tokens in $data or original input if empty.
+ */
+	public static function tokenize($data, $separator = ',', $leftBound = '(', $rightBound = ')') {
+		if (empty($data)) {
+			return array();
+>>>>>>> origin/master
 		}
 
 		$depth = 0;
@@ -255,8 +275,13 @@ class String {
  * is to replace all whitespace and unneeded markup around placeholders that did not get replaced
  * by String::insert().
  *
+<<<<<<< HEAD
  * @param string $str
  * @param array $options
+=======
+ * @param string $str String to clean.
+ * @param array $options Options list.
+>>>>>>> origin/master
  * @return string
  * @see String::insert()
  */
@@ -325,7 +350,11 @@ class String {
  * - `indentAt` 0 based index to start indenting at. Defaults to 0.
  *
  * @param string $text The text to format.
+<<<<<<< HEAD
  * @param array|integer $options Array of options to use, or an integer to wrap the text to.
+=======
+ * @param array|int $options Array of options to use, or an integer to wrap the text to.
+>>>>>>> origin/master
  * @return string Formatted text.
  */
 	public static function wrap($text, $options = array()) {
@@ -352,9 +381,15 @@ class String {
  * Unicode aware version of wordwrap.
  *
  * @param string $text The text to format.
+<<<<<<< HEAD
  * @param integer $width The width to wrap to. Defaults to 72.
  * @param string $break The line is broken using the optional break parameter. Defaults to '\n'.
  * @param boolean $cut If the cut is set to true, the string is always wrapped at the specified width.
+=======
+ * @param int $width The width to wrap to. Defaults to 72.
+ * @param string $break The line is broken using the optional break parameter. Defaults to '\n'.
+ * @param bool $cut If the cut is set to true, the string is always wrapped at the specified width.
+>>>>>>> origin/master
  * @return string Formatted text.
  */
 	public static function wordWrap($text, $width = 72, $break = "\n", $cut = false) {
@@ -407,8 +442,13 @@ class String {
  * - `html` If true, will ignore any HTML tags, ensuring that only the correct text is highlighted
  * - `regex` a custom regex rule that is used to match words, default is '|$tag|iu'
  *
+<<<<<<< HEAD
  * @param string $text Text to search the phrase in
  * @param string $phrase The phrase that will be searched
+=======
+ * @param string $text Text to search the phrase in.
+ * @param string|array $phrase The phrase or phrases that will be searched.
+>>>>>>> origin/master
  * @param array $options An array of html attributes and options.
  * @return string The highlighted text
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/text.html#TextHelper::highlight
@@ -418,12 +458,20 @@ class String {
 			return $text;
 		}
 
+<<<<<<< HEAD
 		$default = array(
+=======
+		$defaults = array(
+>>>>>>> origin/master
 			'format' => '<span class="highlight">\1</span>',
 			'html' => false,
 			'regex' => "|%s|iu"
 		);
+<<<<<<< HEAD
 		$options = array_merge($default, $options);
+=======
+		$options += $defaults;
+>>>>>>> origin/master
 		extract($options);
 
 		if (is_array($phrase)) {
@@ -452,7 +500,11 @@ class String {
 	}
 
 /**
+<<<<<<< HEAD
  * Strips given text of all links (<a href=....)
+=======
+ * Strips given text of all links (<a href=....).
+>>>>>>> origin/master
  *
  * @param string $text Text
  * @return string The text without links
@@ -474,15 +526,26 @@ class String {
  * - `exact` If false, $text will not be cut mid-word
  *
  * @param string $text String to truncate.
+<<<<<<< HEAD
  * @param integer $length Length of returned string, including ellipsis.
+=======
+ * @param int $length Length of returned string, including ellipsis.
+>>>>>>> origin/master
  * @param array $options An array of options.
  * @return string Trimmed string.
  */
 	public static function tail($text, $length = 100, $options = array()) {
+<<<<<<< HEAD
 		$default = array(
 			'ellipsis' => '...', 'exact' => true
 		);
 		$options = array_merge($default, $options);
+=======
+		$defaults = array(
+			'ellipsis' => '...', 'exact' => true
+		);
+		$options += $defaults;
+>>>>>>> origin/master
 		extract($options);
 
 		if (!function_exists('mb_strlen')) {
@@ -515,12 +578,17 @@ class String {
  * - `html` If true, HTML tags would be handled correctly
  *
  * @param string $text String to truncate.
+<<<<<<< HEAD
  * @param integer $length Length of returned string, including ellipsis.
+=======
+ * @param int $length Length of returned string, including ellipsis.
+>>>>>>> origin/master
  * @param array $options An array of html attributes and options.
  * @return string Trimmed string.
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/text.html#TextHelper::truncate
  */
 	public static function truncate($text, $length = 100, $options = array()) {
+<<<<<<< HEAD
 		$default = array(
 			'ellipsis' => '...', 'exact' => true, 'html' => false
 		);
@@ -530,6 +598,17 @@ class String {
 			$default['ellipsis'] = "\xe2\x80\xa6";
 		}
 		$options = array_merge($default, $options);
+=======
+		$defaults = array(
+			'ellipsis' => '...', 'exact' => true, 'html' => false
+		);
+		if (isset($options['ending'])) {
+			$defaults['ellipsis'] = $options['ending'];
+		} elseif (!empty($options['html']) && Configure::read('App.encoding') === 'UTF-8') {
+			$defaults['ellipsis'] = "\xe2\x80\xa6";
+		}
+		$options += $defaults;
+>>>>>>> origin/master
 		extract($options);
 
 		if (!function_exists('mb_strlen')) {
@@ -635,7 +714,11 @@ class String {
  *
  * @param string $text String to search the phrase in
  * @param string $phrase Phrase that will be searched for
+<<<<<<< HEAD
  * @param integer $radius The amount of characters that will be returned on each side of the founded phrase
+=======
+ * @param int $radius The amount of characters that will be returned on each side of the founded phrase
+>>>>>>> origin/master
  * @param string $ellipsis Ending that will be appended
  * @return string Modified string
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/text.html#TextHelper::excerpt

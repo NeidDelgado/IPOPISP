@@ -4,8 +4,11 @@
  *
  * Use it to configure database for i18n
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -21,7 +24,10 @@
  */
 
 /**
+<<<<<<< HEAD
  *
+=======
+>>>>>>> origin/master
  * Using the Schema command line utility
  *
  * Use it to configure database for i18n

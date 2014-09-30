@@ -121,7 +121,11 @@ class TranslateBehavior extends ModelBehavior {
 		$this->_joinTable = $joinTable;
 		$this->_runtimeModel = $RuntimeModel;
 
+<<<<<<< HEAD
 		if (is_string($query['fields']) && "COUNT(*) AS {$db->name('count')}" == $query['fields']) {
+=======
+		if (is_string($query['fields']) && $query['fields'] === "COUNT(*) AS {$db->name('count')}") {
+>>>>>>> origin/master
 			$query['fields'] = "COUNT(DISTINCT({$db->name($Model->escapeField())})) {$db->alias}count";
 			$query['joins'][] = array(
 				'type' => 'INNER',
@@ -139,6 +143,11 @@ class TranslateBehavior extends ModelBehavior {
 			}
 			unset($this->_joinTable, $this->_runtimeModel);
 			return $query;
+<<<<<<< HEAD
+=======
+		} elseif (is_string($query['fields'])) {
+			$query['fields'] = String::tokenize($query['fields']);
+>>>>>>> origin/master
 		}
 
 		$fields = array_merge(
@@ -272,12 +281,26 @@ class TranslateBehavior extends ModelBehavior {
  *
  * @param Model $Model Model find was run on
  * @param array $results Array of model results.
+<<<<<<< HEAD
  * @param boolean $primary Did the find originate on $model.
+=======
+ * @param bool $primary Did the find originate on $model.
+>>>>>>> origin/master
  * @return array Modified results
  */
 	public function afterFind(Model $Model, $results, $primary = false) {
 		$Model->virtualFields = $this->runtime[$Model->alias]['virtualFields'];
+<<<<<<< HEAD
 		$this->runtime[$Model->alias]['virtualFields'] = $this->runtime[$Model->alias]['fields'] = array();
+=======
+
+		$this->runtime[$Model->alias]['virtualFields'] = $this->runtime[$Model->alias]['fields'] = array();
+		if (!empty($this->runtime[$Model->alias]['restoreFields'])) {
+			$this->runtime[$Model->alias]['fields'] = $this->runtime[$Model->alias]['restoreFields'];
+			unset($this->runtime[$Model->alias]['restoreFields']);
+		}
+
+>>>>>>> origin/master
 		$locale = $this->_getLocale($Model);
 
 		if (empty($locale) || empty($results) || empty($this->runtime[$Model->alias]['beforeFind'])) {
@@ -305,7 +328,11 @@ class TranslateBehavior extends ModelBehavior {
 					}
 				} else {
 					$value = '';
+<<<<<<< HEAD
 					if (!empty($row[$Model->alias][$aliasVirtual])) {
+=======
+					if (isset($row[$Model->alias][$aliasVirtual])) {
+>>>>>>> origin/master
 						$value = $row[$Model->alias][$aliasVirtual];
 					}
 					$row[$Model->alias][$aliasField] = $value;
@@ -321,7 +348,11 @@ class TranslateBehavior extends ModelBehavior {
  *
  * @param Model $Model Model invalidFields was called on.
  * @param array $options Options passed from Model::save().
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  * @see Model::save()
  */
 	public function beforeValidate(Model $Model, $options = array()) {
@@ -338,7 +369,11 @@ class TranslateBehavior extends ModelBehavior {
  *
  * @param Model $Model Model save was called on.
  * @param array $options Options passed from Model::save().
+<<<<<<< HEAD
  * @return boolean true.
+=======
+ * @return bool true.
+>>>>>>> origin/master
  * @see Model::save()
  */
 	public function beforeSave(Model $Model, $options = array()) {
@@ -359,7 +394,11 @@ class TranslateBehavior extends ModelBehavior {
  * and to allow translations to be persisted even when validation
  * is disabled.
  *
+<<<<<<< HEAD
  * @param Model $Model
+=======
+ * @param Model $Model Model using this behavior.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _setRuntimeData(Model $Model) {
@@ -392,7 +431,11 @@ class TranslateBehavior extends ModelBehavior {
  * Restores model data to the original data.
  * This solves issues with saveAssociated and validate = first.
  *
+<<<<<<< HEAD
  * @param Model $model
+=======
+ * @param Model $Model Model using this behavior.
+>>>>>>> origin/master
  * @return void
  */
 	public function afterValidate(Model $Model) {
@@ -407,7 +450,11 @@ class TranslateBehavior extends ModelBehavior {
  * afterSave Callback
  *
  * @param Model $Model Model the callback is called on
+<<<<<<< HEAD
  * @param boolean $created Whether or not the save created a record.
+=======
+ * @param bool $created Whether or not the save created a record.
+>>>>>>> origin/master
  * @param array $options Options passed from Model::save().
  * @return void
  */
@@ -471,7 +518,11 @@ class TranslateBehavior extends ModelBehavior {
  * Prepares the data to be saved for translated records.
  * Add blank fields, and populates data for multi-locale saves.
  *
+<<<<<<< HEAD
  * @param Model $Model Model instance
+=======
+ * @param Model $Model Model using this behavior
+>>>>>>> origin/master
  * @param array $data The sparse data that was provided.
  * @return array The fully populated data to save.
  */
@@ -561,11 +612,19 @@ class TranslateBehavior extends ModelBehavior {
  * *Note* You should avoid binding translations that overlap existing model properties.
  * This can cause un-expected and un-desirable behavior.
  *
+<<<<<<< HEAD
  * @param Model $Model instance of model
  * @param string|array $fields string with field or array(field1, field2=>AssocName, field3)
  * @param boolean $reset Leave true to have the fields only modified for the next operation.
  *   if false the field will be added for all future queries.
  * @return boolean
+=======
+ * @param Model $Model using this behavior of model
+ * @param string|array $fields string with field or array(field1, field2=>AssocName, field3)
+ * @param bool $reset Leave true to have the fields only modified for the next operation.
+ *   if false the field will be added for all future queries.
+ * @return bool
+>>>>>>> origin/master
  * @throws CakeException when attempting to bind a translating called name. This is not allowed
  *   as it shadows Model::$name.
  */
@@ -575,7 +634,14 @@ class TranslateBehavior extends ModelBehavior {
 		}
 		$associations = array();
 		$RuntimeModel = $this->translateModel($Model);
+<<<<<<< HEAD
 		$default = array('className' => $RuntimeModel->alias, 'foreignKey' => 'foreign_key');
+=======
+		$default = array(
+			'className' => $RuntimeModel->alias,
+			'foreignKey' => 'foreign_key'
+		);
+>>>>>>> origin/master
 
 		foreach ($fields as $key => $value) {
 			if (is_numeric($key)) {
@@ -590,7 +656,10 @@ class TranslateBehavior extends ModelBehavior {
 					__d('cake_dev', 'You cannot bind a translation named "name".')
 				);
 			}
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 			$this->_removeField($Model, $field);
 
 			if ($association === null) {
@@ -602,6 +671,10 @@ class TranslateBehavior extends ModelBehavior {
 			} else {
 				if ($reset) {
 					$this->runtime[$Model->alias]['fields'][$field] = $association;
+<<<<<<< HEAD
+=======
+					$this->runtime[$Model->alias]['restoreFields'][] = $field;
+>>>>>>> origin/master
 				} else {
 					$this->settings[$Model->alias][$field] = $association;
 				}
@@ -631,7 +704,11 @@ class TranslateBehavior extends ModelBehavior {
 /**
  * Update runtime setting for a given field.
  *
+<<<<<<< HEAD
  * @param Model $Model Model instance
+=======
+ * @param Model $Model Model using this behavior
+>>>>>>> origin/master
  * @param string $field The field to update.
  * @return void
  */
@@ -653,10 +730,17 @@ class TranslateBehavior extends ModelBehavior {
  * Unbind translation for fields, optionally unbinds hasMany association for
  * fake field
  *
+<<<<<<< HEAD
  * @param Model $Model instance of model
  * @param string|array $fields string with field, or array(field1, field2=>AssocName, field3), or null for
  *    unbind all original translations
  * @return boolean
+=======
+ * @param Model $Model using this behavior of model
+ * @param string|array $fields string with field, or array(field1, field2=>AssocName, field3), or null for
+ *    unbind all original translations
+ * @return bool
+>>>>>>> origin/master
  */
 	public function unbindTranslation(Model $Model, $fields = null) {
 		if (empty($fields) && empty($this->settings[$Model->alias])) {

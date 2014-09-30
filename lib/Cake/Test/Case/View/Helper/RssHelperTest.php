@@ -2,8 +2,11 @@
 /**
  * RssHelperTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -93,6 +96,7 @@ class RssHelperTest extends CakeTestCase {
  */
 	public function testChannel() {
 		$attrib = array('a' => '1', 'b' => '2');
+<<<<<<< HEAD
 		$elements = array('title' => 'title');
 		$content = 'content';
 
@@ -117,6 +121,9 @@ class RssHelperTest extends CakeTestCase {
 		$this->View->pageTitle = 'title';
 		$attrib = array('a' => '1', 'b' => '2');
 		$elements = array();
+=======
+		$elements = array('title' => 'Title');
+>>>>>>> origin/master
 		$content = 'content';
 
 		$result = $this->Rss->channel($attrib, $elements, $content);
@@ -126,7 +133,11 @@ class RssHelperTest extends CakeTestCase {
 				'b' => '2'
 			),
 			'<title',
+<<<<<<< HEAD
 			'title',
+=======
+			'Title',
+>>>>>>> origin/master
 			'/title',
 			'<link',
 			$this->Rss->url('/', true),
@@ -745,6 +756,7 @@ class RssHelperTest extends CakeTestCase {
 
 	public function testElementNamespaceWithPrefix() {
 		$item = array(
+<<<<<<< HEAD
 				'title' => 'Title',
 				'dc:creator' => 'Alex',
 				'xy:description' => 'descriptive words'
@@ -754,18 +766,37 @@ class RssHelperTest extends CakeTestCase {
 						'prefix' => 'dc',
 						'url' => 'http://link.com'
 				)
+=======
+			'title' => 'Title',
+			'dc:creator' => 'Alex',
+			'dc:description' => 'descriptive words'
+		);
+		$attributes = array(
+			'namespace' => array(
+				'prefix' => 'dc',
+				'url' => 'http://link.com'
+			)
+>>>>>>> origin/master
 		);
 		$result = $this->Rss->item($attributes, $item);
 		$expected = array(
 			'item' => array(
+<<<<<<< HEAD
 					'xmlns:dc' => 'http://link.com'
 			),
 			'title' => array(
 					'xmlns:dc' => 'http://link.com'
+=======
+				'xmlns:dc' => 'http://link.com'
+			),
+			'title' => array(
+				'xmlns:dc' => 'http://link.com'
+>>>>>>> origin/master
 			),
 			'Title',
 			'/title',
 			'dc:creator' => array(
+<<<<<<< HEAD
 					'xmlns:dc' => 'http://link.com'
 			),
 			'Alex',
@@ -775,6 +806,17 @@ class RssHelperTest extends CakeTestCase {
 			),
 			'descriptive words',
 			'/description',
+=======
+				'xmlns:dc' => 'http://link.com'
+			),
+			'Alex',
+			'/dc:creator',
+			'dc:description' => array(
+				'xmlns:dc' => 'http://link.com'
+			),
+			'descriptive words',
+			'/dc:description',
+>>>>>>> origin/master
 			'/item'
 		);
 		$this->assertTags($result, $expected, true);

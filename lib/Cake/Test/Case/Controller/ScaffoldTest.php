@@ -2,8 +2,11 @@
 /**
  * ScaffoldTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -66,6 +69,10 @@ class ScaffoldMockControllerWithFields extends Controller {
  * function beforeScaffold
  *
  * @param string method
+<<<<<<< HEAD
+=======
+ * @return bool true
+>>>>>>> origin/master
  */
 	public function beforeScaffold($method) {
 		$this->set('scaffoldFields', array('title'));
@@ -84,7 +91,12 @@ class TestScaffoldMock extends Scaffold {
 /**
  * Overload _scaffold
  *
+<<<<<<< HEAD
  * @param unknown_type $params
+=======
+ * @param CakeRequest $request
+ * @return void
+>>>>>>> origin/master
  */
 	protected function _scaffold(CakeRequest $request) {
 		$this->_params = $request;

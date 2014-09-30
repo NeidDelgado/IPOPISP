@@ -32,7 +32,11 @@ class CakeTestModel extends Model {
  * incorrect order when no order has been defined in the finds.
  * Postgres can return the results in any order it considers appropriate if none is specified
  *
+<<<<<<< HEAD
  * @param integer|string|array $id Set this ID for this model on startup, can also be an array of options, see above.
+=======
+ * @param int|string|array $id Set this ID for this model on startup, can also be an array of options, see above.
+>>>>>>> origin/master
  * @param string $table Name of database table to use.
  * @param string $ds DataSource connection name.
  */
@@ -44,11 +48,19 @@ class CakeTestModel extends Model {
 /**
  * Overriding save() to set CakeTestSuiteDispatcher::date() as formatter for created, modified and updated fields
  *
+<<<<<<< HEAD
  * @param array $data
  * @param boolean|array $validate
  * @param array $fieldList
  */
 
+=======
+ * @param array $data Data to save
+ * @param bool|array $validate Validate or options.
+ * @param array $fieldList Whitelist of fields
+ * @return mixed
+ */
+>>>>>>> origin/master
 	public function save($data = null, $validate = true, $fieldList = array()) {
 		$db = $this->getDataSource();
 		$db->columns['datetime']['formatter'] = 'CakeTestSuiteDispatcher::date';

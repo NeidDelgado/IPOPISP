@@ -2,8 +2,11 @@
 /**
  * TreeBehaviorAfterTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -20,6 +23,10 @@
 
 App::uses('Model', 'Model');
 App::uses('AppModel', 'Model');
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 require_once dirname(dirname(__FILE__)) . DS . 'models.php';
 
 /**
@@ -32,7 +39,11 @@ class TreeBehaviorAfterTest extends CakeTestCase {
 /**
  * Whether backup global state for each test method or not
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $backupGlobals = false;
 

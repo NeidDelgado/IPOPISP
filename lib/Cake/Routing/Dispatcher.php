@@ -5,8 +5,11 @@
  *
  * This is the heart of CakePHP's operation.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -87,7 +90,11 @@ class Dispatcher implements CakeEventListener {
  * Attaches all event listeners for this dispatcher instance. Loads the
  * dispatcher filters from the configured locations.
  *
+<<<<<<< HEAD
  * @param CakeEventManager $manager
+=======
+ * @param CakeEventManager $manager Event manager instance.
+>>>>>>> origin/master
  * @return void
  * @throws MissingDispatcherFilterException
  */
@@ -97,7 +104,16 @@ class Dispatcher implements CakeEventListener {
 			return;
 		}
 
+<<<<<<< HEAD
 		foreach ($filters as $filter) {
+=======
+		foreach ($filters as $index => $filter) {
+			$settings = array();
+			if (is_array($filter) && !is_int($index)) {
+				$settings = $filter;
+				$filter = $index;
+			}
+>>>>>>> origin/master
 			if (is_string($filter)) {
 				$filter = array('callable' => $filter);
 			}
@@ -107,7 +123,11 @@ class Dispatcher implements CakeEventListener {
 				if (!class_exists($callable)) {
 					throw new MissingDispatcherFilterException($callable);
 				}
+<<<<<<< HEAD
 				$manager->attach(new $callable);
+=======
+				$manager->attach(new $callable($settings));
+>>>>>>> origin/master
 			} else {
 				$on = strtolower($filter['on']);
 				$options = array();
@@ -159,7 +179,11 @@ class Dispatcher implements CakeEventListener {
 			));
 		}
 
+<<<<<<< HEAD
 		$response = $this->_invoke($controller, $request, $response);
+=======
+		$response = $this->_invoke($controller, $request);
+>>>>>>> origin/master
 		if (isset($request->params['return'])) {
 			return $response->body();
 		}
@@ -171,6 +195,7 @@ class Dispatcher implements CakeEventListener {
 
 /**
  * Initializes the components and models a controller will be using.
+<<<<<<< HEAD
  * Triggers the controller action, and invokes the rendering if Controller::$autoRender is true and echo's the output.
  * Otherwise the return value of the controller action are returned.
  *
@@ -183,6 +208,21 @@ class Dispatcher implements CakeEventListener {
 		$controller->constructClasses();
 		$controller->startupProcess();
 
+=======
+ * Triggers the controller action, and invokes the rendering if Controller::$autoRender
+ * is true and echo's the output. Otherwise the return value of the controller
+ * action are returned.
+ *
+ * @param Controller $controller Controller to invoke
+ * @param CakeRequest $request The request object to invoke the controller for.
+ * @return CakeResponse the resulting response object
+ */
+	protected function _invoke(Controller $controller, CakeRequest $request) {
+		$controller->constructClasses();
+		$controller->startupProcess();
+
+		$response = $controller->response;
+>>>>>>> origin/master
 		$render = true;
 		$result = $controller->invokeAction($request);
 		if ($result instanceof CakeResponse) {
@@ -238,10 +278,17 @@ class Dispatcher implements CakeEventListener {
 	}
 
 /**
+<<<<<<< HEAD
  * Load controller and return controller classname
  *
  * @param CakeRequest $request
  * @return string|boolean Name of controller class name
+=======
+ * Load controller and return controller class name
+ *
+ * @param CakeRequest $request Request instance.
+ * @return string|bool Name of controller class name
+>>>>>>> origin/master
  */
 	protected function _loadController($request) {
 		$pluginName = $pluginPath = $controller = null;

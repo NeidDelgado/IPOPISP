@@ -1,7 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -43,7 +46,11 @@ class FormAuthenticate extends BaseAuthenticate {
  * @param CakeRequest $request The request that contains login information.
  * @param string $model The model used for login verification.
  * @param array $fields The fields to be checked.
+<<<<<<< HEAD
  * @return boolean False if the fields have not been supplied. True if they exist.
+=======
+ * @return bool False if the fields have not been supplied. True if they exist.
+>>>>>>> origin/master
  */
 	protected function _checkFields(CakeRequest $request, $model, $fields) {
 		if (empty($request->data[$model])) {
@@ -51,7 +58,11 @@ class FormAuthenticate extends BaseAuthenticate {
 		}
 		foreach (array($fields['username'], $fields['password']) as $field) {
 			$value = $request->data($model . '.' . $field);
+<<<<<<< HEAD
 			if (empty($value) || !is_string($value)) {
+=======
+			if (empty($value) && $value !== '0' || !is_string($value)) {
+>>>>>>> origin/master
 				return false;
 			}
 		}

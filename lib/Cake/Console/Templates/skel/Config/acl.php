@@ -4,8 +4,11 @@
  *
  * Use it to configure access control of your CakePHP application.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.Config
  * @since         CakePHP(tm) v 2.1

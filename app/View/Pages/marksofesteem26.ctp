@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container"> <br><br><br><br><br><br><br><br>
     <span class="title sixteen columns">
         <h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?></h1>
@@ -12,6 +13,20 @@
                       <th><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Date</font></th>
                       <th><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Inventor</font></th>
                       <th><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Nationality</font></th>
+=======
+
+                <td valign="top"> <p align="justify"><strong>MARKS OF ESTEEM<br>
+                    <font color="#CC9900" size="2" face="Verdana, Arial, Helvetica, sans-serif">INVENTIONS THAT MODIFIED OUR LIFE</font></strong></p>
+                  <table border=1 width=100% bordercolor="#000000">
+                    <tr bgcolor="#004C97"> 
+                      <th colspan="4"> <div align="center"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Medicine 
+                          and Biotechnology</font></b></div></th>
+                    <tr> 
+                      <th bgcolor="#666666"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Invention</font></th>
+                      <th bgcolor="#666666"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Date</font></th>
+                      <th bgcolor="#666666"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Inventor</font></th>
+                      <th bgcolor="#666666"><font size="1" face="Verdana, Arial, Helvetica, sans-serif" color="#FFFFFF">Nationality</font></th>
+>>>>>>> origin/master
                     <tr> 
                       <td bgcolor="#F5F5F5"><font size="1" face="Verdana, Arial, Helvetica, sans-serif">Blood 
                         transfusion </font></td>
@@ -255,6 +270,7 @@
                       <td bordercolor="#CCCCCC"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"> 
                         American</font></td>
                     </tr>
+<<<<<<< HEAD
             </table>
         </div>
         <div class="destaq">
@@ -271,3 +287,11 @@
         </div>
     </div><!--FIM DE CONTEUDO -->
 </div>  
+=======
+                  </table>
+                  <p align="justify">&nbsp;</p>
+                  </td>
+                <td>&nbsp;</td>
+              </tr>
+            </table></td>
+>>>>>>> origin/master

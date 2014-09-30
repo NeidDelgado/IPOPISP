@@ -2,8 +2,11 @@
 /**
  * CakeTextReporter contains reporting features used for plain text based output
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -152,6 +155,7 @@ class CakeTextReporter extends CakeBaseReporter {
 		$plugin = $this->params['plugin'];
 
 		$buffer = "Core Test Cases:\n";
+<<<<<<< HEAD
 		$urlExtra = '';
 		if ($app) {
 			$buffer = "App Test Cases:\n";
@@ -159,6 +163,12 @@ class CakeTextReporter extends CakeBaseReporter {
 		} elseif ($plugin) {
 			$buffer = Inflector::humanize($plugin) . " Test Cases:\n";
 			$urlExtra = '&plugin=' . $plugin;
+=======
+		if ($app) {
+			$buffer = "App Test Cases:\n";
+		} elseif ($plugin) {
+			$buffer = Inflector::humanize($plugin) . " Test Cases:\n";
+>>>>>>> origin/master
 		}
 
 		if (count($testCases) < 1) {

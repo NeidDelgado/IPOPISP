@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -20,7 +23,11 @@
 <h2><?php echo __d('cake_dev', 'Database Error'); ?></h2>
 <p class="error">
 	<strong><?php echo __d('cake_dev', 'Error'); ?>: </strong>
+<<<<<<< HEAD
 	<?php echo $name; ?>
+=======
+	<?php echo $message; ?>
+>>>>>>> origin/master
 </p>
 <?php if (!empty($error->queryString)) : ?>
 	<p class="notice">

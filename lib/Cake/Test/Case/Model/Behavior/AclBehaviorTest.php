@@ -4,8 +4,11 @@
  *
  * Test the Acl Behavior
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -124,6 +127,10 @@ class AclUser extends CakeTestModel {
 /**
  * parentNode
  *
+<<<<<<< HEAD
+=======
+ * @return null
+>>>>>>> origin/master
  */
 	public function parentNode() {
 		return null;
@@ -162,6 +169,10 @@ class AclPost extends CakeTestModel {
 /**
  * parentNode
  *
+<<<<<<< HEAD
+=======
+ * @return null
+>>>>>>> origin/master
  */
 	public function parentNode() {
 		return null;

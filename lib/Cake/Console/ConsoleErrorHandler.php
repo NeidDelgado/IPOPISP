@@ -2,8 +2,11 @@
 /**
  * ErrorHandler for Console Shells
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -60,17 +63,30 @@ class ConsoleErrorHandler {
 			$exception->getMessage(),
 			$exception->getTraceAsString()
 		));
+<<<<<<< HEAD
 		return $this->_stop($exception->getCode() ? $exception->getCode() : 1);
+=======
+		$code = $exception->getCode();
+		$code = ($code && is_int($code)) ? $code : 1;
+		return $this->_stop($code);
+>>>>>>> origin/master
 	}
 
 /**
  * Handle errors in the console environment. Writes errors to stderr,
  * and logs messages if Configure::read('debug') is 0.
  *
+<<<<<<< HEAD
  * @param integer $code Error code
  * @param string $description Description of the error.
  * @param string $file The file the error occurred in.
  * @param integer $line The line the error occurred on.
+=======
+ * @param int $code Error code
+ * @param string $description Description of the error.
+ * @param string $file The file the error occurred in.
+ * @param int $line The line the error occurred on.
+>>>>>>> origin/master
  * @param array $context The backtrace of the error.
  * @return void
  */
@@ -95,7 +111,11 @@ class ConsoleErrorHandler {
 /**
  * Wrapper for exit(), used for testing.
  *
+<<<<<<< HEAD
  * @param integer $code The exit code.
+=======
+ * @param int $code The exit code.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _stop($code = 0) {

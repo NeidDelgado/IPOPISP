@@ -56,7 +56,20 @@ class Inflector {
 			'/$/' => 's',
 		),
 		'uninflected' => array(
+<<<<<<< HEAD
 			'.*[nrlm]ese', '.*deer', '.*fish', '.*measles', '.*ois', '.*pox', '.*sheep', 'people'
+=======
+			'.*[nrlm]ese',
+			'.*deer',
+			'.*fish',
+			'.*measles',
+			'.*ois',
+			'.*pox',
+			'.*sheep',
+			'people',
+			'feedback',
+			'stadia'
+>>>>>>> origin/master
 		),
 		'irregular' => array(
 			'atlas' => 'atlases',
@@ -117,7 +130,11 @@ class Inflector {
 			'/(alumn|bacill|cact|foc|fung|nucle|radi|stimul|syllab|termin|viri?)i$/i' => '\1us',
 			'/([ftw]ax)es/i' => '\1',
 			'/(cris|ax|test)es$/i' => '\1is',
+<<<<<<< HEAD
 			'/(shoe|slave)s$/i' => '\1',
+=======
+			'/(shoe)s$/i' => '\1',
+>>>>>>> origin/master
 			'/(o)es$/i' => '\1',
 			'/ouses$/' => 'ouse',
 			'/([^a])uses$/' => '\1us',
@@ -130,7 +147,11 @@ class Inflector {
 			'/(hive)s$/i' => '\1',
 			'/(drive)s$/i' => '\1',
 			'/([le])ves$/i' => '\1f',
+<<<<<<< HEAD
 			'/([^rfo])ves$/i' => '\1fe',
+=======
+			'/([^rfoa])ves$/i' => '\1fe',
+>>>>>>> origin/master
 			'/(^analy)ses$/i' => '\1sis',
 			'/(analy|diagno|^ba|(p)arenthe|(p)rogno|(s)ynop|(t)he)ses$/i' => '\1\2sis',
 			'/([ti])a$/i' => '\1um',
@@ -143,11 +164,18 @@ class Inflector {
 			'/s$/i' => ''
 		),
 		'uninflected' => array(
+<<<<<<< HEAD
 			'.*[nrlm]ese', '.*deer', '.*fish', '.*measles', '.*ois', '.*pox', '.*sheep', '.*ss'
 		),
 		'irregular' => array(
 			'foes' => 'foe',
 			'waves' => 'wave',
+=======
+			'.*[nrlm]ese', '.*deer', '.*fish', '.*measles', '.*ois', '.*pox', '.*sheep', '.*ss', 'feedback'
+		),
+		'irregular' => array(
+			'foes' => 'foe',
+>>>>>>> origin/master
 		)
 	);
 
@@ -163,9 +191,15 @@ class Inflector {
 		'Foochowese', 'gallows', 'Genevese', 'Genoese', 'Gilbertese', 'graffiti',
 		'headquarters', 'herpes', 'hijinks', 'Hottentotese', 'information', 'innings',
 		'jackanapes', 'Kiplingese', 'Kongoese', 'Lucchese', 'mackerel', 'Maltese', '.*?media',
+<<<<<<< HEAD
 		'mews', 'moose', 'mumps', 'Nankingese', 'news', 'nexus', 'Niasese',
 		'Pekingese', 'Piedmontese', 'pincers', 'Pistoiese', 'pliers', 'Portuguese',
 		'proceedings', 'rabies', 'rice', 'rhinoceros', 'salmon', 'Sarawakese', 'scissors',
+=======
+		'metadata', 'mews', 'moose', 'mumps', 'Nankingese', 'news', 'nexus', 'Niasese',
+		'Pekingese', 'Piedmontese', 'pincers', 'Pistoiese', 'pliers', 'Portuguese',
+		'proceedings', 'rabies', 'research', 'rice', 'rhinoceros', 'salmon', 'Sarawakese', 'scissors',
+>>>>>>> origin/master
 		'sea[- ]bass', 'series', 'Shavese', 'shears', 'siemens', 'species', 'swine', 'testes',
 		'trousers', 'trout', 'tuna', 'Vermontese', 'Wenchowese', 'whiting', 'wildebeest',
 		'Yengeese'
@@ -177,6 +211,7 @@ class Inflector {
  * @var array
  */
 	protected static $_transliteration = array(
+<<<<<<< HEAD
 		'/ä|æ|ǽ/' => 'ae',
 		'/ö|œ/' => 'oe',
 		'/ü/' => 'ue',
@@ -227,6 +262,65 @@ class Inflector {
 		'/ĳ/' => 'ij',
 		'/Œ/' => 'OE',
 		'/ƒ/' => 'f'
+=======
+		'/À|Á|Â|Ã|Å|Ǻ|Ā|Ă|Ą|Ǎ/' => 'A',
+		'/Æ|Ǽ/' => 'AE',
+		'/Ä/' => 'Ae',
+		'/Ç|Ć|Ĉ|Ċ|Č/' => 'C',
+		'/Ð|Ď|Đ/' => 'D',
+		'/È|É|Ê|Ë|Ē|Ĕ|Ė|Ę|Ě/' => 'E',
+		'/Ĝ|Ğ|Ġ|Ģ|Ґ/' => 'G',
+		'/Ĥ|Ħ/' => 'H',
+		'/Ì|Í|Î|Ï|Ĩ|Ī|Ĭ|Ǐ|Į|İ|І/' => 'I',
+		'/Ĳ/' => 'IJ',
+		'/Ĵ/' => 'J',
+		'/Ķ/' => 'K',
+		'/Ĺ|Ļ|Ľ|Ŀ|Ł/' => 'L',
+		'/Ñ|Ń|Ņ|Ň/' => 'N',
+		'/Ò|Ó|Ô|Õ|Ō|Ŏ|Ǒ|Ő|Ơ|Ø|Ǿ/' => 'O',
+		'/Œ/' => 'OE',
+		'/Ö/' => 'Oe',
+		'/Ŕ|Ŗ|Ř/' => 'R',
+		'/Ś|Ŝ|Ş|Ș|Š/' => 'S',
+		'/ẞ/' => 'SS',
+		'/Ţ|Ț|Ť|Ŧ/' => 'T',
+		'/Þ/' => 'TH',
+		'/Ù|Ú|Û|Ũ|Ū|Ŭ|Ů|Ű|Ų|Ư|Ǔ|Ǖ|Ǘ|Ǚ|Ǜ/' => 'U',
+		'/Ü/' => 'Ue',
+		'/Ŵ/' => 'W',
+		'/Ý|Ÿ|Ŷ/' => 'Y',
+		'/Є/' => 'Ye',
+		'/Ї/' => 'Yi',
+		'/Ź|Ż|Ž/' => 'Z',
+		'/à|á|â|ã|å|ǻ|ā|ă|ą|ǎ|ª/' => 'a',
+		'/ä|æ|ǽ/' => 'ae',
+		'/ç|ć|ĉ|ċ|č/' => 'c',
+		'/ð|ď|đ/' => 'd',
+		'/è|é|ê|ë|ē|ĕ|ė|ę|ě/' => 'e',
+		'/ƒ/' => 'f',
+		'/ĝ|ğ|ġ|ģ|ґ/' => 'g',
+		'/ĥ|ħ/' => 'h',
+		'/ì|í|î|ï|ĩ|ī|ĭ|ǐ|į|ı|і/' => 'i',
+		'/ĳ/' => 'ij',
+		'/ĵ/' => 'j',
+		'/ķ/' => 'k',
+		'/ĺ|ļ|ľ|ŀ|ł/' => 'l',
+		'/ñ|ń|ņ|ň|ŉ/' => 'n',
+		'/ò|ó|ô|õ|ō|ŏ|ǒ|ő|ơ|ø|ǿ|º/' => 'o',
+		'/ö|œ/' => 'oe',
+		'/ŕ|ŗ|ř/' => 'r',
+		'/ś|ŝ|ş|ș|š|ſ/' => 's',
+		'/ß/' => 'ss',
+		'/ţ|ț|ť|ŧ/' => 't',
+		'/þ/' => 'th',
+		'/ù|ú|û|ũ|ū|ŭ|ů|ű|ų|ư|ǔ|ǖ|ǘ|ǚ|ǜ/' => 'u',
+		'/ü/' => 'ue',
+		'/ŵ/' => 'w',
+		'/ý|ÿ|ŷ/' => 'y',
+		'/є/' => 'ye',
+		'/ї/' => 'yi',
+		'/ź|ż|ž/' => 'z',
+>>>>>>> origin/master
 	);
 
 /**
@@ -299,7 +393,11 @@ class Inflector {
  *
  * @param string $type The type of inflection, either 'plural', 'singular' or 'transliteration'
  * @param array $rules Array of rules to be added.
+<<<<<<< HEAD
  * @param boolean $reset If true, will unset default inflections for all
+=======
+ * @param bool $reset If true, will unset default inflections for all
+>>>>>>> origin/master
  *        new rules that are being defined in $rules.
  * @return void
  */
@@ -515,7 +613,11 @@ class Inflector {
 /**
  * Returns camelBacked version of an underscored string.
  *
+<<<<<<< HEAD
  * @param string $string
+=======
+ * @param string $string String to convert.
+>>>>>>> origin/master
  * @return string in variable form
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/inflector.html#Inflector::variable
  */
@@ -542,8 +644,13 @@ class Inflector {
 		$quotedReplacement = preg_quote($replacement, '/');
 
 		$merge = array(
+<<<<<<< HEAD
 			'/[^\s\p{Ll}\p{Lm}\p{Lo}\p{Lt}\p{Lu}\p{Nd}]/mu' => ' ',
 			'/\\s+/' => $replacement,
+=======
+			'/[^\s\p{Zs}\p{Ll}\p{Lm}\p{Lo}\p{Lt}\p{Lu}\p{Nd}]/mu' => ' ',
+			'/[\s\p{Zs}]+/mu' => $replacement,
+>>>>>>> origin/master
 			sprintf('/^[%s]+|[%s]+$/', $quotedReplacement, $quotedReplacement) => '',
 		);
 

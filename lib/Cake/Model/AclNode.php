@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -29,7 +32,11 @@ class AclNode extends Model {
 /**
  * Explicitly disable in-memory query caching for ACL models
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $cacheQueries = false;
 
@@ -91,6 +98,11 @@ class AclNode extends Model {
 				'order' => $db->name("{$type}.lft") . ' DESC'
 			);
 
+<<<<<<< HEAD
+=======
+			$conditionsAfterJoin = array();
+
+>>>>>>> origin/master
 			foreach ($path as $i => $alias) {
 				$j = $i - 1;
 
@@ -99,6 +111,7 @@ class AclNode extends Model {
 					'alias' => "{$type}{$i}",
 					'type' => 'INNER',
 					'conditions' => array(
+<<<<<<< HEAD
 						$db->name("{$type}{$i}.lft") . ' > ' . $db->name("{$type}{$j}.lft"),
 						$db->name("{$type}{$i}.rght") . ' < ' . $db->name("{$type}{$j}.rght"),
 						$db->name("{$type}{$i}.alias") . ' = ' . $db->value($alias, 'string'),
@@ -106,11 +119,26 @@ class AclNode extends Model {
 					)
 				);
 
+=======
+						$db->name("{$type}{$i}.alias") . ' = ' . $db->value($alias, 'string')
+					)
+				);
+
+				// it will be better if this conditions will performs after join operation
+				$conditionsAfterJoin[] = $db->name("{$type}{$j}.id") . ' = ' . $db->name("{$type}{$i}.parent_id");
+				$conditionsAfterJoin[] = $db->name("{$type}{$i}.rght") . ' < ' . $db->name("{$type}{$j}.rght");
+				$conditionsAfterJoin[] = $db->name("{$type}{$i}.lft") . ' > ' . $db->name("{$type}{$j}.lft");
+
+>>>>>>> origin/master
 				$queryData['conditions'] = array('or' => array(
 					$db->name("{$type}.lft") . ' <= ' . $db->name("{$type}0.lft") . ' AND ' . $db->name("{$type}.rght") . ' >= ' . $db->name("{$type}0.rght"),
 					$db->name("{$type}.lft") . ' <= ' . $db->name("{$type}{$i}.lft") . ' AND ' . $db->name("{$type}.rght") . ' >= ' . $db->name("{$type}{$i}.rght"))
 				);
 			}
+<<<<<<< HEAD
+=======
+			$queryData['conditions'] = array_merge($queryData['conditions'], $conditionsAfterJoin);
+>>>>>>> origin/master
 			$result = $db->read($this, $queryData, -1);
 			$path = array_values($path);
 

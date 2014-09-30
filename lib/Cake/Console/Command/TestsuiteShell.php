@@ -4,8 +4,11 @@
  *
  * This is a bc wrapper for the newer Test shell
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -34,6 +37,7 @@ App::uses('CakeTestLoader', 'TestSuite');
 class TestsuiteShell extends TestShell {
 
 /**
+<<<<<<< HEAD
  * get the option parser for the test suite.
  *
  * @return void
@@ -43,6 +47,18 @@ class TestsuiteShell extends TestShell {
 		$parser->description(array(
 			__d('cake_console', 'The CakePHP Testsuite allows you to run test cases from the command line'),
 			__d('cake_console', "<warning>This shell is for backwards-compatibility only</warning>\nuse the test shell instead"),
+=======
+ * Gets the option parser instance and configures it.
+ *
+ * @return ConsoleOptionParser
+ */
+	public function getOptionParser() {
+		$parser = parent::getOptionParser();
+
+		$parser->description(array(
+			__d('cake_console', 'The CakePHP Testsuite allows you to run test cases from the command line'),
+			__d('cake_console', "<warning>This shell is for backwards-compatibility only</warning>\nuse the test shell instead")
+>>>>>>> origin/master
 		));
 
 		return $parser;

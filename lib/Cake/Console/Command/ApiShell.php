@@ -4,8 +4,11 @@
  *
  * Implementation of a Cake Shell to show CakePHP core method signatures.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -139,20 +142,36 @@ class ApiShell extends AppShell {
 	}
 
 /**
+<<<<<<< HEAD
  * Get and configure the optionparser.
+=======
+ * Gets the option parser instance and configures it.
+>>>>>>> origin/master
  *
  * @return ConsoleOptionParser
  */
 	public function getOptionParser() {
 		$parser = parent::getOptionParser();
+<<<<<<< HEAD
 		$parser->addArgument('type', array(
+=======
+
+		$parser->description(
+			__d('cake_console', 'Lookup doc block comments for classes in CakePHP.')
+		)->addArgument('type', array(
+>>>>>>> origin/master
 			'help' => __d('cake_console', 'Either a full path or type of class (model, behavior, controller, component, view, helper)')
 		))->addArgument('className', array(
 			'help' => __d('cake_console', 'A CakePHP core class name (e.g: Component, HtmlHelper).')
 		))->addOption('method', array(
 			'short' => 'm',
 			'help' => __d('cake_console', 'The specific method you want help on.')
+<<<<<<< HEAD
 		))->description(__d('cake_console', 'Lookup doc block comments for classes in CakePHP.'));
+=======
+		));
+
+>>>>>>> origin/master
 		return $parser;
 	}
 

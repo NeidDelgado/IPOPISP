@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 App::uses('DataSource', 'Model/Datasource');
 
 class TestSource extends DataSource {

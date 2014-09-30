@@ -2,9 +2,12 @@
 ;/**
 ; * ACL Configuration
 ; *
+<<<<<<< HEAD
 ; *
 ; * PHP 5
 ; *
+=======
+>>>>>>> origin/master
 ; * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
 ; * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
 ; *

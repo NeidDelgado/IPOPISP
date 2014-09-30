@@ -174,12 +174,20 @@ class HtmlHelper extends AppHelper {
  * @param string $name Text for link
  * @param string $link URL for link (if empty it won't be a link)
  * @param string|array $options Link attributes e.g. array('id' => 'selected')
+<<<<<<< HEAD
  * @return void
+=======
+ * @return $this
+>>>>>>> origin/master
  * @see HtmlHelper::link() for details on $options that can be used.
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/html.html#creating-breadcrumb-trails-with-htmlhelper
  */
 	public function addCrumb($name, $link = null, $options = null) {
 		$this->_crumbs[] = array($name, $link, $options);
+<<<<<<< HEAD
+=======
+		return $this;
+>>>>>>> origin/master
 	}
 
 /**
@@ -253,7 +261,11 @@ class HtmlHelper extends AppHelper {
 			);
 
 			if ($type === 'icon' && $url === null) {
+<<<<<<< HEAD
 				$types['icon']['link'] = $this->webroot('favicon.ico');
+=======
+				$types['icon']['link'] = 'favicon.ico';
+>>>>>>> origin/master
 			}
 
 			if (isset($types[$type])) {
@@ -272,6 +284,7 @@ class HtmlHelper extends AppHelper {
 			}
 		}
 
+<<<<<<< HEAD
 		$options = array_merge($type, $options);
 		$out = null;
 
@@ -281,6 +294,16 @@ class HtmlHelper extends AppHelper {
 				$options['rel'] = 'shortcut icon';
 			} else {
 				$options['link'] = $this->url($options['link'], true);
+=======
+		$options += $type;
+		$out = null;
+
+		if (isset($options['link'])) {
+			$options['link'] = $this->assetUrl($options['link']);
+			if (isset($options['rel']) && $options['rel'] === 'icon') {
+				$out = sprintf($this->_tags['metalink'], $options['link'], $this->_parseAttributes($options, array('block', 'link'), ' ', ' '));
+				$options['rel'] = 'shortcut icon';
+>>>>>>> origin/master
 			}
 			$out .= sprintf($this->_tags['metalink'], $options['link'], $this->_parseAttributes($options, array('block', 'link'), ' ', ' '));
 		} else {
@@ -454,7 +477,11 @@ class HtmlHelper extends AppHelper {
 			}
 		}
 
+<<<<<<< HEAD
 		if ($options['rel'] == 'import') {
+=======
+		if ($options['rel'] === 'import') {
+>>>>>>> origin/master
 			$out = sprintf(
 				$this->_tags['style'],
 				$this->_parseAttributes($options, array('rel', 'block'), '', ' '),
@@ -481,7 +508,10 @@ class HtmlHelper extends AppHelper {
  * If the filename is prefixed with "/", the path will be relative to the base path of your
  * application. Otherwise, the path will be relative to your JavaScript path, usually webroot/js.
  *
+<<<<<<< HEAD
  *
+=======
+>>>>>>> origin/master
  * ### Usage
  *
  * Include one script file:
@@ -512,7 +542,11 @@ class HtmlHelper extends AppHelper {
  * - `fullBase` If true the url will get a full address for the script file.
  *
  * @param string|array $url String or array of javascript files to include
+<<<<<<< HEAD
  * @param array|boolean $options Array of options, and html attributes see above. If boolean sets $options['inline'] = value
+=======
+ * @param array|bool $options Array of options, and html attributes see above. If boolean sets $options['inline'] = value
+>>>>>>> origin/master
  * @return mixed String of `<script />` tags or null if $inline is false or if $once is true and the file has been
  *   included before.
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/html.html#HtmlHelper::script
@@ -522,7 +556,11 @@ class HtmlHelper extends AppHelper {
 			list($inline, $options) = array($options, array());
 			$options['inline'] = $inline;
 		}
+<<<<<<< HEAD
 		$options = array_merge(array('block' => null, 'inline' => true, 'once' => true), $options);
+=======
+		$options += array('block' => null, 'inline' => true, 'once' => true);
+>>>>>>> origin/master
 		if (!$options['inline'] && empty($options['block'])) {
 			$options['block'] = __FUNCTION__;
 		}
@@ -645,7 +683,11 @@ class HtmlHelper extends AppHelper {
  * }}}
  *
  * @param array $data Style data array, keys will be used as property names, values as property values.
+<<<<<<< HEAD
  * @param boolean $oneline Whether or not the style block should be displayed on one line.
+=======
+ * @param bool $oneline Whether or not the style block should be displayed on one line.
+>>>>>>> origin/master
  * @return string CSS styling data
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/html.html#HtmlHelper::style
  */
@@ -674,7 +716,11 @@ class HtmlHelper extends AppHelper {
  * All other keys will be passed to HtmlHelper::link() as the `$options` parameter.
  *
  * @param string $separator Text to separate crumbs.
+<<<<<<< HEAD
  * @param string|array|boolean $startText This will be the first crumb, if false it defaults to first crumb in array. Can
+=======
+ * @param string|array|bool $startText This will be the first crumb, if false it defaults to first crumb in array. Can
+>>>>>>> origin/master
  *   also be an array, see above for details.
  * @return string Composed bread crumbs
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/html.html#creating-breadcrumb-trails-with-htmlhelper
@@ -708,12 +754,17 @@ class HtmlHelper extends AppHelper {
  * - `lastClass` Class for wrapper tag on current active page, defaults to 'last'
  *
  * @param array $options Array of html attributes to apply to the generated list elements.
+<<<<<<< HEAD
  * @param string|array|boolean $startText This will be the first crumb, if false it defaults to first crumb in array. Can
+=======
+ * @param string|array|bool $startText This will be the first crumb, if false it defaults to first crumb in array. Can
+>>>>>>> origin/master
  *   also be an array, see `HtmlHelper::getCrumbs` for details.
  * @return string breadcrumbs html list
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/html.html#creating-breadcrumb-trails-with-htmlhelper
  */
 	public function getCrumbList($options = array(), $startText = false) {
+<<<<<<< HEAD
 		$defaults = array('firstClass' => 'first', 'lastClass' => 'last', 'separator' => '');
 		$options = array_merge($defaults, (array)$options);
 		$firstClass = $options['firstClass'];
@@ -722,6 +773,17 @@ class HtmlHelper extends AppHelper {
 		unset($options['firstClass'], $options['lastClass'], $options['separator']);
 
 		$crumbs = $this->_prepareCrumbs($startText);
+=======
+		$defaults = array('firstClass' => 'first', 'lastClass' => 'last', 'separator' => '', 'escape' => true);
+		$options = (array)$options + $defaults;
+		$firstClass = $options['firstClass'];
+		$lastClass = $options['lastClass'];
+		$separator = $options['separator'];
+		$escape = $options['escape'];
+		unset($options['firstClass'], $options['lastClass'], $options['separator'], $options['escape']);
+
+		$crumbs = $this->_prepareCrumbs($startText, $escape);
+>>>>>>> origin/master
 		if (empty($crumbs)) {
 			return null;
 		}
@@ -753,9 +815,16 @@ class HtmlHelper extends AppHelper {
  * Prepends startText to crumbs array if set
  *
  * @param string $startText Text to prepend
+<<<<<<< HEAD
  * @return array Crumb list including startText (if provided)
  */
 	protected function _prepareCrumbs($startText) {
+=======
+ * @param bool $escape If the output should be escaped or not
+ * @return array Crumb list including startText (if provided)
+ */
+	protected function _prepareCrumbs($startText, $escape = true) {
+>>>>>>> origin/master
 		$crumbs = $this->_crumbs;
 		if ($startText) {
 			if (!is_array($startText)) {
@@ -767,7 +836,11 @@ class HtmlHelper extends AppHelper {
 			$startText += array('url' => '/', 'text' => __d('cake', 'Home'));
 			list($url, $text) = array($startText['url'], $startText['text']);
 			unset($startText['url'], $startText['text']);
+<<<<<<< HEAD
 			array_unshift($crumbs, array($text, $url, $startText));
+=======
+			array_unshift($crumbs, array($text, $url, $startText + array('escape' => $escape)));
+>>>>>>> origin/master
 		}
 		return $crumbs;
 	}
@@ -849,8 +922,13 @@ class HtmlHelper extends AppHelper {
  * @param array $data Array of table data
  * @param array $oddTrOptions HTML options for odd TR elements if true useCount is used
  * @param array $evenTrOptions HTML options for even TR elements
+<<<<<<< HEAD
  * @param boolean $useCount adds class "column-$i"
  * @param boolean $continueOddEven If false, will use a non-static $count variable,
+=======
+ * @param bool $useCount adds class "column-$i"
+ * @param bool $continueOddEven If false, will use a non-static $count variable,
+>>>>>>> origin/master
  *    so that the odd/even count is reset to zero just for that call.
  * @return string Formatted HTML
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/html.html#HtmlHelper::tableCells
@@ -1229,6 +1307,7 @@ class HtmlHelper extends AppHelper {
 		$readerObj = new $readerClass($path);
 		$configs = $readerObj->read($file);
 		if (isset($configs['tags']) && is_array($configs['tags'])) {
+<<<<<<< HEAD
 			$this->_tags = array_merge($this->_tags, $configs['tags']);
 		}
 		if (isset($configs['minimizedAttributes']) && is_array($configs['minimizedAttributes'])) {
@@ -1236,6 +1315,15 @@ class HtmlHelper extends AppHelper {
 		}
 		if (isset($configs['docTypes']) && is_array($configs['docTypes'])) {
 			$this->_docTypes = array_merge($this->_docTypes, $configs['docTypes']);
+=======
+			$this->_tags = $configs['tags'] + $this->_tags;
+		}
+		if (isset($configs['minimizedAttributes']) && is_array($configs['minimizedAttributes'])) {
+			$this->_minimizedAttributes = $configs['minimizedAttributes'] + $this->_minimizedAttributes;
+		}
+		if (isset($configs['docTypes']) && is_array($configs['docTypes'])) {
+			$this->_docTypes = $configs['docTypes'] + $this->_docTypes;
+>>>>>>> origin/master
 		}
 		if (isset($configs['attributeFormat'])) {
 			$this->_attributeFormat = $configs['attributeFormat'];

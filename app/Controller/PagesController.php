@@ -4,8 +4,11 @@
  *
  * This file will render views from views/pages/
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -19,6 +22,10 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 App::uses('AppController', 'Controller');
 
 /**
@@ -31,13 +38,19 @@ App::uses('AppController', 'Controller');
  */
 class PagesController extends AppController {
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 /**
  * This controller does not use a model
  *
  * @var array
  */
+<<<<<<< HEAD
     public $name = 'Pages';
+=======
+>>>>>>> origin/master
 	public $uses = array();
 
 /**

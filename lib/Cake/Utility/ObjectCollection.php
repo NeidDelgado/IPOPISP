@@ -44,7 +44,11 @@ abstract class ObjectCollection {
 /**
  * Default object priority. A non zero integer.
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	public $defaultPriority = 10;
 
@@ -82,8 +86,12 @@ abstract class ObjectCollection {
  *    Any non-null value will modify the parameter index indicated.
  *    Defaults to false.
  *
+<<<<<<< HEAD
  *
  * @param string $callback|CakeEvent Method to fire on all the objects. Its assumed all the objects implement
+=======
+ * @param string|CakeEvent $callback Method to fire on all the objects. Its assumed all the objects implement
+>>>>>>> origin/master
  *   the method you are calling. If an instance of CakeEvent is provided, then then Event name will parsed to
  *   get the callback name. This is done by getting the last word after any dot in the event name
  *   (eg. `Model.afterSave` event will trigger the `afterSave` callback)
@@ -113,6 +121,7 @@ abstract class ObjectCollection {
 			$parts = explode('.', $event->name());
 			$callback = array_pop($parts);
 		}
+<<<<<<< HEAD
 		$options = array_merge(
 			array(
 				'break' => false,
@@ -121,6 +130,13 @@ abstract class ObjectCollection {
 				'modParams' => false
 			),
 			$options
+=======
+		$options += array(
+			'break' => false,
+			'breakOn' => false,
+			'collectReturn' => false,
+			'modParams' => false
+>>>>>>> origin/master
 		);
 		$collected = array();
 		$list = array_keys($this->_enabled);
@@ -165,7 +181,11 @@ abstract class ObjectCollection {
  * Provide isset access to _loaded
  *
  * @param string $name Name of object being checked.
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	public function __isset($name) {
 		return isset($this->_loaded[$name]);
@@ -175,7 +195,11 @@ abstract class ObjectCollection {
  * Enables callbacks on an object or array of objects
  *
  * @param string|array $name CamelCased name of the object(s) to enable (string or array)
+<<<<<<< HEAD
  * @param boolean Prioritize enabled list after enabling object(s)
+=======
+ * @param bool $prioritize Prioritize enabled list after enabling object(s)
+>>>>>>> origin/master
  * @return void
  */
 	public function enable($name, $prioritize = true) {
@@ -216,7 +240,11 @@ abstract class ObjectCollection {
  * @param string|array $name CamelCased name of the object(s) to enable (string or array)
  * 	If string the second param $priority is used else it should be an associative array
  * 	with keys as object names and values as priorities to set.
+<<<<<<< HEAD
  * @param integer|null Integer priority to set or null for default
+=======
+ * @param int|null $priority Integer priority to set or null for default
+>>>>>>> origin/master
  * @return void
  */
 	public function setPriority($name, $priority = null) {

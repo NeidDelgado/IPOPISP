@@ -2,8 +2,11 @@
 /**
  * XmlTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -84,7 +87,11 @@ class XmlTest extends CakeTestCase {
 /**
  * autoFixtures property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $autoFixtures = false;
 
@@ -208,7 +215,11 @@ class XmlTest extends CakeTestCase {
 /**
  * test build with a single empty tag
  *
+<<<<<<< HEAD
  * return void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testBuildEmptyTag() {
 		try {
@@ -555,6 +566,10 @@ XML;
  * testFromArrayFail method
  *
  * @dataProvider invalidArrayDataProvider
+<<<<<<< HEAD
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testFromArrayFail($value) {
 		try {
@@ -784,7 +799,11 @@ XML;
 			'pubDate' => 'Tue, 31 Aug 2010 01:42:00 -0500',
 			'guid' => 'http://bakery.cakephp.org/articles/view/alertpay-automated-sales-via-ipn'
 		);
+<<<<<<< HEAD
 		$this->assertSame($rssAsArray['rss']['channel']['item'][1], $expected);
+=======
+		$this->assertSame($expected, $rssAsArray['rss']['channel']['item'][1]);
+>>>>>>> origin/master
 
 		$rss = array(
 			'rss' => array(
@@ -850,7 +869,11 @@ XML;
 				'params' => ''
 			)
 		);
+<<<<<<< HEAD
 		$this->assertSame(Xml::toArray($xml), $expected);
+=======
+		$this->assertSame($expected, Xml::toArray($xml));
+>>>>>>> origin/master
 
 		$xml = Xml::build('<methodCall><methodName>test</methodName><params><param><value><array><data><value><int>12</int></value><value><string>Egypt</string></value><value><boolean>0</boolean></value><value><int>-31</int></value></data></array></value></param></params></methodCall>');
 		$expected = array(
@@ -874,7 +897,11 @@ XML;
 				)
 			)
 		);
+<<<<<<< HEAD
 		$this->assertSame(Xml::toArray($xml), $expected);
+=======
+		$this->assertSame($expected, Xml::toArray($xml));
+>>>>>>> origin/master
 
 		$xmlText = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
@@ -916,7 +943,11 @@ XML;
 				)
 			)
 		);
+<<<<<<< HEAD
 		$this->assertSame(Xml::toArray($xml), $expected);
+=======
+		$this->assertSame($expected, Xml::toArray($xml));
+>>>>>>> origin/master
 
 		$xml = Xml::fromArray($expected, 'tags');
 		$this->assertXmlStringEqualsXmlString($xmlText, $xml->asXML());
@@ -1040,7 +1071,11 @@ XML;
 		);
 		$expected = '<' . '?xml version="1.0" encoding="UTF-8"?><root><ns:attr xmlns:ns="http://cakephp.org">1</ns:attr></root>';
 		$xmlResponse = Xml::fromArray($xml);
+<<<<<<< HEAD
 		$this->assertEquals(str_replace(array("\r", "\n"), '', $xmlResponse->asXML()), $expected);
+=======
+		$this->assertEquals($expected, str_replace(array("\r", "\n"), '', $xmlResponse->asXML()));
+>>>>>>> origin/master
 
 		$xml = array(
 			'root' => array(
@@ -1125,6 +1160,10 @@ XML;
  *
  * @dataProvider invalidToArrayDataProvider
  * @expectedException XmlException
+<<<<<<< HEAD
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testToArrayFail($value) {
 		Xml::toArray($value);

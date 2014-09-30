@@ -4,8 +4,11 @@
  *
  * Test Case for Shell
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP :  Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -41,7 +44,11 @@ class ShellTestShell extends Shell {
 /**
  * stopped property
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	public $stopped;
 
@@ -55,7 +62,11 @@ class ShellTestShell extends Shell {
 /**
  * stop method
  *
+<<<<<<< HEAD
  * @param integer $status
+=======
+ * @param int $status
+>>>>>>> origin/master
  * @return void
  */
 	protected function _stop($status = 0) {
@@ -842,6 +853,11 @@ TEXT;
 
 /**
  * Test file and console and logging
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testFileAndConsoleLogging() {
 		// file logging
@@ -888,6 +904,11 @@ TEXT;
 
 /**
  * Test file and console and logging quiet output
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testQuietLog() {
 		$output = $this->getMock('ConsoleOutput', array(), array(), '', false);

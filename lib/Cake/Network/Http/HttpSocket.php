@@ -2,8 +2,11 @@
 /**
  * HTTP Socket connection class.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -37,7 +40,11 @@ class HttpSocket extends CakeSocket {
  * enforce RFC 2616 (HTTP/1.1 specs).
  * will be disabled and additional measures to deal with non-standard responses will be enabled.
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $quirksMode = false;
 
@@ -78,7 +85,11 @@ class HttpSocket extends CakeSocket {
 	public $response = null;
 
 /**
+<<<<<<< HEAD
  * Response classname
+=======
+ * Response class name
+>>>>>>> origin/master
  *
  * @var string
  */
@@ -212,7 +223,11 @@ class HttpSocket extends CakeSocket {
  * Set proxy settings
  *
  * @param string|array $host Proxy host. Can be an array with settings to authentication class
+<<<<<<< HEAD
  * @param integer $port Port. Default 3128.
+=======
+ * @param int $port Port. Default 3128.
+>>>>>>> origin/master
  * @param string $method Proxy method (ie, Basic, Digest). If empty, disable proxy authentication
  * @param string $user Username if your proxy need authentication
  * @param string $pass Password to proxy authentication
@@ -233,7 +248,11 @@ class HttpSocket extends CakeSocket {
 /**
  * Set the resource to receive the request content. This resource must support fwrite.
  *
+<<<<<<< HEAD
  * @param resource|boolean $resource Resource or false to disable the resource use
+=======
+ * @param resource|bool $resource Resource or false to disable the resource use
+>>>>>>> origin/master
  * @return void
  * @throws SocketException
  */
@@ -545,7 +564,11 @@ class HttpSocket extends CakeSocket {
  *
  * Would return `/search?q=socket`.
  *
+<<<<<<< HEAD
  * @param string|array Either a string or array of URL options to create a URL with.
+=======
+ * @param string|array $url Either a string or array of URL options to create a URL with.
+>>>>>>> origin/master
  * @param string $uriTemplate A template string to use for URL formatting.
  * @return mixed Either false on failure or a string containing the composed URL.
  */
@@ -642,7 +665,11 @@ class HttpSocket extends CakeSocket {
  * Parses and sets the specified URI into current request configuration.
  *
  * @param string|array $uri URI, See HttpSocket::_parseUri()
+<<<<<<< HEAD
  * @return boolean If uri has merged in config
+=======
+ * @return bool If uri has merged in config
+>>>>>>> origin/master
  */
 	protected function _configUri($uri = null) {
 		if (empty($uri)) {
@@ -686,13 +713,22 @@ class HttpSocket extends CakeSocket {
 			}
 			unset($this->config[$key]);
 		}
+<<<<<<< HEAD
 		if (empty($this->_context['ssl']['cafile'])) {
+=======
+		if (empty($this->config['context']['ssl']['cafile'])) {
+>>>>>>> origin/master
 			$this->config['context']['ssl']['cafile'] = CAKE . 'Config' . DS . 'cacert.pem';
 		}
 		if (!empty($this->config['context']['ssl']['verify_host'])) {
 			$this->config['context']['ssl']['CN_match'] = $host;
+<<<<<<< HEAD
 			unset($this->config['context']['ssl']['verify_host']);
 		}
+=======
+		}
+		unset($this->config['context']['ssl']['verify_host']);
+>>>>>>> origin/master
 	}
 
 /**
@@ -747,7 +783,11 @@ class HttpSocket extends CakeSocket {
  * such as 'scheme', 'port', 'query'.
  *
  * @param string|array $uri URI to parse
+<<<<<<< HEAD
  * @param boolean|array $base If true use default URI config, otherwise indexed array to set 'scheme', 'host', 'port', etc.
+=======
+ * @param bool|array $base If true use default URI config, otherwise indexed array to set 'scheme', 'host', 'port', etc.
+>>>>>>> origin/master
  * @return array Parsed URI
  */
 	protected function _parseUri($uri = null, $base = array()) {
@@ -895,7 +935,11 @@ class HttpSocket extends CakeSocket {
 		}
 
 		$request['uri'] = $this->_parseUri($request['uri']);
+<<<<<<< HEAD
 		$request = array_merge(array('method' => 'GET'), $request);
+=======
+		$request += array('method' => 'GET');
+>>>>>>> origin/master
 		if (!empty($this->_proxy['host'])) {
 			$request['uri'] = $this->_buildUri($request['uri'], '%scheme://%host:%port/%path?%query');
 		} else {
@@ -912,7 +956,11 @@ class HttpSocket extends CakeSocket {
  * Builds the header.
  *
  * @param array $header Header to build
+<<<<<<< HEAD
  * @param string $mode
+=======
+ * @param string $mode Mode
+>>>>>>> origin/master
  * @return string Header built from array
  */
 	protected function _buildHeader($header, $mode = 'standard') {
@@ -974,7 +1022,11 @@ class HttpSocket extends CakeSocket {
  * Escapes a given $token according to RFC 2616 (HTTP 1.1 specs)
  *
  * @param string $token Token to escape
+<<<<<<< HEAD
  * @param array $chars
+=======
+ * @param array $chars Characters to escape
+>>>>>>> origin/master
  * @return string Escaped token
  */
 	protected function _escapeToken($token, $chars = null) {
@@ -986,8 +1038,13 @@ class HttpSocket extends CakeSocket {
 /**
  * Gets escape chars according to RFC 2616 (HTTP 1.1 specs).
  *
+<<<<<<< HEAD
  * @param boolean $hex true to get them as HEX values, false otherwise
  * @param array $chars
+=======
+ * @param bool $hex true to get them as HEX values, false otherwise
+ * @param array $chars Characters to escape
+>>>>>>> origin/master
  * @return array Escape chars
  */
 	protected function _tokenEscapeChars($hex = true, $chars = null) {
@@ -1014,8 +1071,13 @@ class HttpSocket extends CakeSocket {
  * Resets the state of this HttpSocket instance to it's initial state (before Object::__construct got executed) or does
  * the same thing partially for the request and the response property only.
  *
+<<<<<<< HEAD
  * @param boolean $full If set to false only HttpSocket::response and HttpSocket::request are reseted
  * @return boolean True on success
+=======
+ * @param bool $full If set to false only HttpSocket::response and HttpSocket::request are reset
+ * @return bool True on success
+>>>>>>> origin/master
  */
 	public function reset($full = true) {
 		static $initalState = array();

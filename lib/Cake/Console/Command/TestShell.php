@@ -4,8 +4,11 @@
  *
  * This Shell allows the running of test suites via the cake command line
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -40,6 +43,7 @@ class TestShell extends Shell {
 	protected $_dispatcher = null;
 
 /**
+<<<<<<< HEAD
  * get the option parser for the test suite.
  *
  * @return void
@@ -54,6 +58,23 @@ class TestShell extends Shell {
 		))->addArgument('file', array(
 			'help' => __d('cake_console', 'The path to the file, or test file, to test.'),
 			'required' => false,
+=======
+ * Gets the option parser instance and configures it.
+ *
+ * @return ConsoleOptionParser
+ */
+	public function getOptionParser() {
+		$parser = new ConsoleOptionParser($this->name);
+
+		$parser->description(
+			__d('cake_console', 'The CakePHP Testsuite allows you to run test cases from the command line')
+		)->addArgument('category', array(
+			'help' => __d('cake_console', 'The category for the test, or test file, to test.'),
+			'required' => false
+		))->addArgument('file', array(
+			'help' => __d('cake_console', 'The path to the file, or test file, to test.'),
+			'required' => false
+>>>>>>> origin/master
 		))->addOption('log-junit', array(
 			'help' => __d('cake_console', '<file> Log test execution in JUnit XML format to file.'),
 			'default' => false
@@ -155,9 +176,15 @@ class TestShell extends Shell {
 			'help' => __d('cake_console', 'key[=value] Sets a php.ini value.'),
 			'default' => false
 		))->addOption('fixture', array(
+<<<<<<< HEAD
 			'help' => __d('cake_console', 'Choose a custom fixture manager.'),
 		))->addOption('debug', array(
 			'help' => __d('cake_console', 'More verbose output.'),
+=======
+			'help' => __d('cake_console', 'Choose a custom fixture manager.')
+		))->addOption('debug', array(
+			'help' => __d('cake_console', 'More verbose output.')
+>>>>>>> origin/master
 		));
 
 		return $parser;
@@ -173,7 +200,11 @@ class TestShell extends Shell {
 		$this->_dispatcher = new CakeTestSuiteDispatcher();
 		$success = $this->_dispatcher->loadTestFramework();
 		if (!$success) {
+<<<<<<< HEAD
 			throw new Exception(__d('cake_dev', 'Please install PHPUnit framework <info>(http://www.phpunit.de)</info>'));
+=======
+			throw new Exception(__d('cake_dev', 'Please install PHPUnit framework v3.7 <info>(http://www.phpunit.de)</info>'));
+>>>>>>> origin/master
 		}
 	}
 
@@ -335,9 +366,15 @@ class TestShell extends Shell {
 /**
  * Find the test case for the passed file. The file could itself be a test.
  *
+<<<<<<< HEAD
  * @param string $file
  * @param string $category
  * @param boolean $throwOnMissingFile
+=======
+ * @param string $file The file to map.
+ * @param string $category The test file category.
+ * @param bool $throwOnMissingFile Whether or not to throw an exception.
+>>>>>>> origin/master
  * @return array array(type, case)
  * @throws Exception
  */
@@ -412,7 +449,11 @@ class TestShell extends Shell {
 /**
  * For the given file, what category of test is it? returns app, core or the name of the plugin
  *
+<<<<<<< HEAD
  * @param string $file
+=======
+ * @param string $file The file to map.
+>>>>>>> origin/master
  * @return string
  */
 	protected function _mapFileToCategory($file) {

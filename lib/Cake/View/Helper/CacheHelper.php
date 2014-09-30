@@ -2,8 +2,11 @@
 /**
  * CacheHelper helps create full page view caching.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -50,14 +53,22 @@ class CacheHelper extends AppHelper {
 /**
  * Counter used for counting nocache section tags.
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	protected $_counter = 0;
 
 /**
  * Is CacheHelper enabled? should files + output be parsed.
  *
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	protected function _enabled() {
 		return $this->_View->cacheAction && (Configure::read('Cache.check') === true);
@@ -66,7 +77,11 @@ class CacheHelper extends AppHelper {
 /**
  * Parses the view file and stores content for cache file building.
  *
+<<<<<<< HEAD
  * @param string $viewFile
+=======
+ * @param string $viewFile View file name.
+>>>>>>> origin/master
  * @param string $output The output for the file.
  * @return string Updated content.
  */
@@ -79,7 +94,11 @@ class CacheHelper extends AppHelper {
 /**
  * Parses the layout file and stores content for cache file building.
  *
+<<<<<<< HEAD
  * @param string $layoutFile
+=======
+ * @param string $layoutFile Layout file name.
+>>>>>>> origin/master
  * @return void
  */
 	public function afterLayout($layoutFile) {
@@ -135,7 +154,11 @@ class CacheHelper extends AppHelper {
 			$options = $cacheAction;
 			if (isset($cacheAction[$index])) {
 				if (is_array($cacheAction[$index])) {
+<<<<<<< HEAD
 					$options = array_merge(array('duration' => 0, 'callbacks' => false), $cacheAction[$index]);
+=======
+					$options = $cacheAction[$index] + array('duration' => 0, 'callbacks' => false);
+>>>>>>> origin/master
 				} else {
 					$cacheTime = $cacheAction[$index];
 				}
@@ -268,8 +291,14 @@ class CacheHelper extends AppHelper {
  *
  * @param string $content view content to write to a cache file.
  * @param string $timestamp Duration to set for cache file.
+<<<<<<< HEAD
  * @param boolean $useCallbacks
  * @return boolean success of caching view.
+=======
+ * @param bool $useCallbacks Whether to include statements in cached file which
+ *   run callbacks.
+ * @return bool success of caching view.
+>>>>>>> origin/master
  */
 	protected function _writeFile($content, $timestamp, $useCallbacks = false) {
 		$now = time();

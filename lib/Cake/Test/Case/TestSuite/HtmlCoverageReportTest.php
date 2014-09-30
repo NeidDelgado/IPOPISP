@@ -127,7 +127,11 @@ class HtmlCoverageReportTest extends CakeTestCase {
 			if (in_array($i + 1, array(5, 9, 2))) {
 				$class = 'uncovered';
 			}
+<<<<<<< HEAD
 			if ($i + 1 == 2) {
+=======
+			if ($i + 1 === 2) {
+>>>>>>> origin/master
 				$class .= ' dead';
 			}
 			$this->assertTrue(strpos($class, $result) !== 0, 'Class name is wrong ' . $i);
@@ -175,7 +179,11 @@ class HtmlCoverageReportTest extends CakeTestCase {
 			if (in_array($i + 1, array(5, 9, 2))) {
 				$class = 'uncovered';
 			}
+<<<<<<< HEAD
 			if ($i + 1 == 2) {
+=======
+			if ($i + 1 === 2) {
+>>>>>>> origin/master
 				$class .= ' dead';
 			}
 			$this->assertTrue(strpos($class, $result) !== 0, 'Class name is wrong ' . $i);

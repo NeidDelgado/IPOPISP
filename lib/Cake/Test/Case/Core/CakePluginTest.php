@@ -2,8 +2,11 @@
 /**
  * CakePluginTest file.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -212,10 +215,17 @@ class CakePluginTest extends CakeTestCase {
 	public function testPath() {
 		CakePlugin::load(array('TestPlugin', 'TestPluginTwo'));
 		$expected = CAKE . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS . 'TestPlugin' . DS;
+<<<<<<< HEAD
 		$this->assertEquals(CakePlugin::path('TestPlugin'), $expected);
 
 		$expected = CAKE . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS . 'TestPluginTwo' . DS;
 		$this->assertEquals(CakePlugin::path('TestPluginTwo'), $expected);
+=======
+		$this->assertEquals($expected, CakePlugin::path('TestPlugin'));
+
+		$expected = CAKE . 'Test' . DS . 'test_app' . DS . 'Plugin' . DS . 'TestPluginTwo' . DS;
+		$this->assertEquals($expected, CakePlugin::path('TestPluginTwo'));
+>>>>>>> origin/master
 	}
 
 /**
@@ -255,8 +265,13 @@ class CakePluginTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
  * Tests that CakePlugin::loadAll() will load all plugins in the configured folder wit defaults
  * and overrides for a plugin
+=======
+ * Tests that CakePlugin::loadAll() will load all plugins in the configured folder with defaults
+ * and merges in global defaults.
+>>>>>>> origin/master
  *
  * @return void
  */
@@ -268,6 +283,27 @@ class CakePluginTest extends CakeTestCase {
 		$this->assertEquals($expected, CakePlugin::loaded());
 		$this->assertEquals('loaded js plugin bootstrap', Configure::read('CakePluginTest.js_plugin.bootstrap'));
 		$this->assertEquals('loaded plugin routes', Configure::read('CakePluginTest.test_plugin.routes'));
+<<<<<<< HEAD
+=======
+		$this->assertEquals('loaded plugin bootstrap', Configure::read('CakePluginTest.test_plugin.bootstrap'));
+		$this->assertEquals('loaded plugin two bootstrap', Configure::read('CakePluginTest.test_plugin_two.bootstrap'));
+	}
+
+/**
+ * Tests that CakePlugin::loadAll() will load all plugins in the configured folder with defaults
+ * and overrides for a plugin
+ *
+ * @return void
+ */
+	public function testLoadAllWithDefaultsAndOverrideComplex() {
+		CakePlugin::loadAll(array(array('bootstrap' => true), 'TestPlugin' => array('routes' => true, 'bootstrap' => false)));
+		CakePlugin::routes();
+
+		$expected = array('PluginJs', 'TestPlugin', 'TestPluginTwo');
+		$this->assertEquals($expected, CakePlugin::loaded());
+		$this->assertEquals('loaded js plugin bootstrap', Configure::read('CakePluginTest.js_plugin.bootstrap'));
+		$this->assertEquals('loaded plugin routes', Configure::read('CakePluginTest.test_plugin.routes'));
+>>>>>>> origin/master
 		$this->assertEquals(null, Configure::read('CakePluginTest.test_plugin.bootstrap'));
 		$this->assertEquals('loaded plugin two bootstrap', Configure::read('CakePluginTest.test_plugin_two.bootstrap'));
 	}

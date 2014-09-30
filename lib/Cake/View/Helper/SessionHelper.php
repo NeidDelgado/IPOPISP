@@ -2,8 +2,11 @@
 /**
  * Session Helper provides access to the Session in the Views.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -50,8 +53,13 @@ class SessionHelper extends AppHelper {
  *
  * In your view: `$this->Session->check('Controller.sessKey');`
  *
+<<<<<<< HEAD
  * @param string $name
  * @return boolean
+=======
+ * @param string $name Session key to check.
+ * @return bool
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/session.html#SessionHelper::check
  */
 	public function check($name) {
@@ -154,7 +162,11 @@ class SessionHelper extends AppHelper {
 /**
  * Used to check is a session is valid in a view
  *
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-libraries/helpers/session.html#SessionHelper::valid
  */
 	public function valid() {

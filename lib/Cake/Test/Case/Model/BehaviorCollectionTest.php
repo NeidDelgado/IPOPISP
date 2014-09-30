@@ -4,8 +4,11 @@
  *
  * Long description for behavior.test.php
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -13,7 +16,11 @@
  * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
+<<<<<<< HEAD
  * @copyright     CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+=======
+ * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+>>>>>>> origin/master
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       Cake.Test.Case.Model
  * @since         1.2
@@ -21,6 +28,10 @@
  */
 
 App::uses('AppModel', 'Model');
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 require_once dirname(__FILE__) . DS . 'models.php';
 
 /**
@@ -81,7 +92,11 @@ class TestBehavior extends ModelBehavior {
  *
  * @param Model $model
  * @param array $results
+<<<<<<< HEAD
  * @param boolean $primary
+=======
+ * @param bool $primary
+>>>>>>> origin/master
  * @return void
  */
 	public function afterFind(Model $model, $results, $primary = false) {
@@ -129,7 +144,11 @@ class TestBehavior extends ModelBehavior {
  * afterSave method
  *
  * @param Model $model
+<<<<<<< HEAD
  * @param boolean $created
+=======
+ * @param bool $created
+>>>>>>> origin/master
  * @param array $options Options passed from Model::save().
  * @return void
  */
@@ -162,7 +181,11 @@ class TestBehavior extends ModelBehavior {
  *
  * @param Model $Model Model invalidFields was called on.
  * @param array $options Options passed from Model::save().
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  * @see Model::save()
  */
 	public function beforeValidate(Model $model, $options = array()) {
@@ -189,7 +212,11 @@ class TestBehavior extends ModelBehavior {
  * afterValidate method
  *
  * @param Model $model
+<<<<<<< HEAD
  * @param boolean $cascade
+=======
+ * @param bool $cascade
+>>>>>>> origin/master
  * @return void
  */
 	public function afterValidate(Model $model) {
@@ -210,7 +237,11 @@ class TestBehavior extends ModelBehavior {
  * beforeDelete method
  *
  * @param Model $model
+<<<<<<< HEAD
  * @param boolean $cascade
+=======
+ * @param bool $cascade
+>>>>>>> origin/master
  * @return void
  */
 	public function beforeDelete(Model $model, $cascade = true) {
@@ -282,7 +313,11 @@ class TestBehavior extends ModelBehavior {
  * testMethod method
  *
  * @param Model $model
+<<<<<<< HEAD
  * @param boolean $param
+=======
+ * @param bool $param
+>>>>>>> origin/master
  * @return void
  */
 	public function testMethod(Model $model, $param = true) {
@@ -477,6 +512,10 @@ class BehaviorCollectionTest extends CakeTestCase {
 /**
  * Test load() with enabled => false
  *
+<<<<<<< HEAD
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testLoadDisabled() {
 		$Apple = new Apple();
@@ -489,6 +528,11 @@ class BehaviorCollectionTest extends CakeTestCase {
 
 /**
  * Tests loading aliased behaviors
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testLoadAlias() {
 		$Apple = new Apple();
@@ -1190,6 +1234,11 @@ class BehaviorCollectionTest extends CakeTestCase {
 
 /**
  * Test that behavior priority
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testBehaviorOrderCallbacks() {
 		$model = ClassRegistry::init('Orangutan');

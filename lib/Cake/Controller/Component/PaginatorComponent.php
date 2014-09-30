@@ -2,8 +2,11 @@
 /**
  * Paginator Component
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -204,6 +207,11 @@ class PaginatorComponent extends Component {
 			$count = 0;
 		} elseif ($object->hasMethod('paginateCount')) {
 			$count = $object->paginateCount($conditions, $recursive, $extra);
+<<<<<<< HEAD
+=======
+		} elseif ($page === 1 && count($results) < $limit) {
+			$count = count($results);
+>>>>>>> origin/master
 		} else {
 			$parameters = compact('conditions');
 			if ($recursive != $object->recursive) {
@@ -214,9 +222,12 @@ class PaginatorComponent extends Component {
 		$pageCount = intval(ceil($count / $limit));
 		$requestedPage = $page;
 		$page = max(min($page, $pageCount), 1);
+<<<<<<< HEAD
 		if ($requestedPage > $page) {
 			throw new NotFoundException();
 		}
+=======
+>>>>>>> origin/master
 
 		$paging = array(
 			'page' => $page,
@@ -239,6 +250,13 @@ class PaginatorComponent extends Component {
 			array($object->alias => $paging)
 		);
 
+<<<<<<< HEAD
+=======
+		if ($requestedPage > $page) {
+			throw new NotFoundException();
+		}
+
+>>>>>>> origin/master
 		if (
 			!in_array('Paginator', $this->Controller->helpers) &&
 			!array_key_exists('Paginator', $this->Controller->helpers)
@@ -393,7 +411,11 @@ class PaginatorComponent extends Component {
 				if (strpos($key, '.') !== false) {
 					list($alias, $field) = explode('.', $key);
 				}
+<<<<<<< HEAD
 				$correctAlias = ($object->alias == $alias);
+=======
+				$correctAlias = ($object->alias === $alias);
+>>>>>>> origin/master
 
 				if ($correctAlias && $object->hasField($field)) {
 					$order[$object->alias . '.' . $field] = $value;

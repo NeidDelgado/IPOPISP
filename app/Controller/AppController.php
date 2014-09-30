@@ -5,8 +5,11 @@
  * This file is application-wide controller file. You can put all
  * application-wide controller-related methods here.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -20,9 +23,14 @@
  * @since         CakePHP(tm) v 0.2.9
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
+<<<<<<< HEAD
 App::uses('Controller', 'Controller');
 App::uses('CakeEmail', 'Network/Email');
 
+=======
+
+App::uses('Controller', 'Controller');
+>>>>>>> origin/master
 
 /**
  * Application Controller
@@ -34,6 +42,7 @@ App::uses('CakeEmail', 'Network/Email');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+<<<<<<< HEAD
 
 	public function beforeFilter(){
 		if (isset($_GET['lang'])){
@@ -41,4 +50,6 @@ class AppController extends Controller {
 		}
 	}
 
+=======
+>>>>>>> origin/master
 }

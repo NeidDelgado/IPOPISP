@@ -2,8 +2,11 @@
 /**
  * ConsoleInputOption file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -50,7 +53,11 @@ class ConsoleInputOption {
 /**
  * Is the option a boolean option. Boolean options do not consume a parameter.
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	protected $_boolean;
 
@@ -74,7 +81,11 @@ class ConsoleInputOption {
  * @param string|array $name The long name of the option, or an array with all the properties.
  * @param string $short The short alias for this option
  * @param string $help The help text for this option
+<<<<<<< HEAD
  * @param boolean $boolean Whether this option is a boolean option. Boolean options don't consume extra tokens
+=======
+ * @param bool $boolean Whether this option is a boolean option. Boolean options don't consume extra tokens
+>>>>>>> origin/master
  * @param string $default The default value for this option.
  * @param array $choices Valid choices for this option.
  * @throws ConsoleException
@@ -120,7 +131,11 @@ class ConsoleInputOption {
 /**
  * Generate the help for this this option.
  *
+<<<<<<< HEAD
  * @param integer $width The width to make the name of the option.
+=======
+ * @param int $width The width to make the name of the option.
+>>>>>>> origin/master
  * @return string
  */
 	public function help($width = 0) {
@@ -170,7 +185,11 @@ class ConsoleInputOption {
 /**
  * Check if this option is a boolean option
  *
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	public function isBoolean() {
 		return (bool)$this->_boolean;
@@ -179,8 +198,13 @@ class ConsoleInputOption {
 /**
  * Check that a value is a valid choice for this option.
  *
+<<<<<<< HEAD
  * @param string $value
  * @return boolean
+=======
+ * @param string $value The choice to validate.
+ * @return bool
+>>>>>>> origin/master
  * @throws ConsoleException
  */
 	public function validChoice($value) {

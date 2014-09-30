@@ -2,8 +2,11 @@
 /**
  * DigestAuthenticationTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -63,7 +66,11 @@ class DigestAuthenticationTest extends CakeTestCase {
 /**
  * Socket property
  *
+<<<<<<< HEAD
  * @var mixed null
+=======
+ * @var mixed
+>>>>>>> origin/master
  */
 	public $HttpSocket = null;
 

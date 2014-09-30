@@ -43,7 +43,11 @@ class TaskCollection extends ObjectCollection {
 /**
  * Constructor
  *
+<<<<<<< HEAD
  * @param Shell $Shell
+=======
+ * @param Shell $Shell The shell this task collection is attached to.
+>>>>>>> origin/master
  */
 	public function __construct(Shell $Shell) {
 		$this->_Shell = $Shell;

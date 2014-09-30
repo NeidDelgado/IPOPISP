@@ -2,8 +2,11 @@
 /**
  * HtmlHelperTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -25,6 +28,10 @@ App::uses('HtmlHelper', 'View/Helper');
 App::uses('FormHelper', 'View/Helper');
 App::uses('ClassRegistry', 'Utility');
 App::uses('Folder', 'Utility');
+<<<<<<< HEAD
+=======
+App::uses('CakePlugin', 'Core');
+>>>>>>> origin/master
 
 if (!defined('FULL_BASE_URL')) {
 	define('FULL_BASE_URL', 'http://cakephp.org');
@@ -47,7 +54,11 @@ class TheHtmlTestController extends Controller {
 /**
  * uses property
  *
+<<<<<<< HEAD
  * @var mixed null
+=======
+ * @var mixed
+>>>>>>> origin/master
  */
 	public $uses = null;
 }
@@ -416,10 +427,39 @@ class HtmlHelperTest extends CakeTestCase {
 
 		$result = $this->Html->image('/test/view/1.gif');
 		$this->assertTags($result, array('img' => array('src' => '/test/view/1.gif', 'alt' => '')));
+<<<<<<< HEAD
 
 		$result = $this->Html->image('test.gif?one=two&three=four');
 		$this->assertTags($result, array('img' => array('src' => 'img/test.gif?one=two&amp;three=four', 'alt' => '')));
 
+=======
+	}
+
+/**
+ * Test image() with query strings.
+ *
+ * @return void
+ */
+	public function testImageQueryString() {
+		$result = $this->Html->image('test.gif?one=two&three=four');
+		$this->assertTags($result, array('img' => array('src' => 'img/test.gif?one=two&amp;three=four', 'alt' => '')));
+
+		$result = $this->Html->image(array(
+			'controller' => 'images',
+			'action' => 'display',
+			'test',
+			'?' => array('one' => 'two', 'three' => 'four')
+		));
+		$this->assertTags($result, array('img' => array('src' => '/images/display/test?one=two&amp;three=four', 'alt' => '')));
+	}
+
+/**
+ * Test that image works with pathPrefix.
+ *
+ * @return void
+ */
+	public function testImagePathPrefix() {
+>>>>>>> origin/master
 		$result = $this->Html->image('test.gif', array('pathPrefix' => '/my/custom/path/'));
 		$this->assertTags($result, array('img' => array('src' => '/my/custom/path/test.gif', 'alt' => '')));
 
@@ -886,7 +926,11 @@ class HtmlHelperTest extends CakeTestCase {
 	public function testPluginScriptTimestamping() {
 		CakePlugin::load('TestPlugin');
 
+<<<<<<< HEAD
 		$pluginPath = App::pluginPath('TestPlugin');
+=======
+		$pluginPath = CakePlugin::path('TestPlugin');
+>>>>>>> origin/master
 		$pluginJsPath = $pluginPath . 'webroot/js';
 		$this->skipIf(!is_writable($pluginJsPath), $pluginJsPath . ' is not Writable, timestamp testing has been skipped.');
 
@@ -1408,6 +1452,11 @@ class HtmlHelperTest extends CakeTestCase {
 
 /**
  * Test the array form of $startText
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testGetCrumbFirstLink() {
 		$result = $this->Html->getCrumbList(null, 'Home');
@@ -1689,19 +1738,8 @@ class HtmlHelperTest extends CakeTestCase {
 		);
 		$this->assertTags($result, $expected);
 
-		$result = $this->Html->meta('icon', 'favicon.ico');
-		$expected = array(
-			'link' => array('href' => 'preg:/.*favicon\.ico/', 'type' => 'image/x-icon', 'rel' => 'icon'),
-			array('link' => array('href' => 'preg:/.*favicon\.ico/', 'type' => 'image/x-icon', 'rel' => 'shortcut icon'))
-		);
-		$this->assertTags($result, $expected);
-		$result = $this->Html->meta('icon');
-		$expected = array(
-			'link' => array('href' => 'preg:/.*favicon\.ico/', 'type' => 'image/x-icon', 'rel' => 'icon'),
-			array('link' => array('href' => 'preg:/.*favicon\.ico/', 'type' => 'image/x-icon', 'rel' => 'shortcut icon'))
-		);
-		$this->assertTags($result, $expected);
-
+<<<<<<< HEAD
+=======
 		$result = $this->Html->meta('keywords', 'these, are, some, meta, keywords');
 		$this->assertTags($result, array('meta' => array('name' => 'keywords', 'content' => 'these, are, some, meta, keywords')));
 		$this->assertRegExp('/\s+\/>$/', $result);
@@ -1714,7 +1752,75 @@ class HtmlHelperTest extends CakeTestCase {
 	}
 
 /**
+ * Test generating favicon's with meta()
+ *
+ * @return void
+ */
+	public function testMetaIcon() {
+>>>>>>> origin/master
+		$result = $this->Html->meta('icon', 'favicon.ico');
+		$expected = array(
+			'link' => array('href' => 'preg:/.*favicon\.ico/', 'type' => 'image/x-icon', 'rel' => 'icon'),
+			array('link' => array('href' => 'preg:/.*favicon\.ico/', 'type' => 'image/x-icon', 'rel' => 'shortcut icon'))
+		);
+		$this->assertTags($result, $expected);
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
+		$result = $this->Html->meta('icon');
+		$expected = array(
+			'link' => array('href' => 'preg:/.*favicon\.ico/', 'type' => 'image/x-icon', 'rel' => 'icon'),
+			array('link' => array('href' => 'preg:/.*favicon\.ico/', 'type' => 'image/x-icon', 'rel' => 'shortcut icon'))
+		);
+		$this->assertTags($result, $expected);
+
+<<<<<<< HEAD
+		$result = $this->Html->meta('keywords', 'these, are, some, meta, keywords');
+		$this->assertTags($result, array('meta' => array('name' => 'keywords', 'content' => 'these, are, some, meta, keywords')));
+		$this->assertRegExp('/\s+\/>$/', $result);
+
+		$result = $this->Html->meta('description', 'this is the meta description');
+		$this->assertTags($result, array('meta' => array('name' => 'description', 'content' => 'this is the meta description')));
+
+		$result = $this->Html->meta(array('name' => 'ROBOTS', 'content' => 'ALL'));
+		$this->assertTags($result, array('meta' => array('name' => 'ROBOTS', 'content' => 'ALL')));
+=======
+		$result = $this->Html->meta('icon', '/favicon.png?one=two&three=four');
+		$url = '/favicon.png?one=two&amp;three=four';
+		$expected = array(
+			'link' => array(
+				'href' => $url,
+				'type' => 'image/x-icon',
+				'rel' => 'icon'
+			),
+			array(
+				'link' => array(
+					'href' => $url,
+					'type' => 'image/x-icon',
+					'rel' => 'shortcut icon'
+				)
+			)
+		);
+		$this->assertTags($result, $expected);
+
+		$this->Html->request->webroot = '/testing/';
+		$result = $this->Html->meta('icon');
+		$expected = array(
+			'link' => array('href' => '/testing/favicon.ico', 'type' => 'image/x-icon', 'rel' => 'icon'),
+			array('link' => array('href' => '/testing/favicon.ico', 'type' => 'image/x-icon', 'rel' => 'shortcut icon'))
+		);
+		$this->assertTags($result, $expected);
+>>>>>>> origin/master
+	}
+
+/**
  * Test the inline and block options for meta()
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testMetaWithBlocks() {
 		$this->View->expects($this->at(0))
@@ -1974,7 +2080,10 @@ class HtmlHelperTest extends CakeTestCase {
 /**
  * testCrumbList method
  *
+<<<<<<< HEAD
  *
+=======
+>>>>>>> origin/master
  * @return void
  */
 	public function testCrumbList() {
@@ -2006,6 +2115,11 @@ class HtmlHelperTest extends CakeTestCase {
 
 /**
  * Test getCrumbList startText
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testCrumbListFirstLink() {
 		$this->Html->addCrumb('First', '#first');

@@ -1,7 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -79,8 +82,13 @@ abstract class BaseAuthorize {
  * Checks user authorization.
  *
  * @param array $user Active user data
+<<<<<<< HEAD
  * @param CakeRequest $request
  * @return boolean
+=======
+ * @param CakeRequest $request Request instance.
+ * @return bool
+>>>>>>> origin/master
  */
 	abstract public function authorize($user, CakeRequest $request);
 
@@ -107,7 +115,11 @@ abstract class BaseAuthorize {
  * that need to get information about the plugin, controller, and action being invoked.
  *
  * @param CakeRequest $request The request a path is needed for.
+<<<<<<< HEAD
  * @param string $path
+=======
+ * @param string $path Path format.
+>>>>>>> origin/master
  * @return string the action path for the given request.
  */
 	public function action(CakeRequest $request, $path = '/:plugin/:controller/:action') {
@@ -130,16 +142,35 @@ abstract class BaseAuthorize {
  * $this->Auth->mapActions(array('create' => array('add', 'register'));
  * }}}
  *
+<<<<<<< HEAD
  * Create mappings for custom CRUD operations:
  *
  * {{{
  * $this->Auth->mapActions(array('my_action' => 'admin'));
+=======
+ * Or equivalently:
+ *
+ * {{{
+ * $this->Auth->mapActions(array('register' => 'create', 'add' => 'create'));
+ * }}}
+ *
+ * Create mappings for custom CRUD operations:
+ *
+ * {{{
+ * $this->Auth->mapActions(array('range' => 'search'));
+>>>>>>> origin/master
  * }}}
  *
  * You can use the custom CRUD operations to create additional generic permissions
  * that behave like CRUD operations. Doing this will require additional columns on the
+<<<<<<< HEAD
  * permissions lookup. When using with DbAcl, you'll have to add additional _admin type columns
  * to the `aros_acos` table.
+=======
+ * permissions lookup. For example if one wanted an additional search CRUD operation
+ * one would create and additional column '_search' in the aros_acos table. One could
+ * create a custom admin CRUD operation for administration functions similarly if needed.
+>>>>>>> origin/master
  *
  * @param array $map Either an array of mappings, or undefined to get current values.
  * @return mixed Either the current mappings or null when setting.
@@ -149,9 +180,14 @@ abstract class BaseAuthorize {
 		if (empty($map)) {
 			return $this->settings['actionMap'];
 		}
+<<<<<<< HEAD
 		$crud = array('create', 'read', 'update', 'delete');
 		foreach ($map as $action => $type) {
 			if (in_array($action, $crud) && is_array($type)) {
+=======
+		foreach ($map as $action => $type) {
+			if (is_array($type)) {
+>>>>>>> origin/master
 				foreach ($type as $typedAction) {
 					$this->settings['actionMap'][$typedAction] = $action;
 				}

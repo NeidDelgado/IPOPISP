@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -31,11 +34,34 @@ abstract class DispatcherFilter implements CakeEventListener {
 /**
  * Default priority for all methods in this filter
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	public $priority = 10;
 
 /**
+<<<<<<< HEAD
+=======
+ * Settings for this filter
+ *
+ * @var array
+ */
+	public $settings = array();
+
+/**
+ * Constructor.
+ *
+ * @param array $settings Configuration settings for the filter.
+ */
+	public function __construct($settings = array()) {
+		$this->settings = Hash::merge($this->settings, $settings);
+	}
+
+/**
+>>>>>>> origin/master
  * Returns the list of events this filter listens to.
  * Dispatcher notifies 2 different events `Dispatcher.before` and `Dispatcher.after`.
  * By default this class will attach `preDispatch` and `postDispatch` method respectively.
@@ -65,7 +91,11 @@ abstract class DispatcherFilter implements CakeEventListener {
  *
  * @param CakeEvent $event container object having the `request`, `response` and `additionalParams`
  *	keys in the data property.
+<<<<<<< HEAD
  * @return CakeResponse|boolean
+=======
+ * @return CakeResponse|bool
+>>>>>>> origin/master
  */
 	public function beforeDispatch(CakeEvent $event) {
 	}

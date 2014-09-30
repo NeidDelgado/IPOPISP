@@ -4,8 +4,11 @@
  *
  * Use it to configure core behavior of Cake.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.Config
  * @since         CakePHP(tm) v 0.2.9
@@ -61,7 +64,11 @@
  * - `renderer` - string - The class responsible for rendering uncaught exceptions. If you choose a custom class you
  *   should place the file for that class in app/Lib/Error. This class needs to implement a render method.
  * - `log` - boolean - Should Exceptions be logged?
+<<<<<<< HEAD
   * - `skipLog` - array - list of exceptions to skip for logging. Exceptions that
+=======
+ * - `skipLog` - array - list of exceptions to skip for logging. Exceptions that
+>>>>>>> origin/master
  *   extend one of the listed exceptions will also be skipped for logging.
  *   Example: `'skipLog' => array('NotFoundException', 'UnauthorizedException')`
  *
@@ -263,7 +270,10 @@
 	//date_default_timezone_set('UTC');
 
 /**
+<<<<<<< HEAD
  *
+=======
+>>>>>>> origin/master
  * Cache Engine Configuration
  * Default settings provided below
  *

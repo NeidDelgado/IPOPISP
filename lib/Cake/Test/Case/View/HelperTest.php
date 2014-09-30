@@ -2,8 +2,11 @@
 /**
  * HelperTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -33,7 +36,11 @@ class HelperTestPost extends Model {
 /**
  * useTable property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $useTable = false;
 
@@ -73,7 +80,11 @@ class HelperTestComment extends Model {
 /**
  * useTable property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $useTable = false;
 
@@ -107,7 +118,11 @@ class HelperTestTag extends Model {
 /**
  * useTable property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $useTable = false;
 
@@ -138,7 +153,11 @@ class HelperTestPostsTag extends Model {
 /**
  * useTable property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $useTable = false;
 
@@ -854,6 +873,19 @@ class HelperTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * testDomId method
+ *
+ * @return void
+ */
+	public function testDomId() {
+		$result = $this->Helper->domId('Foo.bar');
+		$this->assertEquals('FooBar', $result);
+	}
+
+/**
+>>>>>>> origin/master
  * testMultiDimensionalField method
  *
  * @return void

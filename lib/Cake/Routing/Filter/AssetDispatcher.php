@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -31,7 +34,11 @@ class AssetDispatcher extends DispatcherFilter {
  * Default priority for all methods in this filter
  * This filter should run before the request gets parsed by router
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	public $priority = 9;
 
@@ -39,7 +46,12 @@ class AssetDispatcher extends DispatcherFilter {
  * Checks if a requested asset exists and sends it to the browser
  *
  * @param CakeEvent $event containing the request and response object
+<<<<<<< HEAD
  * @return CakeResponse if the client is requesting a recognized asset, null otherwise
+=======
+ * @return mixed The resulting response.
+ * @throws NotFoundException When asset not found
+>>>>>>> origin/master
  */
 	public function beforeDispatch(CakeEvent $event) {
 		$url = urldecode($event->data['request']->url);
@@ -56,7 +68,10 @@ class AssetDispatcher extends DispatcherFilter {
 		if ($assetFile === null || !file_exists($assetFile)) {
 			return null;
 		}
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 		$response = $event->data['response'];
 		$event->stopPropagation();
 
@@ -67,6 +82,10 @@ class AssetDispatcher extends DispatcherFilter {
 
 		$pathSegments = explode('.', $url);
 		$ext = array_pop($pathSegments);
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 		$this->_deliverAsset($response, $assetFile, $ext);
 		return $response;
 	}
@@ -110,7 +129,11 @@ class AssetDispatcher extends DispatcherFilter {
 /**
  * Builds asset file path based off url
  *
+<<<<<<< HEAD
  * @param string $url
+=======
+ * @param string $url URL
+>>>>>>> origin/master
  * @return string Absolute path for asset file
  */
 	protected function _getAssetFile($url) {
@@ -143,7 +166,11 @@ class AssetDispatcher extends DispatcherFilter {
 	protected function _deliverAsset(CakeResponse $response, $assetFile, $ext) {
 		ob_start();
 		$compressionEnabled = Configure::read('Asset.compress') && $response->compress();
+<<<<<<< HEAD
 		if ($response->type($ext) == $ext) {
+=======
+		if ($response->type($ext) === $ext) {
+>>>>>>> origin/master
 			$contentType = 'application/octet-stream';
 			$agent = env('HTTP_USER_AGENT');
 			if (preg_match('%Opera(/| )([0-9].[0-9]{1,2})%', $agent) || preg_match('/MSIE ([0-9].[0-9]{1,2})/', $agent)) {

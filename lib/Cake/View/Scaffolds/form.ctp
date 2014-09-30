@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -31,7 +34,11 @@
 		<li><?php echo $this->Form->postLink(
 			__d('cake', 'Delete'),
 			array('action' => 'delete', $this->Form->value($modelClass . '.' . $primaryKey)),
+<<<<<<< HEAD
 			null,
+=======
+			array(),
+>>>>>>> origin/master
 			__d('cake', 'Are you sure you want to delete # %s?', $this->Form->value($modelClass . '.' . $primaryKey)));
 		?></li>
 <?php endif; ?>

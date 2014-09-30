@@ -2,8 +2,11 @@
 /**
  * MailTransportTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -52,10 +55,26 @@ class MailTransportTest extends CakeTestCase {
 		$email->cc(array('mark@cakephp.org' => 'Mark Story', 'juan@cakephp.org' => 'Juan Basso'));
 		$email->bcc('phpnut@cakephp.org');
 		$email->messageID('<4d9946cf-0a44-4907-88fe-1d0ccbdd56cb@localhost>');
+<<<<<<< HEAD
 		$email->subject('Foø Bår Béz Foø Bår Béz Foø Bår Béz Foø Bår Béz');
 		$date = date(DATE_RFC2822);
 		$email->setHeaders(array('X-Mailer' => 'CakePHP Email', 'Date' => $date));
 		$email->expects($this->any())->method('message')->will($this->returnValue(array('First Line', 'Second Line', '.Third Line', '')));
+=======
+		$longNonAscii = 'Foø Bår Béz Foø Bår Béz Foø Bår Béz Foø Bår Béz';
+		$email->subject($longNonAscii);
+		$date = date(DATE_RFC2822);
+		$email->setHeaders(array(
+			'X-Mailer' => 'CakePHP Email',
+			'Date' => $date,
+			'X-add' => mb_encode_mimeheader($longNonAscii, 'utf8', 'B'),
+		));
+		$email->expects($this->any())->method('message')
+			->will($this->returnValue(array('First Line', 'Second Line', '.Third Line', '')));
+
+		$encoded = '=?UTF-8?B?Rm/DuCBCw6VyIELDqXogRm/DuCBCw6VyIELDqXogRm/DuCBCw6VyIELDqXog?=';
+		$encoded .= ' =?UTF-8?B?Rm/DuCBCw6VyIELDqXo=?=';
+>>>>>>> origin/master
 
 		$data = "From: CakePHP Test <noreply@cakephp.org>" . PHP_EOL;
 		$data .= "Return-Path: CakePHP Return <pleasereply@cakephp.org>" . PHP_EOL;
@@ -63,17 +82,28 @@ class MailTransportTest extends CakeTestCase {
 		$data .= "Bcc: phpnut@cakephp.org" . PHP_EOL;
 		$data .= "X-Mailer: CakePHP Email" . PHP_EOL;
 		$data .= "Date: " . $date . PHP_EOL;
+<<<<<<< HEAD
+=======
+		$data .= "X-add: " . $encoded . PHP_EOL;
+>>>>>>> origin/master
 		$data .= "Message-ID: <4d9946cf-0a44-4907-88fe-1d0ccbdd56cb@localhost>" . PHP_EOL;
 		$data .= "MIME-Version: 1.0" . PHP_EOL;
 		$data .= "Content-Type: text/plain; charset=UTF-8" . PHP_EOL;
 		$data .= "Content-Transfer-Encoding: 8bit";
 
+<<<<<<< HEAD
 		$subject = '=?UTF-8?B?Rm/DuCBCw6VyIELDqXogRm/DuCBCw6VyIELDqXogRm/DuCBCw6VyIELDqXog?=';
 		$subject .= "\r\n" . ' =?UTF-8?B?Rm/DuCBCw6VyIELDqXo=?=';
 		$this->MailTransport->expects($this->once())->method('_mail')
 			->with(
 				'CakePHP <cake@cakephp.org>',
 				$subject,
+=======
+		$this->MailTransport->expects($this->once())->method('_mail')
+			->with(
+				'CakePHP <cake@cakephp.org>',
+				$encoded,
+>>>>>>> origin/master
 				implode(PHP_EOL, array('First Line', 'Second Line', '.Third Line', '')),
 				$data,
 				'-f'

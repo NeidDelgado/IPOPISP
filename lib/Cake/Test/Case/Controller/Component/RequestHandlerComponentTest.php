@@ -2,8 +2,11 @@
 /**
  * RequestHandlerComponentTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -35,7 +38,11 @@ class RequestHandlerTestController extends Controller {
 /**
  * uses property
  *
+<<<<<<< HEAD
  * @var mixed null
+=======
+ * @var mixed
+>>>>>>> origin/master
  */
 	public $uses = null;
 
@@ -355,6 +362,7 @@ class RequestHandlerComponentTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
  * testAutoResponseType method
  *
  * @return void
@@ -368,6 +376,8 @@ class RequestHandlerComponentTest extends CakeTestCase {
 	}
 
 /**
+=======
+>>>>>>> origin/master
  * testAutoAjaxLayout method
  *
  * @return void

@@ -4,8 +4,11 @@
  *
  * Helpful methods to make unsafe strings usable.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -106,14 +109,22 @@ class Sanitize {
 				$defaultCharset = 'UTF-8';
 			}
 		}
+<<<<<<< HEAD
 		$default = array(
+=======
+		$defaults = array(
+>>>>>>> origin/master
 			'remove' => false,
 			'charset' => $defaultCharset,
 			'quotes' => ENT_QUOTES,
 			'double' => true
 		);
 
+<<<<<<< HEAD
 		$options = array_merge($default, $options);
+=======
+		$options += $defaults;
+>>>>>>> origin/master
 
 		if ($options['remove']) {
 			$string = strip_tags($string);
@@ -186,7 +197,11 @@ class Sanitize {
  *
  * Will remove all `<b>`, `<p>`, and `<div>` tags from the $dirty string.
  *
+<<<<<<< HEAD
  * @param string $str,... String to sanitize
+=======
+ * @param string $str String to sanitize.
+>>>>>>> origin/master
  * @return string sanitized String
  */
 	public static function stripTags($str) {
@@ -226,7 +241,11 @@ class Sanitize {
 			$options = array('connection' => $options);
 		}
 
+<<<<<<< HEAD
 		$options = array_merge(array(
+=======
+		$options += array(
+>>>>>>> origin/master
 			'connection' => 'default',
 			'odd_spaces' => true,
 			'remove_html' => false,
@@ -236,7 +255,11 @@ class Sanitize {
 			'unicode' => true,
 			'escape' => true,
 			'backslash' => true
+<<<<<<< HEAD
 		), $options);
+=======
+		);
+>>>>>>> origin/master
 
 		if (is_array($data)) {
 			foreach ($data as $key => $val) {

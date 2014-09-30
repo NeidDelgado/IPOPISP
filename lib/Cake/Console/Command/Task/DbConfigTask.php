@@ -2,8 +2,11 @@
 /**
  * The DbConfig Task handles creating and updating the database.php
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -201,11 +204,19 @@ class DbConfigTask extends AppShell {
 /**
  * Output verification message and bake if it looks good
  *
+<<<<<<< HEAD
  * @param array $config
  * @return boolean True if user says it looks good, false otherwise
  */
 	protected function _verify($config) {
 		$config = array_merge($this->_defaultConfig, $config);
+=======
+ * @param array $config The config data.
+ * @return bool True if user says it looks good, false otherwise
+ */
+	protected function _verify($config) {
+		$config += $this->_defaultConfig;
+>>>>>>> origin/master
 		extract($config);
 		$this->out();
 		$this->hr();
@@ -249,7 +260,11 @@ class DbConfigTask extends AppShell {
  * Assembles and writes database.php
  *
  * @param array $configs Configuration settings to use
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function bake($configs) {
 		if (!is_dir($this->path)) {
@@ -266,7 +281,11 @@ class DbConfigTask extends AppShell {
 			$temp = get_class_vars(get_class($db));
 
 			foreach ($temp as $configName => $info) {
+<<<<<<< HEAD
 				$info = array_merge($this->_defaultConfig, $info);
+=======
+				$info += $this->_defaultConfig;
+>>>>>>> origin/master
 
 				if (!isset($info['schema'])) {
 					$info['schema'] = null;
@@ -298,7 +317,11 @@ class DbConfigTask extends AppShell {
 
 		foreach ($oldConfigs as $key => $oldConfig) {
 			foreach ($configs as $config) {
+<<<<<<< HEAD
 				if ($oldConfig['name'] == $config['name']) {
+=======
+				if ($oldConfig['name'] === $config['name']) {
+>>>>>>> origin/master
 					unset($oldConfigs[$key]);
 				}
 			}
@@ -309,7 +332,11 @@ class DbConfigTask extends AppShell {
 		$out .= "class DATABASE_CONFIG {\n\n";
 
 		foreach ($configs as $config) {
+<<<<<<< HEAD
 			$config = array_merge($this->_defaultConfig, $config);
+=======
+			$config += $this->_defaultConfig;
+>>>>>>> origin/master
 			extract($config);
 
 			if (strpos($datasource, 'Database/') === false) {
@@ -370,15 +397,28 @@ class DbConfigTask extends AppShell {
 	}
 
 /**
+<<<<<<< HEAD
  * get the option parser
+=======
+ * Gets the option parser instance and configures it.
+>>>>>>> origin/master
  *
  * @return ConsoleOptionParser
  */
 	public function getOptionParser() {
 		$parser = parent::getOptionParser();
+<<<<<<< HEAD
 		return $parser->description(
 				__d('cake_console', 'Bake new database configuration settings.')
 			);
+=======
+
+		$parser->description(
+			__d('cake_console', 'Bake new database configuration settings.')
+		);
+
+		return $parser;
+>>>>>>> origin/master
 	}
 
 }

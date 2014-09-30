@@ -4,8 +4,11 @@
  *
  * Tree test using UUIDs
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -23,6 +26,10 @@
 App::uses('Model', 'Model');
 App::uses('AppModel', 'Model');
 App::uses('String', 'Utility');
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 require_once dirname(dirname(__FILE__)) . DS . 'models.php';
 
 /**
@@ -35,7 +42,11 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 /**
  * Whether backup global state for each test method or not
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $backupGlobals = false;
 
@@ -109,10 +120,17 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 		$this->Tree->id = $data[$modelClass]['id'];
 		$this->Tree->saveField($parentField, $parentId);
 		$direct = $this->Tree->children($parentId, true, array('name', $leftField, $rightField));
+<<<<<<< HEAD
 		$expects = array(array($modelClass => array('name' => '1.1', $leftField => 2, $rightField => 5)),
 			array($modelClass => array('name' => '1.2', $leftField => 6, $rightField => 11)),
 			array($modelClass => array('name' => '1.1.1', $leftField => 12, $rightField => 13)));
 		$this->assertEquals($direct, $expects);
+=======
+		$expected = array(array($modelClass => array('name' => '1.1', $leftField => 2, $rightField => 5)),
+			array($modelClass => array('name' => '1.2', $leftField => 6, $rightField => 11)),
+			array($modelClass => array('name' => '1.1.1', $leftField => 12, $rightField => 13)));
+		$this->assertEquals($expected, $direct);
+>>>>>>> origin/master
 		$validTree = $this->Tree->verify();
 		$this->assertTrue($validTree);
 	}
@@ -164,7 +182,11 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 		$this->assertEquals($initialCount, $laterCount);
 
 		$nodes = $this->Tree->find('list', array('order' => $leftField));
+<<<<<<< HEAD
 		$expects = array(
+=======
+		$expected = array(
+>>>>>>> origin/master
 			'1. Root',
 			'1.1',
 			'1.1.2',
@@ -174,7 +196,11 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 			'1.1.1',
 		);
 
+<<<<<<< HEAD
 		$this->assertEquals(array_values($nodes), $expects);
+=======
+		$this->assertEquals($expected, array_values($nodes));
+>>>>>>> origin/master
 
 		$validTree = $this->Tree->verify();
 		$this->assertTrue($validTree);
@@ -199,7 +225,11 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 		$this->assertEquals($initialCount - 1, $laterCount);
 
 		$nodes = $this->Tree->find('list', array('order' => $leftField));
+<<<<<<< HEAD
 		$expects = array(
+=======
+		$expected = array(
+>>>>>>> origin/master
 			'1. Root',
 			'1.1',
 			'1.1.2',
@@ -207,7 +237,11 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 			'1.2.1',
 			'1.2.2',
 		);
+<<<<<<< HEAD
 		$this->assertEquals(array_values($nodes), $expects);
+=======
+		$this->assertEquals($expected, array_values($nodes));
+>>>>>>> origin/master
 
 		$validTree = $this->Tree->verify();
 		$this->assertTrue($validTree);
@@ -228,18 +262,31 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 		$this->Tree->id = $data[$modelClass]['id'];
 
 		$direct = $this->Tree->children(null, true, array('name', $leftField, $rightField));
+<<<<<<< HEAD
 		$expects = array(array($modelClass => array('name' => '1.1', $leftField => 2, $rightField => 7)),
 			array($modelClass => array('name' => '1.2', $leftField => 8, $rightField => 13)));
 		$this->assertEquals($direct, $expects);
 
 		$total = $this->Tree->children(null, null, array('name', $leftField, $rightField));
 		$expects = array(array($modelClass => array('name' => '1.1', $leftField => 2, $rightField => 7)),
+=======
+		$expected = array(array($modelClass => array('name' => '1.1', $leftField => 2, $rightField => 7)),
+			array($modelClass => array('name' => '1.2', $leftField => 8, $rightField => 13)));
+		$this->assertEquals($expected, $direct);
+
+		$total = $this->Tree->children(null, null, array('name', $leftField, $rightField));
+		$expected = array(array($modelClass => array('name' => '1.1', $leftField => 2, $rightField => 7)),
+>>>>>>> origin/master
 			array($modelClass => array('name' => '1.1.1', $leftField => 3, $rightField => 4)),
 			array($modelClass => array('name' => '1.1.2', $leftField => 5, $rightField => 6)),
 			array($modelClass => array('name' => '1.2', $leftField => 8, $rightField => 13)),
 			array($modelClass => array('name' => '1.2.1', $leftField => 9, $rightField => 10)),
 			array($modelClass => array('name' => '1.2.2', $leftField => 11, $rightField => 12)));
+<<<<<<< HEAD
 		$this->assertEquals($total, $expects);
+=======
+		$this->assertEquals($expected, $total);
+>>>>>>> origin/master
 	}
 
 /**
@@ -263,12 +310,21 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 		$this->Tree->id = $data[$modelClass]['id'];
 
 		$direct = $this->Tree->children(null, true, array('name', $leftField, $rightField));
+<<<<<<< HEAD
 		$expects = array(array($modelClass => array('name' => '1.1', $leftField => 2, $rightField => 7)),
 			array($modelClass => array('name' => '1.2', $leftField => 8, $rightField => 13)));
 		$this->assertEquals($direct, $expects);
 
 		$total = $this->Tree->children(null, null, array('name', $leftField, $rightField));
 		$expects = array(
+=======
+		$expected = array(array($modelClass => array('name' => '1.1', $leftField => 2, $rightField => 7)),
+			array($modelClass => array('name' => '1.2', $leftField => 8, $rightField => 13)));
+		$this->assertEquals($expected, $direct);
+
+		$total = $this->Tree->children(null, null, array('name', $leftField, $rightField));
+		$expected = array(
+>>>>>>> origin/master
 			array($modelClass => array('name' => '1.1', $leftField => 2, $rightField => 7)),
 			array($modelClass => array('name' => '1.1.1', $leftField => 3, $rightField => 4)),
 			array($modelClass => array('name' => '1.1.2', $leftField => 5, $rightField => 6)),
@@ -276,7 +332,11 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 			array($modelClass => array('name' => '1.2.1', $leftField => 9, $rightField => 10)),
 			array($modelClass => array('name' => '1.2.2', $leftField => 11, $rightField => 12))
 		);
+<<<<<<< HEAD
 		$this->assertEquals($total, $expects);
+=======
+		$this->assertEquals($expected, $total);
+>>>>>>> origin/master
 	}
 
 /**
@@ -294,6 +354,10 @@ class TreeBehaviorUuidTest extends CakeTestCase {
 
 		$result = $this->Tree->generateTreeList();
 		$expected = array('1. Root', '_1.1', '__1.1.1', '__1.1.2', '_1.2', '__1.2.1', '__1.2.2');
+<<<<<<< HEAD
 		$this->assertSame(array_values($result), $expected);
+=======
+		$this->assertSame($expected, array_values($result));
+>>>>>>> origin/master
 	}
 }

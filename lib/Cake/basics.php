@@ -4,8 +4,11 @@
  *
  * Core functions for including other source files, loading models and so forth.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -40,7 +43,11 @@ if (!function_exists('config')) {
  *
  * `config('config1', 'config2');`
  *
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#config
  */
 	function config() {
@@ -65,9 +72,15 @@ if (!function_exists('debug')) {
  *
  * Only runs if debug level is greater than zero.
  *
+<<<<<<< HEAD
  * @param boolean $var Variable to show debug information for.
  * @param boolean $showHtml If set to true, the method prints the debug data in a browser-friendly way.
  * @param boolean $showFrom If set to true, the method prints from where the function was called.
+=======
+ * @param mixed $var Variable to show debug information for.
+ * @param bool $showHtml If set to true, the method prints the debug data in a browser-friendly way.
+ * @param bool $showFrom If set to true, the method prints from where the function was called.
+>>>>>>> origin/master
  * @return void
  * @link http://book.cakephp.org/2.0/en/development/debugging.html#basic-debugging
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#debug
@@ -125,6 +138,7 @@ TEXT;
 if (!function_exists('sortByKey')) {
 
 /**
+<<<<<<< HEAD
  * Sorts given $array by key $sortby.
  *
  * @param array $array Array to sort
@@ -135,12 +149,28 @@ if (!function_exists('sortByKey')) {
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#sortByKey
  */
 	function sortByKey(&$array, $sortby, $order = 'asc', $type = SORT_NUMERIC) {
+=======
+ * Sorts given $array by key $sortBy.
+ *
+ * @param array &$array Array to sort
+ * @param string $sortBy Sort by this key
+ * @param string $order Sort order asc/desc (ascending or descending).
+ * @param int $type Type of sorting to perform
+ * @return mixed Sorted array
+ * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#sortByKey
+ */
+	function sortByKey(&$array, $sortBy, $order = 'asc', $type = SORT_NUMERIC) {
+>>>>>>> origin/master
 		if (!is_array($array)) {
 			return null;
 		}
 
 		foreach ($array as $key => $val) {
+<<<<<<< HEAD
 			$sa[$key] = $val[$sortby];
+=======
+			$sa[$key] = $val[$sortBy];
+>>>>>>> origin/master
 		}
 
 		if ($order === 'asc') {
@@ -165,13 +195,23 @@ if (!function_exists('h')) {
  * @param string|array|object $text Text to wrap through htmlspecialchars. Also works with arrays, and objects.
  *    Arrays will be mapped and have all their elements escaped. Objects will be string cast if they
  *    implement a `__toString` method. Otherwise the class name will be used.
+<<<<<<< HEAD
  * @param boolean $double Encode existing html entities
+=======
+ * @param bool $double Encode existing html entities
+>>>>>>> origin/master
  * @param string $charset Character set to use when escaping. Defaults to config value in 'App.encoding' or 'UTF-8'
  * @return string Wrapped text
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#h
  */
 	function h($text, $double = true, $charset = null) {
+<<<<<<< HEAD
 		if (is_array($text)) {
+=======
+		if (is_string($text)) {
+			//optimize for strings
+		} elseif (is_array($text)) {
+>>>>>>> origin/master
 			$texts = array();
 			foreach ($text as $k => $t) {
 				$texts[$k] = h($t, $double, $charset);
@@ -205,15 +245,25 @@ if (!function_exists('h')) {
 if (!function_exists('pluginSplit')) {
 
 /**
+<<<<<<< HEAD
  * Splits a dot syntax plugin name into its plugin and classname.
+=======
+ * Splits a dot syntax plugin name into its plugin and class name.
+>>>>>>> origin/master
  * If $name does not have a dot, then index 0 will be null.
  *
  * Commonly used like `list($plugin, $name) = pluginSplit($name);`
  *
  * @param string $name The name you want to plugin split.
+<<<<<<< HEAD
  * @param boolean $dotAppend Set to true if you want the plugin to have a '.' appended to it.
  * @param string $plugin Optional default plugin to use if no plugin is found. Defaults to null.
  * @return array Array with 2 indexes. 0 => plugin name, 1 => classname
+=======
+ * @param bool $dotAppend Set to true if you want the plugin to have a '.' appended to it.
+ * @param string $plugin Optional default plugin to use if no plugin is found. Defaults to null.
+ * @return array Array with 2 indexes. 0 => plugin name, 1 => class name
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#pluginSplit
  */
 	function pluginSplit($name, $dotAppend = false, $plugin = null) {
@@ -237,10 +287,17 @@ if (!function_exists('pr')) {
  * In terminals this will act the same as using print_r() directly, when not run on cli
  * print_r() will wrap <PRE> tags around the output of given array. Similar to debug().
  *
+<<<<<<< HEAD
  * @see debug()
  * @param array $var Variable to print out
  * @return void
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#pr
+=======
+ * @param mixed $var Variable to print out
+ * @return void
+ * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#pr
+ * @see debug()
+>>>>>>> origin/master
  */
 	function pr($var) {
 		if (Configure::read('debug') > 0) {
@@ -256,12 +313,19 @@ if (!function_exists('am')) {
 /**
  * Merge a group of arrays
  *
+<<<<<<< HEAD
  * @param array First array
  * @param array Second array
  * @param array Third array
  * @param array Etc...
  * @return array All array parameters merged into one
  * @link http://book.cakephp.org/2.0/en/development/debugging.html#am
+=======
+ * Accepts variable arguments. Each argument will be converted into an array and then merged.
+ *
+ * @return array All array parameters merged into one
+ * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#am
+>>>>>>> origin/master
  */
 	function am() {
 		$r = array();
@@ -561,6 +625,11 @@ if (!function_exists('__')) {
 		} elseif (!is_array($args)) {
 			$args = array_slice(func_get_args(), 1);
 		}
+<<<<<<< HEAD
+=======
+
+		$translated = preg_replace('/(?<!%)%(?![%\'\-+bcdeEfFgGosuxX\d\.])/', '%%', $translated);
+>>>>>>> origin/master
 		return vsprintf($translated, $args);
 	}
 
@@ -574,7 +643,11 @@ if (!function_exists('__n')) {
  *
  * @param string $singular Singular text to translate
  * @param string $plural Plural text
+<<<<<<< HEAD
  * @param integer $count Count
+=======
+ * @param int $count Count
+>>>>>>> origin/master
  * @param mixed $args Array with arguments or multiple arguments in function
  * @return mixed plural form of translated string
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#__n
@@ -585,12 +658,21 @@ if (!function_exists('__n')) {
 		}
 
 		App::uses('I18n', 'I18n');
+<<<<<<< HEAD
 		$translated = I18n::translate($singular, $plural, null, 6, $count);
+=======
+		$translated = I18n::translate($singular, $plural, null, I18n::LC_MESSAGES, $count);
+>>>>>>> origin/master
 		if ($args === null) {
 			return $translated;
 		} elseif (!is_array($args)) {
 			$args = array_slice(func_get_args(), 3);
 		}
+<<<<<<< HEAD
+=======
+
+		$translated = preg_replace('/(?<!%)%(?![%\'\-+bcdeEfFgGosuxX\d\.])/', '%%', $translated);
+>>>>>>> origin/master
 		return vsprintf($translated, $args);
 	}
 
@@ -618,6 +700,11 @@ if (!function_exists('__d')) {
 		} elseif (!is_array($args)) {
 			$args = array_slice(func_get_args(), 2);
 		}
+<<<<<<< HEAD
+=======
+
+		$translated = preg_replace('/(?<!%)%(?![%\'\-+bcdeEfFgGosuxX\d\.])/', '%%', $translated);
+>>>>>>> origin/master
 		return vsprintf($translated, $args);
 	}
 
@@ -633,7 +720,11 @@ if (!function_exists('__dn')) {
  * @param string $domain Domain
  * @param string $singular Singular string to translate
  * @param string $plural Plural
+<<<<<<< HEAD
  * @param integer $count Count
+=======
+ * @param int $count Count
+>>>>>>> origin/master
  * @param mixed $args Array with arguments or multiple arguments in function
  * @return plural form of translated string
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#__dn
@@ -643,12 +734,21 @@ if (!function_exists('__dn')) {
 			return;
 		}
 		App::uses('I18n', 'I18n');
+<<<<<<< HEAD
 		$translated = I18n::translate($singular, $plural, $domain, 6, $count);
+=======
+		$translated = I18n::translate($singular, $plural, $domain, I18n::LC_MESSAGES, $count);
+>>>>>>> origin/master
 		if ($args === null) {
 			return $translated;
 		} elseif (!is_array($args)) {
 			$args = array_slice(func_get_args(), 4);
 		}
+<<<<<<< HEAD
+=======
+
+		$translated = preg_replace('/(?<!%)%(?![%\'\-+bcdeEfFgGosuxX\d\.])/', '%%', $translated);
+>>>>>>> origin/master
 		return vsprintf($translated, $args);
 	}
 
@@ -663,6 +763,7 @@ if (!function_exists('__dc')) {
  * The category argument allows a specific category of the locale settings to be used for fetching a message.
  * Valid categories are: LC_CTYPE, LC_NUMERIC, LC_TIME, LC_COLLATE, LC_MONETARY, LC_MESSAGES and LC_ALL.
  *
+<<<<<<< HEAD
  * Note that the category must be specified with a numeric value, instead of the constant name. The values are:
  *
  * - LC_ALL       0
@@ -676,6 +777,21 @@ if (!function_exists('__dc')) {
  * @param string $domain Domain
  * @param string $msg Message to translate
  * @param integer $category Category
+=======
+ * Note that the category must be specified with a class constant of I18n, instead of the constant name. The values are:
+ *
+ * - LC_ALL       I18n::LC_ALL
+ * - LC_COLLATE   I18n::LC_COLLATE
+ * - LC_CTYPE     I18n::LC_CTYPE
+ * - LC_MONETARY  I18n::LC_MONETARY
+ * - LC_NUMERIC   I18n::LC_NUMERIC
+ * - LC_TIME      I18n::LC_TIME
+ * - LC_MESSAGES  I18n::LC_MESSAGES
+ *
+ * @param string $domain Domain
+ * @param string $msg Message to translate
+ * @param int $category Category
+>>>>>>> origin/master
  * @param mixed $args Array with arguments or multiple arguments in function
  * @return translated string
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#__dc
@@ -691,6 +807,11 @@ if (!function_exists('__dc')) {
 		} elseif (!is_array($args)) {
 			$args = array_slice(func_get_args(), 3);
 		}
+<<<<<<< HEAD
+=======
+
+		$translated = preg_replace('/(?<!%)%(?![%\'\-+bcdeEfFgGosuxX\d\.])/', '%%', $translated);
+>>>>>>> origin/master
 		return vsprintf($translated, $args);
 	}
 
@@ -707,6 +828,7 @@ if (!function_exists('__dcn')) {
  * The category argument allows a specific category of the locale settings to be used for fetching a message.
  * Valid categories are: LC_CTYPE, LC_NUMERIC, LC_TIME, LC_COLLATE, LC_MONETARY, LC_MESSAGES and LC_ALL.
  *
+<<<<<<< HEAD
  * Note that the category must be specified with a numeric value, instead of the constant name. The values are:
  *
  * - LC_ALL       0
@@ -716,12 +838,28 @@ if (!function_exists('__dcn')) {
  * - LC_NUMERIC   4
  * - LC_TIME      5
  * - LC_MESSAGES  6
+=======
+ * Note that the category must be specified with a class constant of I18n, instead of the constant name. The values are:
+ *
+ * - LC_ALL       I18n::LC_ALL
+ * - LC_COLLATE   I18n::LC_COLLATE
+ * - LC_CTYPE     I18n::LC_CTYPE
+ * - LC_MONETARY  I18n::LC_MONETARY
+ * - LC_NUMERIC   I18n::LC_NUMERIC
+ * - LC_TIME      I18n::LC_TIME
+ * - LC_MESSAGES  I18n::LC_MESSAGES
+>>>>>>> origin/master
  *
  * @param string $domain Domain
  * @param string $singular Singular string to translate
  * @param string $plural Plural
+<<<<<<< HEAD
  * @param integer $count Count
  * @param integer $category Category
+=======
+ * @param int $count Count
+ * @param int $category Category
+>>>>>>> origin/master
  * @param mixed $args Array with arguments or multiple arguments in function
  * @return plural form of translated string
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#__dcn
@@ -737,6 +875,11 @@ if (!function_exists('__dcn')) {
 		} elseif (!is_array($args)) {
 			$args = array_slice(func_get_args(), 5);
 		}
+<<<<<<< HEAD
+=======
+
+		$translated = preg_replace('/(?<!%)%(?![%\'\-+bcdeEfFgGosuxX\d\.])/', '%%', $translated);
+>>>>>>> origin/master
 		return vsprintf($translated, $args);
 	}
 
@@ -748,6 +891,7 @@ if (!function_exists('__c')) {
  * The category argument allows a specific category of the locale settings to be used for fetching a message.
  * Valid categories are: LC_CTYPE, LC_NUMERIC, LC_TIME, LC_COLLATE, LC_MONETARY, LC_MESSAGES and LC_ALL.
  *
+<<<<<<< HEAD
  * Note that the category must be specified with a numeric value, instead of the constant name. The values are:
  *
  * - LC_ALL       0
@@ -760,6 +904,20 @@ if (!function_exists('__c')) {
  *
  * @param string $msg String to translate
  * @param integer $category Category
+=======
+ * Note that the category must be specified with a class constant of I18n, instead of the constant name. The values are:
+ *
+ * - LC_ALL       I18n::LC_ALL
+ * - LC_COLLATE   I18n::LC_COLLATE
+ * - LC_CTYPE     I18n::LC_CTYPE
+ * - LC_MONETARY  I18n::LC_MONETARY
+ * - LC_NUMERIC   I18n::LC_NUMERIC
+ * - LC_TIME      I18n::LC_TIME
+ * - LC_MESSAGES  I18n::LC_MESSAGES
+ *
+ * @param string $msg String to translate
+ * @param int $category Category
+>>>>>>> origin/master
  * @param mixed $args Array with arguments or multiple arguments in function
  * @return translated string
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#__c
@@ -775,6 +933,11 @@ if (!function_exists('__c')) {
 		} elseif (!is_array($args)) {
 			$args = array_slice(func_get_args(), 2);
 		}
+<<<<<<< HEAD
+=======
+
+		$translated = preg_replace('/(?<!%)%(?![%\'\-+bcdeEfFgGosuxX\d\.])/', '%%', $translated);
+>>>>>>> origin/master
 		return vsprintf($translated, $args);
 	}
 
@@ -828,7 +991,11 @@ if (!function_exists('convertSlash')) {
 /**
  * Convert forward slashes to underscores and removes first and last underscores in a string
  *
+<<<<<<< HEAD
  * @param string String to convert
+=======
+ * @param string $string String to convert
+>>>>>>> origin/master
  * @return string with underscore remove from start and end of string
  * @link http://book.cakephp.org/2.0/en/core-libraries/global-constants-and-functions.html#convertSlash
  */

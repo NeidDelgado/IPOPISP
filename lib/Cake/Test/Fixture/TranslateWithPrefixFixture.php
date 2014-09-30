@@ -4,8 +4,11 @@
  *
  * Long description for file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -32,7 +35,11 @@ class TranslateWithPrefixFixture extends CakeTestFixture {
 /**
  * table property
  *
+<<<<<<< HEAD
  * @var string 'i18n'
+=======
+ * @var string
+>>>>>>> origin/master
  */
 	public $table = 'i18n_translate_with_prefixes';
 

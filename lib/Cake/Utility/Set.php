@@ -2,8 +2,11 @@
 /**
  * Library of array functions for Cake.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -25,6 +28,10 @@ App::uses('Hash', 'Utility');
  * Class used for manipulation of arrays.
  *
  * @package       Cake.Utility
+<<<<<<< HEAD
+=======
+ * @deprecated Will be removed in 3.0. Use Hash instead.
+>>>>>>> origin/master
  */
 class Set {
 
@@ -121,9 +128,15 @@ class Set {
  * returned object (recursively). If $key is numeric will maintain array
  * structure
  *
+<<<<<<< HEAD
  * @param array $array Array to map
  * @param string $class Class name
  * @param boolean $primary whether to assign first array key as the _name_
+=======
+ * @param array &$array Array to map
+ * @param string $class Class name
+ * @param bool $primary whether to assign first array key as the _name_
+>>>>>>> origin/master
  * @return mixed Mapped object
  */
 	protected static function _map(&$array, $class, $primary = false) {
@@ -187,7 +200,11 @@ class Set {
  * Checks to see if all the values in the array are numeric
  *
  * @param array $array The array to check. If null, the value of the current Set object
+<<<<<<< HEAD
  * @return boolean true if values are numeric, false otherwise
+=======
+ * @return bool true if values are numeric, false otherwise
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::numeric
  */
 	public static function numeric($array = null) {
@@ -309,7 +326,11 @@ class Set {
  * @param string $path An absolute XPath 2.0 path
  * @param array $data An array of data to extract from
  * @param array $options Currently only supports 'flatten' which can be disabled for higher XPath-ness
+<<<<<<< HEAD
  * @return array An array of matched items
+=======
+ * @return mixed An array of matched items or the content of a single selected item or null in any of these cases: $path or $data are null, no items found.
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::extract
  */
 	public static function extract($path, $data = null, $options = array()) {
@@ -328,7 +349,11 @@ class Set {
 			return $data;
 		}
 		$contexts = $data;
+<<<<<<< HEAD
 		$options = array_merge(array('flatten' => true), $options);
+=======
+		$options += array('flatten' => true);
+>>>>>>> origin/master
 		if (!isset($contexts[0])) {
 			$current = current($data);
 			if ((is_array($current) && count($data) < 1) || !is_array($current) || !Set::numeric(array_keys($data))) {
@@ -458,9 +483,15 @@ class Set {
  *
  * @param string|array $conditions An array of condition strings or an XPath expression
  * @param array $data An array of data to execute the match on
+<<<<<<< HEAD
  * @param integer $i Optional: The 'nth'-number of the item being matched.
  * @param integer $length
  * @return boolean
+=======
+ * @param int $i Optional: The 'nth'-number of the item being matched.
+ * @param int $length Length.
+ * @return bool
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::matches
  */
 	public static function matches($conditions, $data = array(), $i = null, $length = null) {
@@ -534,7 +565,11 @@ class Set {
  *
  * @param array $data Array from where to extract
  * @param string|array $path As an array, or as a dot-separated string.
+<<<<<<< HEAD
  * @return array|null Extracted data or null when $data or $path are empty.
+=======
+ * @return mixed An array of matched items or the content of a single selected item or null in any of these cases: $path or $data are null, no items found.
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::classicExtract
  */
 	public static function classicExtract($data, $path = null) {
@@ -646,7 +681,11 @@ class Set {
  *
  * @param string|array $data Data to check on
  * @param string|array $path A dot-separated string.
+<<<<<<< HEAD
  * @return boolean true if path is found, false otherwise
+=======
+ * @return bool true if path is found, false otherwise
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::check
  */
 	public static function check($data, $path = null) {
@@ -706,7 +745,11 @@ class Set {
  *
  * @param array $val1 First value
  * @param array $val2 Second value
+<<<<<<< HEAD
  * @return boolean true if $val1 contains $val2, false otherwise
+=======
+ * @return bool true if $val1 contains $val2, false otherwise
+>>>>>>> origin/master
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::contains
  */
 	public static function contains($val1, $val2 = null) {
@@ -731,12 +774,21 @@ class Set {
  * only consider the dimension of the first element in the array.
  *
  * @param array $array Array to count dimensions on
+<<<<<<< HEAD
  * @param boolean $all Set to true to count the dimension considering all elements in array
  * @param integer $count Start the dimension count at this number
  * @return integer The number of dimensions in $array
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::countDim
  */
 	public static function countDim($array = null, $all = false, $count = 0) {
+=======
+ * @param bool $all Set to true to count the dimension considering all elements in array
+ * @param int $count Start the dimension count at this number
+ * @return int The number of dimensions in $array
+ * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::countDim
+ */
+	public static function countDim($array, $all = false, $count = 0) {
+>>>>>>> origin/master
 		if ($all) {
 			$depth = array($count);
 			if (is_array($array) && reset($array) !== false) {
@@ -759,9 +811,15 @@ class Set {
  * Normalizes a string or array list.
  *
  * @param mixed $list List to normalize
+<<<<<<< HEAD
  * @param boolean $assoc If true, $list will be converted to an associative array
  * @param string $sep If $list is a string, it will be split into an array with $sep
  * @param boolean $trim If true, separated strings will be trimmed
+=======
+ * @param bool $assoc If true, $list will be converted to an associative array
+ * @param string $sep If $list is a string, it will be split into an array with $sep
+ * @param bool $trim If true, separated strings will be trimmed
+>>>>>>> origin/master
  * @return array
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::normalize
  */
@@ -852,6 +910,10 @@ class Set {
 
 /**
  * Converts an object into an array.
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> origin/master
  * @param object $object Object to reverse
  * @return array Array representation of given object
  * @link http://book.cakephp.org/2.0/en/core-utility-libraries/set.html#Set::reverse
@@ -927,8 +989,13 @@ class Set {
 /**
  * Flattens an array for sorting
  *
+<<<<<<< HEAD
  * @param array $results
  * @param string $key
+=======
+ * @param array $results Array to flatten.
+ * @param string $key Key.
+>>>>>>> origin/master
  * @return array
  */
 	protected static function _flatten($results, $key = null) {
@@ -1011,7 +1078,11 @@ class Set {
  */
 	public static function apply($path, $data, $callback, $options = array()) {
 		$defaults = array('type' => 'pass');
+<<<<<<< HEAD
 		$options = array_merge($defaults, $options);
+=======
+		$options += $defaults;
+>>>>>>> origin/master
 		$extracted = Set::extract($path, $data);
 
 		if ($options['type'] === 'map') {
@@ -1027,7 +1098,11 @@ class Set {
 /**
  * Takes in a flat array and returns a nested array
  *
+<<<<<<< HEAD
  * @param mixed $data
+=======
+ * @param mixed $data Data
+>>>>>>> origin/master
  * @param array $options Options are:
  *      children   - the key name to use in the resultset for children
  *      idPath     - the path to a key that identifies each entry

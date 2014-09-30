@@ -25,14 +25,22 @@ interface CakeSessionHandlerInterface {
 /**
  * Method called on open of a session.
  *
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function open();
 
 /**
  * Method called on close of a session.
  *
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function close();
 
@@ -47,17 +55,28 @@ interface CakeSessionHandlerInterface {
 /**
  * Helper function called on write for sessions.
  *
+<<<<<<< HEAD
  * @param integer $id ID that uniquely identifies session in database
  * @param mixed $data The value of the data to be saved.
  * @return boolean True for successful write, false otherwise.
+=======
+ * @param int $id ID that uniquely identifies session in database
+ * @param mixed $data The value of the data to be saved.
+ * @return bool True for successful write, false otherwise.
+>>>>>>> origin/master
  */
 	public function write($id, $data);
 
 /**
  * Method called on the destruction of a session.
  *
+<<<<<<< HEAD
  * @param integer $id ID that uniquely identifies session in database
  * @return boolean True for successful delete, false otherwise.
+=======
+ * @param int $id ID that uniquely identifies session in database
+ * @return bool True for successful delete, false otherwise.
+>>>>>>> origin/master
  */
 	public function destroy($id);
 
@@ -65,8 +84,13 @@ interface CakeSessionHandlerInterface {
  * Run the Garbage collection on the session storage. This method should vacuum all
  * expired or dead sessions.
  *
+<<<<<<< HEAD
  * @param integer $expires Timestamp (defaults to current time)
  * @return boolean Success
+=======
+ * @param int $expires Timestamp (defaults to current time)
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function gc($expires = null);
 

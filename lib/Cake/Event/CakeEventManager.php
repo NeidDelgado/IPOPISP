@@ -1,8 +1,11 @@
 <?php
 /**
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -32,7 +35,11 @@ class CakeEventManager {
 /**
  * The default priority queue value for new, attached listeners
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	public static $defaultPriority = 10;
 
@@ -46,14 +53,22 @@ class CakeEventManager {
 /**
  * List of listener callbacks associated to
  *
+<<<<<<< HEAD
  * @var object $Listeners
+=======
+ * @var object
+>>>>>>> origin/master
  */
 	protected $_listeners = array();
 
 /**
  * Internal flag to distinguish a common manager from the singleton
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	protected $_isGlobal = false;
 
@@ -65,7 +80,11 @@ class CakeEventManager {
  *
  * If called with the first parameter, it will be set as the globally available instance
  *
+<<<<<<< HEAD
  * @param CakeEventManager $manager
+=======
+ * @param CakeEventManager $manager Optional event manager instance.
+>>>>>>> origin/master
  * @return CakeEventManager the global event manager
  */
 	public static function instance($manager = null) {
@@ -73,7 +92,11 @@ class CakeEventManager {
 			self::$_generalManager = $manager;
 		}
 		if (empty(self::$_generalManager)) {
+<<<<<<< HEAD
 			self::$_generalManager = new CakeEventManager;
+=======
+			self::$_generalManager = new CakeEventManager();
+>>>>>>> origin/master
 		}
 
 		self::$_generalManager->_isGlobal = true;
@@ -119,11 +142,19 @@ class CakeEventManager {
  * Auxiliary function to attach all implemented callbacks of a CakeEventListener class instance
  * as individual methods on this manager
  *
+<<<<<<< HEAD
  * @param CakeEventListener $subscriber
  * @return void
  */
 	protected function _attachSubscriber(CakeEventListener $subscriber) {
 		foreach ($subscriber->implementedEvents() as $eventKey => $function) {
+=======
+ * @param CakeEventListener $subscriber Event listener.
+ * @return void
+ */
+	protected function _attachSubscriber(CakeEventListener $subscriber) {
+		foreach ((array)$subscriber->implementedEvents() as $eventKey => $function) {
+>>>>>>> origin/master
 			$options = array();
 			$method = $function;
 			if (is_array($function) && isset($function['callable'])) {
@@ -198,7 +229,11 @@ class CakeEventManager {
  * @return void
  */
 	protected function _detachSubscriber(CakeEventListener $subscriber, $eventKey = null) {
+<<<<<<< HEAD
 		$events = $subscriber->implementedEvents();
+=======
+		$events = (array)$subscriber->implementedEvents();
+>>>>>>> origin/master
 		if (!empty($eventKey) && empty($events[$eventKey])) {
 			return;
 		} elseif (!empty($eventKey)) {
@@ -223,13 +258,18 @@ class CakeEventManager {
  * Dispatches a new event to all configured listeners
  *
  * @param string|CakeEvent $event the event key name or instance of CakeEvent
+<<<<<<< HEAD
  * @return void
+=======
+ * @return CakeEvent
+>>>>>>> origin/master
  */
 	public function dispatch($event) {
 		if (is_string($event)) {
 			$event = new CakeEvent($event);
 		}
 
+<<<<<<< HEAD
 		if (!$this->_isGlobal) {
 			self::instance()->dispatch($event);
 		}
@@ -239,6 +279,14 @@ class CakeEventManager {
 		}
 
 		foreach ($this->listeners($event->name()) as $listener) {
+=======
+		$listeners = $this->listeners($event->name());
+		if (empty($listeners)) {
+			return $event;
+		}
+
+		foreach ($listeners as $listener) {
+>>>>>>> origin/master
 			if ($event->isStopped()) {
 				break;
 			}
@@ -253,13 +301,19 @@ class CakeEventManager {
 			if ($result !== null) {
 				$event->result = $result;
 			}
+<<<<<<< HEAD
 			continue;
 		}
+=======
+		}
+		return $event;
+>>>>>>> origin/master
 	}
 
 /**
  * Returns a list of all listeners for an eventKey in the order they should be called
  *
+<<<<<<< HEAD
  * @param string $eventKey
  * @return array
  */
@@ -271,8 +325,50 @@ class CakeEventManager {
 		$result = array();
 		foreach ($this->_listeners[$eventKey] as $priorityQ) {
 			$result = array_merge($result, $priorityQ);
+=======
+ * @param string $eventKey Event key.
+ * @return array
+ */
+	public function listeners($eventKey) {
+		$localListeners = array();
+		$priorities = array();
+		if (!$this->_isGlobal) {
+			$localListeners = $this->prioritisedListeners($eventKey);
+			$localListeners = empty($localListeners) ? array() : $localListeners;
+		}
+		$globalListeners = self::instance()->prioritisedListeners($eventKey);
+		$globalListeners = empty($globalListeners) ? array() : $globalListeners;
+
+		$priorities = array_merge(array_keys($globalListeners), array_keys($localListeners));
+		$priorities = array_unique($priorities);
+		asort($priorities);
+
+		$result = array();
+		foreach ($priorities as $priority) {
+			if (isset($globalListeners[$priority])) {
+				$result = array_merge($result, $globalListeners[$priority]);
+			}
+			if (isset($localListeners[$priority])) {
+				$result = array_merge($result, $localListeners[$priority]);
+			}
+>>>>>>> origin/master
 		}
 		return $result;
 	}
 
+<<<<<<< HEAD
+=======
+/**
+ * Returns the listeners for the specified event key indexed by priority
+ *
+ * @param string $eventKey Event key.
+ * @return array
+ */
+	public function prioritisedListeners($eventKey) {
+		if (empty($this->_listeners[$eventKey])) {
+			return array();
+		}
+		return $this->_listeners[$eventKey];
+	}
+>>>>>>> origin/master
 }

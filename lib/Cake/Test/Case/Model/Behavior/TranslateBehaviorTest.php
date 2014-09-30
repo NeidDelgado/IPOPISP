@@ -15,6 +15,10 @@
 
 App::uses('Model', 'Model');
 App::uses('AppModel', 'Model');
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 require_once dirname(dirname(__FILE__)) . DS . 'models.php';
 
 /**
@@ -27,7 +31,11 @@ class TranslateBehaviorTest extends CakeTestCase {
 /**
  * autoFixtures property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $autoFixtures = false;
 
@@ -231,6 +239,35 @@ class TranslateBehaviorTest extends CakeTestCase {
 			)
 		);
 		$this->assertEquals($expected, $result);
+<<<<<<< HEAD
+=======
+
+		$result = $TestModel->field('title', array('TranslatedItem.id' => 1));
+		$expected = 'Title #1';
+		$this->assertEquals($expected, $result);
+
+		$result = $TestModel->read('title', 1);
+		$expected = array(
+			'TranslatedItem' => array(
+				'id' => 1,
+				'slug' => 'first_translated',
+				'locale' => 'eng',
+				'title' => 'Title #1',
+				'translated_article_id' => 1,
+			)
+		);
+		$this->assertEquals($expected, $result);
+
+		$result = $TestModel->read('id, title', 1);
+		$expected = array(
+			'TranslatedItem' => array(
+				'id' => 1,
+				'locale' => 'eng',
+				'title' => 'Title #1',
+			)
+		);
+		$this->assertEquals($expected, $result);
+>>>>>>> origin/master
 	}
 
 /**
@@ -275,6 +312,43 @@ class TranslateBehaviorTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * testLocaleSingleCountWithConditions method
+ *
+ * @return void
+ */
+	public function testLocaleSingleCountWithConditions() {
+		$this->loadFixtures('Translate', 'TranslatedItem');
+
+		$TestModel = new TranslatedItem();
+		$TestModel->locale = 'eng';
+		$result = $TestModel->find('all', array(
+			'conditions' => array('slug' => 'first_translated')
+		));
+		$expected = array(
+			array(
+				'TranslatedItem' => array(
+					'id' => 1,
+					'slug' => 'first_translated',
+					'locale' => 'eng',
+					'title' => 'Title #1',
+					'content' => 'Content #1',
+					'translated_article_id' => 1,
+				)
+			)
+		);
+		$this->assertEquals($expected, $result);
+
+		$result = $TestModel->find('count', array(
+			'conditions' => array('slug' => 'first_translated')
+		));
+		$expected = 1;
+		$this->assertEquals($expected, $result);
+	}
+
+/**
+>>>>>>> origin/master
  * testLocaleSingleAssociations method
  *
  * @return void
@@ -354,6 +428,36 @@ class TranslateBehaviorTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * Test loading fields with 0 as the translated value.
+ *
+ * @return void
+ */
+	public function testFetchTranslationsWithZero() {
+		$this->loadFixtures('Translate', 'TranslatedItem');
+
+		$model = new TranslatedItem();
+		$translateModel = $model->translateModel();
+		$translateModel->updateAll(array('content' => "'0'"));
+		$model->locale = 'eng';
+
+		$result = $model->read(null, 1);
+		$expected = array(
+			'TranslatedItem' => array(
+				'id' => 1,
+				'slug' => 'first_translated',
+				'locale' => 'eng',
+				'title' => '0',
+				'content' => '0',
+				'translated_article_id' => 1,
+			)
+		);
+		$this->assertEquals($expected, $result);
+	}
+
+/**
+>>>>>>> origin/master
  * testLocaleMultiple method
  *
  * @return void
@@ -972,6 +1076,32 @@ class TranslateBehaviorTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * test restoring fields after temporary binds method
+ *
+ * @return void
+ */
+	public function testFieldsRestoreAfterBind() {
+		$this->loadFixtures('Translate', 'TranslatedItem');
+
+		$TestModel = new TranslatedItem();
+
+		$translations = array('title' => 'Title');
+		$TestModel->bindTranslation($translations);
+
+		$result = $TestModel->find('first');
+		$this->assertArrayHasKey('Title', $result);
+		$this->assertArrayHasKey('content', $result['Title'][0]);
+		$this->assertArrayNotHasKey('title', $result);
+
+		$result = $TestModel->find('first');
+		$this->assertArrayNotHasKey('Title', $result);
+		$this->assertEquals('Title #1', $result['TranslatedItem']['title']);
+	}
+
+/**
+>>>>>>> origin/master
  * testAttachDetach method
  *
  * @return void

@@ -2,8 +2,11 @@
 /**
  * CakePHP Socket connection class.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -66,7 +69,11 @@ class CakeSocket {
 /**
  * This boolean contains the current state of the CakeSocket class
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $connected = false;
 
@@ -80,7 +87,11 @@ class CakeSocket {
 /**
  * True if the socket stream is encrypted after a CakeSocket::enableCrypto() call
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $encrypted = false;
 
@@ -126,7 +137,11 @@ class CakeSocket {
 /**
  * Connect the socket to the given host and port.
  *
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  * @throws SocketException
  */
 	public function connect() {
@@ -184,8 +199,13 @@ class CakeSocket {
  *
  * Instead we need to handle those errors manually.
  *
+<<<<<<< HEAD
  * @param integer $code
  * @param string $message
+=======
+ * @param int $code Code.
+ * @param string $message Message.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _connectionErrorHandler($code, $message) {
@@ -255,7 +275,11 @@ class CakeSocket {
 /**
  * Set the last error.
  *
+<<<<<<< HEAD
  * @param integer $errNum Error code
+=======
+ * @param int $errNum Error code
+>>>>>>> origin/master
  * @param string $errStr Error string
  * @return void
  */
@@ -267,7 +291,11 @@ class CakeSocket {
  * Write data to the socket.
  *
  * @param string $data The data to write to the socket
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function write($data) {
 		if (!$this->connected) {
@@ -289,7 +317,11 @@ class CakeSocket {
  * Read data from the socket. Returns false if no data is available or no connection could be
  * established.
  *
+<<<<<<< HEAD
  * @param integer $length Optional buffer length to read; defaults to 1024
+=======
+ * @param int $length Optional buffer length to read; defaults to 1024
+>>>>>>> origin/master
  * @return mixed Socket data
  */
 	public function read($length = 1024) {
@@ -314,7 +346,11 @@ class CakeSocket {
 /**
  * Disconnect the socket from the current connection.
  *
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function disconnect() {
 		if (!is_resource($this->connection)) {
@@ -331,7 +367,10 @@ class CakeSocket {
 
 /**
  * Destructor, used to disconnect from current connection.
+<<<<<<< HEAD
  *
+=======
+>>>>>>> origin/master
  */
 	public function __destruct() {
 		$this->disconnect();
@@ -341,7 +380,11 @@ class CakeSocket {
  * Resets the state of this Socket instance to it's initial state (before Object::__construct got executed)
  *
  * @param array $state Array with key and values to reset
+<<<<<<< HEAD
  * @return boolean True on success
+=======
+ * @return bool True on success
+>>>>>>> origin/master
  */
 	public function reset($state = null) {
 		if (empty($state)) {
@@ -363,8 +406,13 @@ class CakeSocket {
  *
  * @param string $type can be one of 'ssl2', 'ssl3', 'ssl23' or 'tls'
  * @param string $clientOrServer can be one of 'client', 'server'. Default is 'client'
+<<<<<<< HEAD
  * @param boolean $enable enable or disable encryption. Default is true (enable)
  * @return boolean True on success
+=======
+ * @param bool $enable enable or disable encryption. Default is true (enable)
+ * @return bool True on success
+>>>>>>> origin/master
  * @throws InvalidArgumentException When an invalid encryption scheme is chosen.
  * @throws SocketException When attempting to enable SSL/TLS fails
  * @see stream_socket_enable_crypto

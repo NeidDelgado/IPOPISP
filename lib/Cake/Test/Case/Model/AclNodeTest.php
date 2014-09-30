@@ -2,8 +2,11 @@
 /**
  * AclNodeTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -38,7 +41,11 @@ class DbAclNodeTestBase extends AclNode {
 /**
  * cacheSources property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $cacheSources = false;
 }
@@ -104,7 +111,11 @@ class DbPermissionTest extends CakeTestModel {
 /**
  * cacheQueries property
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $cacheQueries = false;
 

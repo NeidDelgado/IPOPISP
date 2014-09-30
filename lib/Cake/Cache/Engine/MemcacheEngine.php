@@ -2,9 +2,12 @@
 /**
  * Memcache storage engine for cache
  *
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -24,7 +27,12 @@
  * control you have over expire times far in the future. See MemcacheEngine::write() for
  * more information.
  *
+<<<<<<< HEAD
  * @package       Cake.Cache.Engine
+=======
+ * @package Cake.Cache.Engine
+ * @deprecated You should use the Memcached adapter instead.
+>>>>>>> origin/master
  */
 class MemcacheEngine extends CacheEngine {
 
@@ -61,7 +69,11 @@ class MemcacheEngine extends CacheEngine {
  * To reinitialize the settings call Cache::engine('EngineName', [optional] settings = array());
  *
  * @param array $settings array of setting for the engine
+<<<<<<< HEAD
  * @return boolean True if the engine has been successfully initialized, false if not
+=======
+ * @return bool True if the engine has been successfully initialized, false if not
+>>>>>>> origin/master
  */
 	public function init($settings = array()) {
 		if (!class_exists('Memcache')) {
@@ -133,8 +145,13 @@ class MemcacheEngine extends CacheEngine {
  *
  * @param string $key Identifier for the data
  * @param mixed $value Data to be cached
+<<<<<<< HEAD
  * @param integer $duration How long to cache the data, in seconds
  * @return boolean True if the data was successfully cached, false on failure
+=======
+ * @param int $duration How long to cache the data, in seconds
+ * @return bool True if the data was successfully cached, false on failure
+>>>>>>> origin/master
  * @see http://php.net/manual/en/memcache.set.php
  */
 	public function write($key, $value, $duration) {
@@ -158,7 +175,11 @@ class MemcacheEngine extends CacheEngine {
  * Increments the value of an integer cached key
  *
  * @param string $key Identifier for the data
+<<<<<<< HEAD
  * @param integer $offset How much to increment
+=======
+ * @param int $offset How much to increment
+>>>>>>> origin/master
  * @return New incremented value, false otherwise
  * @throws CacheException when you try to increment with compress = true
  */
@@ -175,7 +196,11 @@ class MemcacheEngine extends CacheEngine {
  * Decrements the value of an integer cached key
  *
  * @param string $key Identifier for the data
+<<<<<<< HEAD
  * @param integer $offset How much to subtract
+=======
+ * @param int $offset How much to subtract
+>>>>>>> origin/master
  * @return New decremented value, false otherwise
  * @throws CacheException when you try to decrement with compress = true
  */
@@ -192,7 +217,11 @@ class MemcacheEngine extends CacheEngine {
  * Delete a key from the cache
  *
  * @param string $key Identifier for the data
+<<<<<<< HEAD
  * @return boolean True if the value was successfully deleted, false if it didn't exist or couldn't be removed
+=======
+ * @return bool True if the value was successfully deleted, false if it didn't exist or couldn't be removed
+>>>>>>> origin/master
  */
 	public function delete($key) {
 		return $this->_Memcache->delete($key);
@@ -201,20 +230,34 @@ class MemcacheEngine extends CacheEngine {
 /**
  * Delete all keys from the cache
  *
+<<<<<<< HEAD
  * @param boolean $check
  * @return boolean True if the cache was successfully cleared, false otherwise
+=======
+ * @param bool $check If true no deletes will occur and instead CakePHP will rely
+ *   on key TTL values.
+ * @return bool True if the cache was successfully cleared, false otherwise
+>>>>>>> origin/master
  */
 	public function clear($check) {
 		if ($check) {
 			return true;
 		}
+<<<<<<< HEAD
 		foreach ($this->_Memcache->getExtendedStats('slabs') as $slabs) {
+=======
+		foreach ($this->_Memcache->getExtendedStats('slabs', 0) as $slabs) {
+>>>>>>> origin/master
 			foreach (array_keys($slabs) as $slabId) {
 				if (!is_numeric($slabId)) {
 					continue;
 				}
 
+<<<<<<< HEAD
 				foreach ($this->_Memcache->getExtendedStats('cachedump', $slabId) as $stats) {
+=======
+				foreach ($this->_Memcache->getExtendedStats('cachedump', $slabId, 0) as $stats) {
+>>>>>>> origin/master
 					if (!is_array($stats)) {
 						continue;
 					}
@@ -233,8 +276,13 @@ class MemcacheEngine extends CacheEngine {
  * Connects to a server in connection pool
  *
  * @param string $host host ip address or name
+<<<<<<< HEAD
  * @param integer $port Server port
  * @return boolean True if memcache server was connected
+=======
+ * @param int $port Server port
+ * @return bool True if memcache server was connected
+>>>>>>> origin/master
  */
 	public function connect($host, $port = 11211) {
 		if ($this->_Memcache->getServerStatus($host, $port) === 0) {
@@ -284,7 +332,12 @@ class MemcacheEngine extends CacheEngine {
  * Increments the group value to simulate deletion of all keys under a group
  * old values will remain in storage until they expire.
  *
+<<<<<<< HEAD
  * @return boolean success
+=======
+ * @param string $group The group to clear.
+ * @return bool success
+>>>>>>> origin/master
  */
 	public function clearGroup($group) {
 		return (bool)$this->_Memcache->increment($this->settings['prefix'] . $group);

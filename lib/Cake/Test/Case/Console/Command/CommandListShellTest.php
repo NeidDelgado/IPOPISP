@@ -2,8 +2,11 @@
 /**
  * CommandListShellTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP :  Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -22,6 +25,10 @@ App::uses('CommandListShell', 'Console/Command');
 App::uses('ConsoleOutput', 'Console');
 App::uses('ConsoleInput', 'Console');
 App::uses('Shell', 'Console');
+<<<<<<< HEAD
+=======
+App::uses('CommandTask', 'Console/Command/Task');
+>>>>>>> origin/master
 
 /**
  * Class TestStringOutput
@@ -70,6 +77,15 @@ class CommandListShellTest extends CakeTestCase {
 			array('in', '_stop', 'clear'),
 			array($out, $out, $in)
 		);
+<<<<<<< HEAD
+=======
+
+		$this->Shell->Command = $this->getMock(
+			'CommandTask',
+			array('in', '_stop', 'clear'),
+			array($out, $out, $in)
+		);
+>>>>>>> origin/master
 	}
 
 /**
@@ -98,7 +114,11 @@ class CommandListShellTest extends CakeTestCase {
 		$expected = "/\[.*TestPluginTwo.*\] example, welcome/";
 		$this->assertRegExp($expected, $output);
 
+<<<<<<< HEAD
 		$expected = "/\[.*CORE.*\] acl, api, bake, command_list, console, i18n, schema, server, test, testsuite, upgrade/";
+=======
+		$expected = "/\[.*CORE.*\] acl, api, bake, command_list, completion, console, i18n, schema, server, test, testsuite, upgrade/";
+>>>>>>> origin/master
 		$this->assertRegExp($expected, $output);
 
 		$expected = "/\[.*app.*\] sample/";

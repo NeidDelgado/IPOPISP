@@ -2,8 +2,11 @@
 /**
  * CookieComponentTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -204,6 +207,43 @@ class CookieComponentTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * test write() encrypted data with falsey value
+ *
+ * @return void
+ */
+	public function testWriteWithFalseyValue() {
+		$this->Cookie->type('aes');
+		$this->Cookie->key = 'qSI232qs*&sXOw!adre@34SAv!@*(XSL#$%)asGb$@11~_+!@#HKis~#^';
+
+		$this->Cookie->write('Testing');
+		$result = $this->Cookie->read('Testing');
+		$this->assertNull($result);
+
+		$this->Cookie->write('Testing', '');
+		$result = $this->Cookie->read('Testing');
+		$this->assertEquals('', $result);
+
+		$this->Cookie->write('Testing', false);
+		$result = $this->Cookie->read('Testing');
+		$this->assertFalse($result);
+
+		$this->Cookie->write('Testing', 1);
+		$result = $this->Cookie->read('Testing');
+		$this->assertEquals(1, $result);
+
+		$this->Cookie->write('Testing', '0');
+		$result = $this->Cookie->read('Testing');
+		$this->assertSame('0', $result);
+
+		$this->Cookie->write('Testing', 0);
+		$result = $this->Cookie->read('Testing');
+		$this->assertSame(0, $result);
+	}
+
+/**
+>>>>>>> origin/master
  * test that two write() calls use the expiry.
  *
  * @return void
@@ -328,6 +368,47 @@ class CookieComponentTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * Test that writing mixed arrays results in the correct data.
+ *
+ * @return void
+ */
+	public function testWriteMixedArray() {
+		$this->Cookie->encrypt = false;
+		$this->Cookie->write('User', array('name' => 'mark'), false);
+		$this->Cookie->write('User.email', 'mark@example.com', false);
+		$expected = array(
+			'name' => $this->Cookie->name . '[User]',
+			'value' => '{"name":"mark","email":"mark@example.com"}',
+			'path' => '/',
+			'domain' => '',
+			'secure' => false,
+			'httpOnly' => false
+		);
+		$result = $this->Controller->response->cookie($this->Cookie->name . '[User]');
+		unset($result['expire']);
+
+		$this->assertEquals($expected, $result);
+
+		$this->Cookie->write('User.email', 'mark@example.com', false);
+		$this->Cookie->write('User', array('name' => 'mark'), false);
+		$expected = array(
+			'name' => $this->Cookie->name . '[User]',
+			'value' => '{"name":"mark"}',
+			'path' => '/',
+			'domain' => '',
+			'secure' => false,
+			'httpOnly' => false
+		);
+		$result = $this->Controller->response->cookie($this->Cookie->name . '[User]');
+		unset($result['expire']);
+
+		$this->assertEquals($expected, $result);
+	}
+
+/**
+>>>>>>> origin/master
  * testReadingCookieValue
  *
  * @return void
@@ -558,17 +639,31 @@ class CookieComponentTest extends CakeTestCase {
 
 /**
  * Test reading empty values.
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testReadEmpty() {
 		$_COOKIE['CakeTestCookie'] = array(
 			'JSON' => '{"name":"value"}',
 			'Empty' => '',
+<<<<<<< HEAD
 			'String' => '{"somewhat:"broken"}'
+=======
+			'String' => '{"somewhat:"broken"}',
+			'Array' => '{}'
+>>>>>>> origin/master
 		);
 		$this->assertEquals(array('name' => 'value'), $this->Cookie->read('JSON'));
 		$this->assertEquals('value', $this->Cookie->read('JSON.name'));
 		$this->assertEquals('', $this->Cookie->read('Empty'));
 		$this->assertEquals('{"somewhat:"broken"}', $this->Cookie->read('String'));
+<<<<<<< HEAD
+=======
+		$this->assertEquals(array(), $this->Cookie->read('Array'));
+>>>>>>> origin/master
 	}
 
 /**

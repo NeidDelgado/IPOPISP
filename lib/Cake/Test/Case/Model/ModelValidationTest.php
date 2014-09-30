@@ -2,8 +2,11 @@
 /**
  * ModelValidationTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -613,6 +616,37 @@ class ModelValidationTest extends BaseModelTest {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * Test that if a behavior modifies the model's whitelist validation gets triggered
+ * properly for those fields.
+ *
+ * @return void
+ */
+	public function testValidateWithFieldListAndBehavior() {
+		$TestModel = new ValidationTest1();
+		$TestModel->validate = array(
+			'title' => array(
+				'rule' => 'notEmpty',
+			),
+			'name' => array(
+				'rule' => 'notEmpty',
+		));
+		$TestModel->Behaviors->attach('ValidationRule', array('fields' => array('name')));
+
+		$data = array(
+			'title' => '',
+			'name' => '',
+		);
+		$result = $TestModel->save($data, array('fieldList' => array('title')));
+		$this->assertFalse($result);
+
+		$expected = array('title' => array('This field cannot be left blank'), 'name' => array('This field cannot be left blank'));
+		$this->assertEquals($expected, $TestModel->validationErrors);
+	}
+
+/**
+>>>>>>> origin/master
  * test that saveAll and with models with validation interact well
  *
  * @return void
@@ -2052,7 +2086,11 @@ class ModelValidationTest extends BaseModelTest {
 /**
  * testValidateFirstWithDefaults method
  *
+<<<<<<< HEAD
  * return @void
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testFirstWithDefaults() {
 		$this->loadFixtures('Article', 'Tag', 'Comment', 'User', 'ArticlesTag');
@@ -2380,3 +2418,24 @@ class ModelValidationTest extends BaseModelTest {
 	}
 
 }
+<<<<<<< HEAD
+=======
+
+/**
+ * Behavior for testing validation rules.
+ */
+class ValidationRuleBehavior extends ModelBehavior {
+
+	public function setup(Model $Model, $config = array()) {
+		$this->settings[$Model->alias] = $config;
+	}
+
+	public function beforeValidate(Model $Model, $options = array()) {
+		$fields = $this->settings[$Model->alias]['fields'];
+		foreach ($fields as $field) {
+			$Model->whitelist[] = $field;
+		}
+	}
+
+}
+>>>>>>> origin/master

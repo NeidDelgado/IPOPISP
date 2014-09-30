@@ -2,8 +2,11 @@
 /**
  * IniReader
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -19,6 +22,10 @@
  */
 
 App::uses('Hash', 'Utility');
+<<<<<<< HEAD
+=======
+App::uses('CakePlugin', 'Core');
+>>>>>>> origin/master
 
 /**
  * Ini file configuration engine.
@@ -154,7 +161,11 @@ class IniReader implements ConfigReaderInterface {
  * @param string $key The identifier to write to. If the key has a . it will be treated
  *  as a plugin prefix.
  * @param array $data The data to convert to ini file.
+<<<<<<< HEAD
  * @return integer Bytes saved.
+=======
+ * @return int Bytes saved.
+>>>>>>> origin/master
  */
 	public function dump($key, $data) {
 		$result = array();
@@ -183,7 +194,11 @@ class IniReader implements ConfigReaderInterface {
 /**
  * Converts a value into the ini equivalent
  *
+<<<<<<< HEAD
  * @param mixed $value to export.
+=======
+ * @param mixed $val Value to export.
+>>>>>>> origin/master
  * @return string String value for ini file.
  */
 	protected function _value($val) {
@@ -220,7 +235,11 @@ class IniReader implements ConfigReaderInterface {
 		}
 
 		if ($plugin) {
+<<<<<<< HEAD
 			$file = App::pluginPath($plugin) . 'Config' . DS . $key;
+=======
+			$file = CakePlugin::path($plugin) . 'Config' . DS . $key;
+>>>>>>> origin/master
 		} else {
 			$file = $this->_path . $key;
 		}

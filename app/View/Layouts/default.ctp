@@ -7,6 +7,7 @@
         <meta name="description" content="IPOPISP is a revolutinary....">
         <title><?php echo $title_for_layout; ?> &dash;iPOPiSP - Worldclass ISP Service</title>
         <?php echo $this->Html->meta('favicon.ico',array('type' => 'icon'));?>
+<<<<<<< HEAD
         <?php echo $this->Html->css(array( 'normalize.css','global.css', 'flexslider.css', 'carousel.css','skeleton.css', 'prettyPhoto.css')); ?>
     </head>
     <body>
@@ -64,6 +65,77 @@
                             </div>
                         </div>
                     </div>
+=======
+        <?php echo $this->Html->css(array( 'normalize.css','global.css', 'flexslider.css', 'carousel.css','skeleton.css', 'prettyPhoto.css')); ?>  
+    </head>
+    <body>
+        <div id="geral container">
+            <div class="headerr">
+                <div class="logotipo">
+                    <div class="header_inside ">
+                        <div class="logo">
+                            <?php echo $this->Html->link($this->Html->image('logotipo.png'), '/', array('escape' => false)); ?>
+                        </div>
+                        <div class="one columns flexslider">	
+                            <ul class="slides service_list">
+                                <li><?php echo $this->Html->image('headeee.png'); ?></li>
+                                <li><?php echo $this->Html->image('headee.png'); ?></li>
+                                <li><?php echo $this->Html->image('head.png'); ?></li>
+                                <li><?php echo $this->Html->image('headeeee.png'); ?></li>
+                                <li><?php echo $this->Html->image('heade.png'); ?></li>
+                            </ul>	
+                        </div> 
+                    </div> 
+                    <div class="header_soc_search">
+                        <div class="header_search">
+                            <?php echo $this->Html->link('Google+', 'http://www.google.com/', array('class' => 'header_soc_google','id' => 'soc_google', ' escape'=> false)); ?>
+                            <?php echo $this->Html->link('Facebook', 'http://www.facebook.com/', array('class' => 'header_soc_fb','id' => 'soc_fb', ' escape'=> false)); ?>
+                            <?php echo $this->Html->link('Twitter', 'http://www.twitter.com/', array('class' => 'header_soc_twitter','id' => 'soc_twitter', ' escape'=> false)); ?>
+                            <?php echo $this->Html->link('Facebook', 'http://www.youtube.com/', array('class' => 'header_soc_youtube','id' => 'soc_youtube', ' escape'=> false)); ?>
+                            <?php echo $this->Html->link('Twitter', 'http://www.skype.com/', array('class' => 'header_soc_skype','id' => 'soc_skype', ' escape'=> false)); ?><br>
+                         </div>
+                    </div>
+                    <div class="header_soc_searcha">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <form name="form" method="post" action="">
+                              <tr>
+                                <td width="15">&nbsp;</td>
+                                <td width="65"><div align="right"><font color="#FFFFFF" size="1" face="Verdana, Arial, Helvetica, sans-serif">Username:</font></div></td>
+                                <td width="110"><div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#FFFFFF">
+                                  <input type="text" name="username" size="14" align="center" value="">
+                                </font></font></div></td>
+                                <td width="16">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td height="3" colspan="4"></td>
+                              </tr>
+                              <tr>
+                                <td>&nbsp;</td>
+                                <td><div align="right"><font color="#FFFFFF" size="1" face="Verdana, Arial, Helvetica, sans-serif">Password:</font></div></td>
+                                <td><div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#FFFFFF">
+                                  <input type="Password" name="passwd" size="14" align="middle" value="">
+                                </font></font></div></td>
+                                <td>&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td height="3" colspan="4"></td>
+                              </tr>
+                              <tr>
+                                <td>&nbsp;</td>
+                                <td><div align="left"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#FFFFFF"></font></font></div></td>
+                                <td><div align="right"><font size="1" face="Verdana, Arial, Helvetica, sans-serif"><font color="#FFFFFF">
+                                  <input type="button" name="okpressed" value="Login" class="Buttons" onClick="javascript:window.location.href='http://ipop.ipopisp.com/ipop2/index.php'">
+                                </font></font></div></td>
+                                <td>&nbsp;</td>
+                              </tr>
+                            </form>
+                        </table><br>
+                        <?php echo $this->Html->link(' &nbsp; Eng', '?lang=eng', array('class' => 'header_soc_eng','id' => 'soc_eng', ' escape'=> false)); ?>
+                        <?php echo $this->Html->link('&nbsp; Por', '?lang=por', array('class' => 'header_soc_por','id' => 'soc_por', ' escape'=> false)); ?>
+                         
+                    </div>
+                </div>
+>>>>>>> origin/master
                 <div class="dark_menu men sixteen columns">
                     <div class=" container">
                         <div id="menu" >
@@ -155,6 +227,7 @@
                             <option value="?lang=eng"><?php echo __('Eng'); ?></option>
                         </select>
                     </div>
+<<<<<<< HEAD
                     <div class="clear"></div>
                 </div>
             </div>  </div>   
@@ -178,6 +251,40 @@
                         <div class="four columns">
                             <h3><?php echo $this->Html->link(__('CONTACT US'), '/contact', array('escape'=> false)); ?></h3>
                             <div class="footer_news_item clearfix">
+=======
+                </div> 
+            </div> 
+            <div class="destaq">
+                <h4><?php echo $this->Html->link('&nbsp; &nbsp; Pricing/Quotation', '/pricing', array('escape'=> false)); ?></h4>
+                <h4><?php echo $this->Html->link('&nbsp; &nbsp; Marks Of Esteem', '/marksofesteem', array('escape'=> false)); ?></h4>
+                <h4>&nbsp;&nbsp;<?php echo $this->Html->link('&nbsp; &nbsp; Faqs', '/faqs', array('escape'=> false)); ?></h4>
+                <h4><?php echo $this->Html->link('&nbsp; &nbsp; Contact', '/contact', array('escape'=> false)); ?></h4>
+                <h5><br>
+                    <?php echo $this->Html->link('&nbsp; &nbsp; * IPOPMIL', '/ipopmil', array('escape'=> false)); ?></br>
+                    <?php echo $this->Html->link('&nbsp; &nbsp; * IPOPBUS', '/ipopbus', array('escape'=> false)); ?></br>
+                    <?php echo $this->Html->link('&nbsp; &nbsp; * IPOPGOV', '/ipopgov', array('escape'=> false)); ?> </br>
+                    <?php echo $this->Html->link('&nbsp; &nbsp; * IPOPEDU', '/ipopedu', array('escape'=> false)); ?></br>
+                </h5>
+            </div>
+            <div class="clear"></div>
+            <!-- Main Navigation::END -->
+            <?php echo $this->fetch('content'); ?>
+                       
+            <footer><!-- Rodapé -->
+                <div id="footer" >
+                    <div class=" containe">
+                        <div class="row footer_inside ">
+                            <div class="six columns">
+                                <h3><?php echo $this->Html->link(__('Services'), '/ipopispworks', array('escape'=> false)); ?></h3>
+                                <p>&nbsp; <?php echo $this->Html->link(__('IPOPMIL'), '/ipopmil', array('escape'=> false)); ?><br>
+                                    &nbsp; <?php echo $this->Html->link(__('IPOPBUS'), '/ipopbus', array('escape'=> false)); ?><br>
+                                    &nbsp; <?php echo $this->Html->link(__('IPOPGOV'), '/ipopgov', array('escape'=> false)); ?><br>
+                                    &nbsp; <?php echo $this->Html->link(__('IPOPEDU'), '/ipopedu', array('escape'=> false)); ?><br>
+                                </p>
+                            </div> 
+                            <div class="four columns">
+                                <h3><?php echo $this->Html->link(__('Contact Us'), '/contact', array('escape'=> false)); ?></h3>
+>>>>>>> origin/master
                                 <div class='icon_phone' title='Phone'>
                                     <p><span>Luanda </span>(+244) 9222000688</p>
                                     <p><span>Fax </span>(+1815)3641713 </p>
@@ -185,6 +292,7 @@
                                 <div class='icon_mail' title='Email'>ipopisp@gmail.com</div>	
                                 <div class='icon_loc' title="<?php echo __('Location'); ?>">iPOPiSP - Av. Che-Guevara, 138 Luanda-Angola</div>
                             </div> 
+<<<<<<< HEAD
                         </div>
                     </div> 
                 </div>
@@ -193,6 +301,14 @@
                                 <div class="footer_bt container">	
                                      <h8>&nbsp; IPOPISP © 2014 All Rights Reserved</h8>
                                 </div>
+=======
+                        </div> 
+                    </div>
+                    <div class="footer_btm">
+                        <div class="footer_bt containe">
+                            <h9>&nbsp; IPOPISP © 2014 All Rights Reserved *  <?php echo $this->Html->link(__('ITELnet - Comunicações & Serviços, S.A. '), 'http://www.itelnet.co.ao/', array('escape'=> false)); ?></h9>
+                        </div>
+>>>>>>> origin/master
                     </div>
                 </div>
             </footer><!-- fim rodapé -->
@@ -280,4 +396,7 @@
     </script>
 </html>
 
+<<<<<<< HEAD
  
+=======
+>>>>>>> origin/master

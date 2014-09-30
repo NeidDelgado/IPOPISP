@@ -2,8 +2,11 @@
 /**
  * Parses the request URL into controller, action, and parameters.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -52,7 +55,11 @@ class Router {
 /**
  * Have routes been loaded
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public static $initialized = false;
 
@@ -75,7 +82,11 @@ class Router {
 /**
  * Directive for Router to parse out file extensions for mapping to Content-types.
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	protected static $_parseExtensions = false;
 
@@ -87,6 +98,7 @@ class Router {
 	protected static $_validExtensions = array();
 
 /**
+<<<<<<< HEAD
  * 'Constant' regular expression definitions for named route elements
  *
  */
@@ -95,6 +107,47 @@ class Router {
 	const MONTH = '0[1-9]|1[012]';
 	const DAY = '0[1-9]|[12][0-9]|3[01]';
 	const ID = '[0-9]+';
+=======
+ * Regular expression for action names
+ *
+ * @var string
+ */
+	const ACTION = 'index|show|add|create|edit|update|remove|del|delete|view|item';
+
+/**
+ * Regular expression for years
+ *
+ * @var string
+ */
+	const YEAR = '[12][0-9]{3}';
+
+/**
+ * Regular expression for months
+ *
+ * @var string
+ */
+	const MONTH = '0[1-9]|1[012]';
+
+/**
+ * Regular expression for days
+ *
+ * @var string
+ */
+	const DAY = '0[1-9]|[12][0-9]|3[01]';
+
+/**
+ * Regular expression for auto increment IDs
+ *
+ * @var string
+ */
+	const ID = '[0-9]+';
+
+/**
+ * Regular expression for UUIDs
+ *
+ * @var string
+ */
+>>>>>>> origin/master
 	const UUID = '[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}';
 
 /**
@@ -247,19 +300,31 @@ class Router {
  * Connects a new Route in the router.
  *
  * Routes are a way of connecting request URLs to objects in your application. At their core routes
+<<<<<<< HEAD
  * are a set or regular expressions that are used to match requests to destinations.
+=======
+ * are a set of regular expressions that are used to match requests to destinations.
+>>>>>>> origin/master
  *
  * Examples:
  *
  * `Router::connect('/:controller/:action/*');`
  *
+<<<<<<< HEAD
  * The first parameter will be used as a controller name while the second is used as the action name.
+=======
+ * The first token ':controller' will be used as a controller name while the second is used as the action name.
+>>>>>>> origin/master
  * the '/*' syntax makes this route greedy in that it will match requests like `/posts/index` as well as requests
  * like `/posts/edit/1/foo/bar`.
  *
  * `Router::connect('/home-page', array('controller' => 'pages', 'action' => 'display', 'home'));`
  *
+<<<<<<< HEAD
  * The above shows the use of route parameter defaults. And providing routing parameters for a static route.
+=======
+ * The above shows the use of route parameter defaults, and providing routing parameters for a static route.
+>>>>>>> origin/master
  *
  * {{{
  * Router::connect(
@@ -272,6 +337,12 @@ class Router {
  * Shows connecting a route with custom route parameters as well as providing patterns for those parameters.
  * Patterns for routing parameters do not need capturing groups, as one will be added for each route params.
  *
+<<<<<<< HEAD
+=======
+ * $defaults is merged with the results of parsing the request URL to form the final routing destination and its
+ * parameters. This destination is expressed as an associative array by Router. See the output of {@link parse()}.
+ *
+>>>>>>> origin/master
  * $options offers four 'special' keys. `pass`, `named`, `persist` and `routeClass`
  * have special meaning in the $options array.
  *
@@ -306,6 +377,10 @@ class Router {
  *   shifted into the passed arguments, supplying patterns for routing parameters and supplying the name of a
  *   custom routing class.
  * @see routes
+<<<<<<< HEAD
+=======
+ * @see parse().
+>>>>>>> origin/master
  * @return array Array of routes
  * @throws RouterException
  */
@@ -447,10 +522,17 @@ class Router {
 		}
 
 		if ($named === true || $named === false) {
+<<<<<<< HEAD
 			$options = array_merge(array('default' => $named, 'reset' => true, 'greedy' => $named), $options);
 			$named = array();
 		} else {
 			$options = array_merge(array('default' => false, 'reset' => false, 'greedy' => true), $options);
+=======
+			$options += array('default' => $named, 'reset' => true, 'greedy' => $named);
+			$named = array();
+		} else {
+			$options += array('default' => false, 'reset' => false, 'greedy' => true);
+>>>>>>> origin/master
 		}
 
 		if ($options['reset'] || self::$_namedConfig['rules'] === false) {
@@ -499,12 +581,30 @@ class Router {
  */
 	public static function mapResources($controller, $options = array()) {
 		$hasPrefix = isset($options['prefix']);
+<<<<<<< HEAD
 		$options = array_merge(array(
 			'prefix' => '/',
 			'id' => self::ID . '|' . self::UUID
 		), $options);
 
 		$prefix = $options['prefix'];
+=======
+		$options += array(
+			'connectOptions' => array(),
+			'prefix' => '/',
+			'id' => self::ID . '|' . self::UUID
+		);
+
+		$prefix = $options['prefix'];
+		$connectOptions = $options['connectOptions'];
+		unset($options['connectOptions']);
+		if (strpos($prefix, '/') !== 0) {
+			$prefix = '/' . $prefix;
+		}
+		if (substr($prefix, -1) !== '/') {
+			$prefix .= '/';
+		}
+>>>>>>> origin/master
 
 		foreach ((array)$controller as $name) {
 			list($plugin, $name) = pluginSplit($name);
@@ -524,7 +624,14 @@ class Router {
 						'action' => $params['action'],
 						'[method]' => $params['method']
 					),
+<<<<<<< HEAD
 					array('id' => $options['id'], 'pass' => array('id'))
+=======
+					array_merge(
+						array('id' => $options['id'], 'pass' => array('id')),
+						$connectOptions
+					)
+>>>>>>> origin/master
 				);
 			}
 			self::$_resourceMapped[] = $urlName;
@@ -591,7 +698,11 @@ class Router {
 /**
  * Parses a file extension out of a URL, if Router::parseExtensions() is enabled.
  *
+<<<<<<< HEAD
  * @param string $url
+=======
+ * @param string $url URL.
+>>>>>>> origin/master
  * @return array Returns an array containing the altered URL and the parsed extension.
  */
 	protected static function _parseExtension($url) {
@@ -655,10 +766,17 @@ class Router {
 	}
 
 /**
+<<<<<<< HEAD
  * Get the either the current request object, or the first one.
  *
  * @param boolean $current Whether you want the request from the top of the stack or the first one.
  * @return CakeRequest or null.
+=======
+ * Gets the current request object, or the first one.
+ *
+ * @param bool $current True to get the current request object, or false to get the first one.
+ * @return CakeRequest|null Null if stack is empty.
+>>>>>>> origin/master
  */
 	public static function getRequest($current = false) {
 		if ($current) {
@@ -671,7 +789,11 @@ class Router {
 /**
  * Gets parameter information
  *
+<<<<<<< HEAD
  * @param boolean $current Get current request parameter, useful when using requestAction
+=======
+ * @param bool $current Get current request parameter, useful when using requestAction
+>>>>>>> origin/master
  * @return array Parameter information
  */
 	public static function getParams($current = false) {
@@ -688,7 +810,11 @@ class Router {
  * Gets URL parameter by name
  *
  * @param string $name Parameter name
+<<<<<<< HEAD
  * @param boolean $current Current parameter, useful when using requestAction
+=======
+ * @param bool $current Current parameter, useful when using requestAction
+>>>>>>> origin/master
  * @return string Parameter value
  */
 	public static function getParam($name = 'controller', $current = false) {
@@ -702,7 +828,11 @@ class Router {
 /**
  * Gets path information
  *
+<<<<<<< HEAD
  * @param boolean $current Current parameter, useful when using requestAction
+=======
+ * @param bool $current Current parameter, useful when using requestAction
+>>>>>>> origin/master
  * @return array
  */
 	public static function getPaths($current = false) {
@@ -738,9 +868,15 @@ class Router {
 /**
  * Promote a route (by default, the last one added) to the beginning of the list
  *
+<<<<<<< HEAD
  * @param integer $which A zero-based array index representing the route to move. For example,
  *    if 3 routes have been added, the last route would be 2.
  * @return boolean Returns false if no route exists at the position specified by $which.
+=======
+ * @param int $which A zero-based array index representing the route to move. For example,
+ *    if 3 routes have been added, the last route would be 2.
+ * @return bool Returns false if no route exists at the position specified by $which.
+>>>>>>> origin/master
  */
 	public static function promote($which = null) {
 		if ($which === null) {
@@ -778,7 +914,11 @@ class Router {
  *   or an array specifying any of the following: 'controller', 'action',
  *   and/or 'plugin', in addition to named arguments (keyed array elements),
  *   and standard URL arguments (indexed array elements)
+<<<<<<< HEAD
  * @param boolean|array $full If (bool) true, the full base URL will be prepended to the result.
+=======
+ * @param bool|array $full If (bool) true, the full base URL will be prepended to the result.
+>>>>>>> origin/master
  *   If an array accepts the following keys
  *    - escape - used when making URLs embedded in html escapes query string '&'
  *    - full - if true the full base URL will be prepended.
@@ -1014,7 +1154,11 @@ class Router {
  * @param string|array $q Query string Either a string of already compiled query string arguments or
  *    an array of arguments to convert into a query string.
  * @param array $extra Extra querystring parameters.
+<<<<<<< HEAD
  * @param boolean $escape Whether or not to use escaped &
+=======
+ * @param bool $escape Whether or not to use escaped &
+>>>>>>> origin/master
  * @return array
  */
 	public static function queryString($q, $extra = array(), $escape = false) {
@@ -1035,7 +1179,11 @@ class Router {
 		}
 		$addition = http_build_query($q, null, $join);
 
+<<<<<<< HEAD
 		if ($out && $addition && substr($out, strlen($join) * -1, strlen($join)) != $join) {
+=======
+		if ($out && $addition && substr($out, strlen($join) * -1, strlen($join)) !== $join) {
+>>>>>>> origin/master
 			$out .= $join;
 		}
 
@@ -1058,7 +1206,11 @@ class Router {
  * are used for CakePHP internals and should not normally be part of an output URL.
  *
  * @param CakeRequest|array $params The params array or CakeRequest object that needs to be reversed.
+<<<<<<< HEAD
  * @param boolean $full Set to true to include the full URL including the protocol when reversing
+=======
+ * @param bool $full Set to true to include the full URL including the protocol when reversing
+>>>>>>> origin/master
  *     the URL.
  * @return string The string that is the reversed result of the array
  */
@@ -1204,7 +1356,11 @@ class Router {
  * To have the extensions parsed you still need to call `Router::parseExtensions()`
  *
  * @param array $extensions List of extensions to be added as valid extension
+<<<<<<< HEAD
  * @param boolean $merge Default true will merge extensions. Set to false to override current extensions
+=======
+ * @param bool $merge Default true will merge extensions. Set to false to override current extensions
+>>>>>>> origin/master
  * @return array
  */
 	public static function setExtensions($extensions, $merge = true) {

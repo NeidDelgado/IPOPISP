@@ -16,6 +16,10 @@
 
 App::uses('Router', 'Routing');
 App::uses('Hash', 'Utility');
+<<<<<<< HEAD
+=======
+App::uses('Inflector', 'Utility');
+>>>>>>> origin/master
 
 /**
  * Abstract base class for all other Helpers in CakePHP.
@@ -200,7 +204,11 @@ class Helper extends Object {
  */
 	public function __get($name) {
 		if (isset($this->_helperMap[$name]) && !isset($this->{$name})) {
+<<<<<<< HEAD
 			$settings = array_merge((array)$this->_helperMap[$name]['settings'], array('enabled' => false));
+=======
+			$settings = array('enabled' => false) + (array)$this->_helperMap[$name]['settings'];
+>>>>>>> origin/master
 			$this->{$name} = $this->_View->loadHelper($this->_helperMap[$name]['class'], $settings);
 		}
 		if (isset($this->{$name})) {
@@ -223,7 +231,11 @@ class Helper extends Object {
  * Provides backwards compatibility access for setting values to the request object.
  *
  * @param string $name Name of the property being accessed.
+<<<<<<< HEAD
  * @param mixed $value
+=======
+ * @param mixed $value Value to set.
+>>>>>>> origin/master
  * @return void
  * @deprecated This method will be removed in 3.0
  */
@@ -250,7 +262,11 @@ class Helper extends Object {
  * @param string|array $url Either a relative string url like `/products/view/23` or
  *    an array of URL parameters. Using an array for URLs will allow you to leverage
  *    the reverse routing features of CakePHP.
+<<<<<<< HEAD
  * @param boolean $full If true, the full base URL will be prepended to the result
+=======
+ * @param bool $full If true, the full base URL will be prepended to the result
+>>>>>>> origin/master
  * @return string Full translated URL with base path.
  * @link http://book.cakephp.org/2.0/en/views/helpers.html
  */
@@ -298,7 +314,11 @@ class Helper extends Object {
  * Generate URL for given asset file. Depending on options passed provides full URL with domain name.
  * Also calls Helper::assetTimestamp() to add timestamp to local files
  *
+<<<<<<< HEAD
  * @param string|array Path string or URL array
+=======
+ * @param string|array $path Path string or URL array
+>>>>>>> origin/master
  * @param array $options Options array. Possible keys:
  *   `fullBase` Return full URL with domain name
  *   `pathPrefix` Path prefix for relative URLs
@@ -480,7 +500,11 @@ class Helper extends Object {
  *
  * @param string $key The name of the attribute to create
  * @param string $value The value of the attribute to create.
+<<<<<<< HEAD
  * @param boolean $escape Define if the value must be escaped
+=======
+ * @param bool $escape Define if the value must be escaped
+>>>>>>> origin/master
  * @return string The composed attribute.
  * @deprecated This method will be moved to HtmlHelper in 3.0
  */
@@ -524,7 +548,11 @@ class Helper extends Object {
  * Sets this helper's model and field properties to the dot-separated value-pair in $entity.
  *
  * @param string $entity A field name, like "ModelName.fieldName" or "ModelName.ID.fieldName"
+<<<<<<< HEAD
  * @param boolean $setScope Sets the view scope to the model specified in $tagValue
+=======
+ * @param bool $setScope Sets the view scope to the model specified in $tagValue
+>>>>>>> origin/master
  * @return void
  */
 	public function setEntity($entity, $setScope = false) {
@@ -664,7 +692,11 @@ class Helper extends Object {
  *
  * @param array|string $options If an array, should be an array of attributes that $key needs to be added to.
  *   If a string or null, will be used as the View entity.
+<<<<<<< HEAD
  * @param string $field
+=======
+ * @param string $field Field name.
+>>>>>>> origin/master
  * @param string $key The name of the attribute to be set, defaults to 'name'
  * @return mixed If an array was given for $options, an array with $key set will be returned.
  *   If a string was supplied a string will be returned.
@@ -705,7 +737,11 @@ class Helper extends Object {
  *
  * @param array|string $options If an array, should be an array of attributes that $key needs to be added to.
  *   If a string or null, will be used as the View entity.
+<<<<<<< HEAD
  * @param string $field
+=======
+ * @param string $field Field name.
+>>>>>>> origin/master
  * @param string $key The name of the attribute to be set, defaults to 'value'
  * @return mixed If an array was given for $options, an array with $key set will be returned.
  *   If a string was supplied a string will be returned.
@@ -780,7 +816,11 @@ class Helper extends Object {
  * Adds the given class to the element options
  *
  * @param array $options Array options/attributes to add a class to
+<<<<<<< HEAD
  * @param string $class The classname being added.
+=======
+ * @param string $class The class name being added.
+>>>>>>> origin/master
  * @param string $key the key to use for class.
  * @return array Array of options with $key set.
  */
@@ -880,8 +920,13 @@ class Helper extends Object {
  * Transforms a recordset from a hasAndBelongsToMany association to a list of selected
  * options for a multiple select element
  *
+<<<<<<< HEAD
  * @param string|array $data
  * @param string $key
+=======
+ * @param string|array $data Data array or model name.
+ * @param string $key Field name.
+>>>>>>> origin/master
  * @return array
  */
 	protected function _selectedArray($data, $key = 'id') {

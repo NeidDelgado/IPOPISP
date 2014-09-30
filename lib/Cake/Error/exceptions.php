@@ -3,8 +3,11 @@
  * Exceptions file. Contains the various exceptions CakePHP will throw until they are
  * moved into their permanent location.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -36,9 +39,15 @@ class CakeBaseException extends RuntimeException {
 /**
  * Get/set the response header to be used
  *
+<<<<<<< HEAD
  * @param string|array $header. An array of header strings or a single header string
  *	- an associative array of "header name" => "header value"
  *	- an array of string headers is also accepted
+=======
+ * @param string|array $header An array of header strings or a single header string
+ *  - an associative array of "header name" => "header value"
+ *  - an array of string headers is also accepted
+>>>>>>> origin/master
  * @param string $value The header value.
  * @return array
  * @see CakeResponse::header()
@@ -78,7 +87,11 @@ class BadRequestException extends HttpException {
  * Constructor
  *
  * @param string $message If no message is given 'Bad Request' will be the message
+<<<<<<< HEAD
  * @param integer $code Status code, defaults to 400
+=======
+ * @param int $code Status code, defaults to 400
+>>>>>>> origin/master
  */
 	public function __construct($message = null, $code = 400) {
 		if (empty($message)) {
@@ -100,7 +113,11 @@ class UnauthorizedException extends HttpException {
  * Constructor
  *
  * @param string $message If no message is given 'Unauthorized' will be the message
+<<<<<<< HEAD
  * @param integer $code Status code, defaults to 401
+=======
+ * @param int $code Status code, defaults to 401
+>>>>>>> origin/master
  */
 	public function __construct($message = null, $code = 401) {
 		if (empty($message)) {
@@ -122,7 +139,11 @@ class ForbiddenException extends HttpException {
  * Constructor
  *
  * @param string $message If no message is given 'Forbidden' will be the message
+<<<<<<< HEAD
  * @param integer $code Status code, defaults to 403
+=======
+ * @param int $code Status code, defaults to 403
+>>>>>>> origin/master
  */
 	public function __construct($message = null, $code = 403) {
 		if (empty($message)) {
@@ -144,7 +165,11 @@ class NotFoundException extends HttpException {
  * Constructor
  *
  * @param string $message If no message is given 'Not Found' will be the message
+<<<<<<< HEAD
  * @param integer $code Status code, defaults to 404
+=======
+ * @param int $code Status code, defaults to 404
+>>>>>>> origin/master
  */
 	public function __construct($message = null, $code = 404) {
 		if (empty($message)) {
@@ -166,7 +191,11 @@ class MethodNotAllowedException extends HttpException {
  * Constructor
  *
  * @param string $message If no message is given 'Method Not Allowed' will be the message
+<<<<<<< HEAD
  * @param integer $code Status code, defaults to 405
+=======
+ * @param int $code Status code, defaults to 405
+>>>>>>> origin/master
  */
 	public function __construct($message = null, $code = 405) {
 		if (empty($message)) {
@@ -188,7 +217,11 @@ class InternalErrorException extends HttpException {
  * Constructor
  *
  * @param string $message If no message is given 'Internal Server Error' will be the message
+<<<<<<< HEAD
  * @param integer $code Status code, defaults to 500
+=======
+ * @param int $code Status code, defaults to 500
+>>>>>>> origin/master
  */
 	public function __construct($message = null, $code = 500) {
 		if (empty($message)) {
@@ -230,7 +263,11 @@ class CakeException extends CakeBaseException {
  *
  * @param string|array $message Either the string of the error message, or an array of attributes
  *   that are made available in the view, and sprintf()'d into CakeException::$_messageTemplate
+<<<<<<< HEAD
  * @param integer $code The code of the error, is also the HTTP status code for the error.
+=======
+ * @param int $code The code of the error, is also the HTTP status code for the error.
+>>>>>>> origin/master
  */
 	public function __construct($message, $code = 500) {
 		if (is_array($message)) {
@@ -380,6 +417,15 @@ class MissingConnectionException extends CakeException {
 
 	protected $_messageTemplate = 'Database connection "%s" is missing, or could not be created.';
 
+<<<<<<< HEAD
+=======
+/**
+ * Constructor
+ *
+ * @param string|array $message The error message.
+ * @param int $code The error code.
+ */
+>>>>>>> origin/master
 	public function __construct($message, $code = 500) {
 		if (is_array($message)) {
 			$message += array('enabled' => true);
@@ -589,10 +635,17 @@ class FatalErrorException extends CakeException {
 /**
  * Constructor
  *
+<<<<<<< HEAD
  * @param string $message
  * @param integer $code
  * @param string $file
  * @param integer $line
+=======
+ * @param string $message The error message.
+ * @param int $code The error code.
+ * @param string $file The file the error occurred in.
+ * @param int $line The line the error occurred on.
+>>>>>>> origin/master
  */
 	public function __construct($message, $code = 500, $file = null, $line = null) {
 		parent::__construct($message, $code);

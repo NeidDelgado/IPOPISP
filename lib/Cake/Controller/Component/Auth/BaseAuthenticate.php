@@ -1,7 +1,10 @@
 <?php
 /**
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -88,7 +91,11 @@ abstract class BaseAuthenticate {
  *
  * @param string|array $username The username/identifier, or an array of find conditions.
  * @param string $password The password, only used if $username param is string.
+<<<<<<< HEAD
  * @return boolean|array Either false on failure, or an array of user data.
+=======
+ * @return bool|array Either false on failure, or an array of user data.
+>>>>>>> origin/master
  */
 	protected function _findUser($username, $password = null) {
 		$userModel = $this->settings['userModel'];
@@ -118,7 +125,11 @@ abstract class BaseAuthenticate {
 		}
 
 		$user = $result[$model];
+<<<<<<< HEAD
 		if ($password) {
+=======
+		if ($password !== null) {
+>>>>>>> origin/master
 			if (!$this->passwordHasher()->check($password, $user[$fields['password']])) {
 				return false;
 			}

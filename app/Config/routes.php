@@ -29,7 +29,11 @@
 	Router::connect('/ipopispworks', array('controller' => 'pages', 'action' => 'display', 'ipopispworks'));
 	Router::connect('/ipopmil', array('controller' => 'pages', 'action' => 'display', 'ipopmil'));
 	Router::connect('/ipopbus', array('controller' => 'pages', 'action' => 'display', 'ipopbus'));
+<<<<<<< HEAD
 	Router::connect('/ipopgov', array('controller' => 'pages', 'action' => 'display', 'ipopgov'));
+=======
+	Router::connect('/ipopmov', array('controller' => 'pages', 'action' => 'display', 'ipopgov'));
+>>>>>>> origin/master
 	Router::connect('/ipopedu', array('controller' => 'pages', 'action' => 'display', 'ipopedu'));
 	Router::connect('/features', array('controller' => 'pages', 'action' => 'display', 'features'));
 	Router::connect('/leaflet', array('controller' => 'pages', 'action' => 'display', 'leaflet'));

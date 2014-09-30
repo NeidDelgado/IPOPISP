@@ -2,8 +2,11 @@
 /**
  * Web Access Frontend for TestSuite
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * @link          http://book.cakephp.org/2.0/en/development/testing.html
  * @package       app.webroot
  * @since         CakePHP(tm) v 1.2.0.4433

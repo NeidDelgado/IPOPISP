@@ -2,8 +2,11 @@
 /**
  * PHP configuration based AclInterface implementation
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -28,11 +31,21 @@ class PhpAcl extends Object implements AclInterface {
 
 /**
  * Constant for deny
+<<<<<<< HEAD
+=======
+ *
+ * @var bool
+>>>>>>> origin/master
  */
 	const DENY = false;
 
 /**
  * Constant for allow
+<<<<<<< HEAD
+=======
+ *
+ * @var bool
+>>>>>>> origin/master
  */
 	const ALLOW = true;
 
@@ -79,7 +92,11 @@ class PhpAcl extends Object implements AclInterface {
  */
 	public function initialize(Component $Component) {
 		if (!empty($Component->settings['adapter'])) {
+<<<<<<< HEAD
 			$this->options = array_merge($this->options, $Component->settings['adapter']);
+=======
+			$this->options = $Component->settings['adapter'] + $this->options;
+>>>>>>> origin/master
 		}
 
 		App::uses('PhpReader', 'Configure');
@@ -122,7 +139,11 @@ class PhpAcl extends Object implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function allow($aro, $aco, $action = "*") {
 		return $this->Aco->access($this->Aro->resolve($aro), $aco, $action, 'allow');
@@ -134,7 +155,11 @@ class PhpAcl extends Object implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function deny($aro, $aco, $action = "*") {
 		return $this->Aco->access($this->Aro->resolve($aro), $aco, $action, 'deny');
@@ -146,7 +171,11 @@ class PhpAcl extends Object implements AclInterface {
  * @param string $aro ARO The requesting object identifier.
  * @param string $aco ACO The controlled object identifier.
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function inherit($aro, $aco, $action = "*") {
 		return false;
@@ -159,7 +188,11 @@ class PhpAcl extends Object implements AclInterface {
  * @param string $aro ARO
  * @param string $aco ACO
  * @param string $action Action
+<<<<<<< HEAD
  * @return boolean true if access is granted, false otherwise
+=======
+ * @return bool true if access is granted, false otherwise
+>>>>>>> origin/master
  */
 	public function check($aro, $aco, $action = "*") {
 		$allow = $this->options['policy'];
@@ -366,6 +399,11 @@ class PhpAro {
 /**
  * role to resolve to when a provided ARO is not listed in
  * the internal tree
+<<<<<<< HEAD
+=======
+ *
+ * @var string
+>>>>>>> origin/master
  */
 	const DEFAULT_ROLE = 'Role/default';
 
@@ -403,9 +441,15 @@ class PhpAro {
 /**
  * Constructor
  *
+<<<<<<< HEAD
  * @param array $aro
  * @param array $map
  * @param array $aliases
+=======
+ * @param array $aro The aro data
+ * @param array $map The identifier mappings
+ * @param array $aliases The aliases to map.
+>>>>>>> origin/master
  */
 	public function __construct(array $aro = array(), array $map = array(), array $aliases = array()) {
 		if (!empty($map)) {
@@ -458,7 +502,11 @@ class PhpAro {
 			$mapped = '';
 
 			if (is_array($aro)) {
+<<<<<<< HEAD
 				if (isset($aro['model']) && isset($aro['foreign_key']) && $aro['model'] == $aroGroup) {
+=======
+				if (isset($aro['model']) && isset($aro['foreign_key']) && $aro['model'] === $aroGroup) {
+>>>>>>> origin/master
 					$mapped = $aroGroup . '/' . $aro['foreign_key'];
 				} elseif (isset($aro[$model][$field])) {
 					$mapped = $aroGroup . '/' . $aro[$model][$field];
@@ -475,7 +523,11 @@ class PhpAro {
 
 					$aroModel = Inflector::camelize($aroModel);
 
+<<<<<<< HEAD
 					if ($aroModel == $model || $aroModel == $aroGroup) {
+=======
+					if ($aroModel === $model || $aroModel === $aroGroup) {
+>>>>>>> origin/master
 						$mapped = $aroGroup . '/' . $aroValue;
 					}
 				}
@@ -542,7 +594,11 @@ class PhpAro {
  * @return void
  */
 	public function addAlias(array $alias) {
+<<<<<<< HEAD
 		$this->aliases = array_merge($this->aliases, $alias);
+=======
+		$this->aliases = $alias + $this->aliases;
+>>>>>>> origin/master
 	}
 
 /**

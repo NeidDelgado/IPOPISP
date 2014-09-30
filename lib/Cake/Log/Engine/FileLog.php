@@ -2,8 +2,11 @@
 /**
  * File Storage stream for Logging
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) :  Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -63,7 +66,11 @@ class FileLog extends BaseLog {
 /**
  * Max file size, used for log file rotation.
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	protected $_size = null;
 
@@ -85,7 +92,11 @@ class FileLog extends BaseLog {
  * - `mask` A mask is applied when log files are created. Left empty no chmod
  *   is made.
  *
+<<<<<<< HEAD
  * @param array $options Options for the FileLog, see above.
+=======
+ * @param array $config Options for the FileLog, see above.
+>>>>>>> origin/master
  */
 	public function __construct($config = array()) {
 		$config = Hash::merge($this->_defaults, $config);
@@ -130,7 +141,11 @@ class FileLog extends BaseLog {
  *
  * @param string $type The type of log you are making.
  * @param string $message The message you want to log.
+<<<<<<< HEAD
  * @return boolean success of write.
+=======
+ * @return bool success of write.
+>>>>>>> origin/master
  */
 	public function write($type, $message) {
 		$output = date('Y-m-d H:i:s') . ' ' . ucfirst($type) . ': ' . $message . "\n";
@@ -159,6 +174,10 @@ class FileLog extends BaseLog {
 
 /**
  * Get filename
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> origin/master
  * @param string $type The type of log.
  * @return string File name
  */
@@ -167,7 +186,11 @@ class FileLog extends BaseLog {
 
 		if (!empty($this->_file)) {
 			$filename = $this->_file;
+<<<<<<< HEAD
 		} elseif ($type == 'error' || $type == 'warning') {
+=======
+		} elseif ($type === 'error' || $type === 'warning') {
+>>>>>>> origin/master
 			$filename = 'error.log';
 		} elseif (in_array($type, $debugTypes)) {
 			$filename = 'debug.log';

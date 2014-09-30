@@ -1,11 +1,18 @@
 <?php
 /**
+<<<<<<< HEAD
  * Error handler
  *
  * Provides Error Capturing for Framework errors.
  *
  * PHP 5
  *
+=======
+ * ErrorHandler class
+ *
+ * Provides Error Capturing for Framework errors.
+ *
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -26,7 +33,10 @@ App::uses('ExceptionRenderer', 'Error');
 App::uses('Router', 'Routing');
 
 /**
+<<<<<<< HEAD
  *
+=======
+>>>>>>> origin/master
  * Error Handler provides basic error and exception handling for your application. It captures and
  * handles all unhandled exceptions and errors. Displays helpful framework errors when debug > 1.
  *
@@ -104,7 +114,11 @@ class ErrorHandler {
  * This will either use custom exception renderer class if configured,
  * or use the default ExceptionRenderer.
  *
+<<<<<<< HEAD
  * @param Exception $exception
+=======
+ * @param Exception $exception The exception to render.
+>>>>>>> origin/master
  * @return void
  * @see http://php.net/manual/en/function.set-exception-handler.php
  */
@@ -134,6 +148,10 @@ class ErrorHandler {
 
 /**
  * Generates a formatted error message
+<<<<<<< HEAD
+=======
+ *
+>>>>>>> origin/master
  * @param Exception $exception Exception instance
  * @return string Formatted message
  */
@@ -161,9 +179,15 @@ class ErrorHandler {
 /**
  * Handles exception logging
  *
+<<<<<<< HEAD
  * @param Exception $exception
  * @param array $config
  * @return boolean
+=======
+ * @param Exception $exception The exception to render.
+ * @param array $config An array of configuration for logging.
+ * @return bool
+>>>>>>> origin/master
  */
 	protected static function _log(Exception $exception, $config) {
 		if (empty($config['log'])) {
@@ -188,12 +212,21 @@ class ErrorHandler {
  * You can use Configure::write('Error.level', $value); to set what type of errors will be handled here.
  * Stack traces for errors can be enabled with Configure::write('Error.trace', true);
  *
+<<<<<<< HEAD
  * @param integer $code Code of error
  * @param string $description Error description
  * @param string $file File on which error occurred
  * @param integer $line Line that triggered the error
  * @param array $context Context
  * @return boolean true if error was handled
+=======
+ * @param int $code Code of error
+ * @param string $description Error description
+ * @param string $file File on which error occurred
+ * @param int $line Line that triggered the error
+ * @param array $context Context
+ * @return bool true if error was handled
+>>>>>>> origin/master
  */
 	public static function handleError($code, $description, $file = null, $line = null, $context = null) {
 		if (error_reporting() === 0) {
@@ -231,11 +264,19 @@ class ErrorHandler {
 /**
  * Generate an error page when some fatal error happens.
  *
+<<<<<<< HEAD
  * @param integer $code Code of error
  * @param string $description Error description
  * @param string $file File on which error occurred
  * @param integer $line Line that triggered the error
  * @return boolean
+=======
+ * @param int $code Code of error
+ * @param string $description Error description
+ * @param string $file File on which error occurred
+ * @param int $line Line that triggered the error
+ * @return bool
+>>>>>>> origin/master
  */
 	public static function handleFatalError($code, $description, $file, $line) {
 		$logMessage = 'Fatal Error (' . $code . '): ' . $description . ' in [' . $file . ', line ' . $line . ']';
@@ -261,7 +302,11 @@ class ErrorHandler {
 /**
  * Map an error code into an Error word, and log location.
  *
+<<<<<<< HEAD
  * @param integer $code Error code to map
+=======
+ * @param int $code Error code to map
+>>>>>>> origin/master
  * @return array Array of error word, and log location.
  */
 	public static function mapErrorCode($code) {

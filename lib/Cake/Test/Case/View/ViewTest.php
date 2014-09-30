@@ -2,8 +2,11 @@
 /**
  * ViewTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -42,7 +45,11 @@ class ViewPostsController extends Controller {
 /**
  * uses property
  *
+<<<<<<< HEAD
  * @var mixed null
+=======
+ * @var mixed
+>>>>>>> origin/master
  */
 	public $uses = null;
 
@@ -165,7 +172,11 @@ class TestView extends View {
  * paths method
  *
  * @param string $plugin Optional plugin name to scan for view files.
+<<<<<<< HEAD
  * @param boolean $cached Set to true to force a refresh of view paths.
+=======
+ * @param bool $cached Set to true to force a refresh of view paths.
+>>>>>>> origin/master
  * @return array paths
  */
 	public function paths($plugin = null, $cached = true) {
@@ -708,17 +719,34 @@ class ViewTest extends CakeTestCase {
 
 /**
  * Test that elements can have callbacks
+<<<<<<< HEAD
  */
 	public function testElementCallbacks() {
 		$this->getMock('Helper', array(), array($this->View), 'ElementCallbackMockHtmlHelper');
 		$this->View->helpers = array('ElementCallbackMockHtml');
 		$this->View->loadHelpers();
 
+=======
+ *
+ * @return void
+ */
+	public function testElementCallbacks() {
+		$Helper = $this->getMock('Helper', array(), array($this->View), 'ElementCallbackMockHtmlHelper');
+		$this->View->helpers = array('ElementCallbackMockHtml');
+		$this->View->loadHelpers();
+
+		$this->View->Helpers->set('ElementCallbackMockHtml', $Helper);
+		$this->View->ElementCallbackMockHtml = $Helper;
+
+>>>>>>> origin/master
 		$this->View->ElementCallbackMockHtml->expects($this->at(0))->method('beforeRender');
 		$this->View->ElementCallbackMockHtml->expects($this->at(1))->method('afterRender');
 
 		$this->View->element('test_element', array(), array('callbacks' => true));
+<<<<<<< HEAD
 		$this->mockObjects[] = $this->View->ElementCallbackMockHtml;
+=======
+>>>>>>> origin/master
 	}
 
 /**
@@ -1026,7 +1054,11 @@ class ViewTest extends CakeTestCase {
 		$this->assertRegExp("/<title>yo what up<\/title>/", $result);
 		$this->assertRegExp("/<p><a href=\"flash\">yo what up<\/a><\/p>/", $result);
 
+<<<<<<< HEAD
 		$this->assertTrue($View->render(false, 'flash'));
+=======
+		$this->assertNull($View->render(false, 'flash'));
+>>>>>>> origin/master
 
 		$this->PostsController->helpers = array('Session', 'Cache', 'Html');
 		$this->PostsController->constructClasses();
@@ -1516,6 +1548,23 @@ class ViewTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * Test that starting the same block twice throws an exception
+ *
+ * @expectedException CakeException
+ * @return void
+ */
+	public function testStartBlocksTwice() {
+		$this->View->start('first');
+		echo 'In first ';
+		$this->View->start('second');
+		echo 'In second';
+		$this->View->start('first');
+	}
+
+/**
+>>>>>>> origin/master
  * Test that an exception gets thrown when you leave a block open at the end
  * of a view.
  *
@@ -1615,6 +1664,7 @@ TEXT;
  *
  * @return void
  */
+<<<<<<< HEAD
 	public function testPropertySetting() {
 		$this->assertFalse(isset($this->View->pageTitle));
 		$this->View->pageTitle = 'test';
@@ -1628,6 +1678,8 @@ TEXT;
  *
  * @return void
  */
+=======
+>>>>>>> origin/master
 	public function testPropertySettingMagicGet() {
 		$this->assertFalse(isset($this->View->action));
 		$this->View->request->params['action'] = 'login';
@@ -1660,7 +1712,11 @@ TEXT;
 	}
 
 /**
+<<<<<<< HEAD
  * Tests that a vew block uses default value when not assigned and uses assigned value when it is
+=======
+ * Tests that a view block uses default value when not assigned and uses assigned value when it is
+>>>>>>> origin/master
  *
  * @return void
  */
@@ -1674,4 +1730,23 @@ TEXT;
 		$result = $this->View->fetch('title', $default);
 		$this->assertEquals($expected, $result);
 	}
+<<<<<<< HEAD
+=======
+
+/**
+ * Tests that a view variable uses default value when not assigned and uses assigned value when it is
+ *
+ * @return void
+ */
+	public function testViewVarDefaultValue() {
+		$default = 'Default';
+		$result = $this->View->get('title', $default);
+		$this->assertEquals($default, $result);
+
+		$expected = 'Back to the Future';
+		$this->View->set('title', $expected);
+		$result = $this->View->get('title', $default);
+		$this->assertEquals($expected, $result);
+	}
+>>>>>>> origin/master
 }

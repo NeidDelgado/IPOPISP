@@ -2,8 +2,11 @@
 /**
  * SchemaShellTest Test file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -427,6 +430,32 @@ class SchemaShellTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * Test schema run create with --yes option
+ *
+ * @return void
+ */
+	public function testCreateOptionYes() {
+		$this->Shell = $this->getMock(
+			'SchemaShell',
+			array('in', 'out', 'hr', 'createFile', 'error', 'err', '_stop', '_run'),
+			array(&$this->Dispatcher)
+		);
+
+		$this->Shell->params = array(
+			'connection' => 'test',
+			'yes' => true,
+		);
+		$this->Shell->args = array('i18n');
+		$this->Shell->expects($this->never())->method('in');
+		$this->Shell->expects($this->exactly(2))->method('_run');
+		$this->Shell->startup();
+		$this->Shell->create();
+	}
+
+/**
+>>>>>>> origin/master
  * Test schema run create with no table args.
  *
  * @return void
@@ -529,7 +558,11 @@ class SchemaShellTest extends CakeTestCase {
 		$this->Shell->expects($this->any())
 			->method('in')
 			->will($this->returnValue('y'));
+<<<<<<< HEAD
 		$r = $this->Shell->expects($this->once())
+=======
+		$this->Shell->expects($this->once())
+>>>>>>> origin/master
 			->method('_run')
 			->with($this->arrayHasKey('newone'), 'update', $this->isInstanceOf('CakeSchema'));
 
@@ -537,6 +570,36 @@ class SchemaShellTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
+=======
+ * test run update with --yes option
+ *
+ * @return void
+ */
+	public function testUpdateWithOptionYes() {
+		$this->Shell = $this->getMock(
+			'SchemaShell',
+			array('in', 'out', 'hr', 'createFile', 'error', 'err', '_stop', '_run'),
+			array(&$this->Dispatcher)
+		);
+
+		$this->Shell->params = array(
+			'connection' => 'test',
+			'force' => true,
+			'yes' => true,
+		);
+		$this->Shell->args = array('SchemaShellTest', 'articles');
+		$this->Shell->startup();
+		$this->Shell->expects($this->never())->method('in');
+		$this->Shell->expects($this->once())
+			->method('_run')
+			->with($this->arrayHasKey('articles'), 'update', $this->isInstanceOf('CakeSchema'));
+
+		$this->Shell->update();
+	}
+
+/**
+>>>>>>> origin/master
  * test that the plugin param creates the correct path in the schema object.
  *
  * @return void
@@ -587,7 +650,11 @@ class SchemaShellTest extends CakeTestCase {
 
 /**
  * test that passing name and file creates the passed filename with the
+<<<<<<< HEAD
  * passed classname
+=======
+ * passed class name
+>>>>>>> origin/master
  *
  * @return void
  */

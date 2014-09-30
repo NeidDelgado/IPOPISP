@@ -5,8 +5,11 @@
  * Provides Prototype specific JavaScript for JsHelper. Requires at least
  * Prototype 1.6
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -36,7 +39,11 @@ class PrototypeEngineHelper extends JsBaseEngineHelper {
 /**
  * Is the current selection a multiple selection? or is it just a single element.
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	protected $_multiple = false;
 
@@ -116,7 +123,11 @@ class PrototypeEngineHelper extends JsBaseEngineHelper {
  * Create javascript selector for a CSS rule
  *
  * @param string $selector The selector that is targeted
+<<<<<<< HEAD
  * @return PrototypeEngineHelper instance of $this. Allows chained methods.
+=======
+ * @return $this
+>>>>>>> origin/master
  */
 	public function get($selector) {
 		$this->_multiple = false;
@@ -148,7 +159,11 @@ class PrototypeEngineHelper extends JsBaseEngineHelper {
  */
 	public function event($type, $callback, $options = array()) {
 		$defaults = array('wrap' => true, 'stop' => true);
+<<<<<<< HEAD
 		$options = array_merge($defaults, $options);
+=======
+		$options += $defaults;
+>>>>>>> origin/master
 
 		$function = 'function (event) {%s}';
 		if ($options['wrap'] && $options['stop']) {
@@ -230,8 +245,13 @@ class PrototypeEngineHelper extends JsBaseEngineHelper {
 /**
  * Create an Ajax or Ajax.Updater call.
  *
+<<<<<<< HEAD
  * @param string|array $url
  * @param array $options
+=======
+ * @param string|array $url URL.
+ * @param array $options Options list.
+>>>>>>> origin/master
  * @return string The completed ajax call.
  */
 	public function request($url, $options = array()) {
@@ -356,7 +376,11 @@ class PrototypeEngineHelper extends JsBaseEngineHelper {
  * @see JsBaseEngineHelper::serializeForm()
  */
 	public function serializeForm($options = array()) {
+<<<<<<< HEAD
 		$options = array_merge(array('isForm' => false, 'inline' => false), $options);
+=======
+		$options += array('isForm' => false, 'inline' => false);
+>>>>>>> origin/master
 		$selection = $this->selection;
 		if (!$options['isForm']) {
 			$selection = '$(' . $this->selection . '.form)';

@@ -2,8 +2,11 @@
 /**
  * The ModelTask handles creating and updating models files.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -163,8 +166,13 @@ class ModelTask extends BakeTask {
  *
  * @param array $options Array of options to use for the selections. indexes must start at 0
  * @param string $prompt Prompt to use for options list.
+<<<<<<< HEAD
  * @param integer $default The default option for the given prompt.
  * @return integer Result of user choice.
+=======
+ * @param int $default The default option for the given prompt.
+ * @return int Result of user choice.
+>>>>>>> origin/master
  */
 	public function inOptions($options, $prompt = null, $default = null) {
 		$valid = false;
@@ -188,7 +196,11 @@ class ModelTask extends BakeTask {
 /**
  * Handles interactive baking
  *
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	protected function _interactive() {
 		$this->hr();
@@ -344,24 +356,51 @@ class ModelTask extends BakeTask {
  * Handles Generation and user interaction for creating validation.
  *
  * @param Model $model Model to have validations generated for.
+<<<<<<< HEAD
  * @return array $validate Array of user selected validations.
+=======
+ * @return array validate Array of user selected validations.
+>>>>>>> origin/master
  */
 	public function doValidation($model) {
 		if (!$model instanceof Model) {
 			return false;
 		}
+<<<<<<< HEAD
 		$fields = $model->schema();
 
 		if (empty($fields)) {
 			return false;
 		}
+=======
+
+		$fields = $model->schema();
+		if (empty($fields)) {
+			return false;
+		}
+
+		$skipFields = false;
+>>>>>>> origin/master
 		$validate = array();
 		$this->initValidations();
 		foreach ($fields as $fieldName => $field) {
 			$validation = $this->fieldValidation($fieldName, $field, $model->primaryKey);
+<<<<<<< HEAD
 			if (!empty($validation)) {
 				$validate[$fieldName] = $validation;
 			}
+=======
+			if (isset($validation['_skipFields'])) {
+				unset($validation['_skipFields']);
+				$skipFields = true;
+			}
+			if (!empty($validation)) {
+				$validate[$fieldName] = $validation;
+			}
+			if ($skipFields) {
+				return $validate;
+			}
+>>>>>>> origin/master
 		}
 		return $validate;
 	}
@@ -394,13 +433,25 @@ class ModelTask extends BakeTask {
  *
  * @param string $fieldName Name of field to be validated.
  * @param array $metaData metadata for field
+<<<<<<< HEAD
  * @param string $primaryKey
+=======
+ * @param string $primaryKey The primary key field.
+>>>>>>> origin/master
  * @return array Array of validation for the field.
  */
 	public function fieldValidation($fieldName, $metaData, $primaryKey = 'id') {
 		$defaultChoice = count($this->_validations);
 		$validate = $alreadyChosen = array();
 
+<<<<<<< HEAD
+=======
+		$prompt = __d('cake_console',
+			"or enter in a valid regex validation string.\nAlternatively [s] skip the rest of the fields.\n"
+		);
+		$methods = array_flip($this->_validations);
+
+>>>>>>> origin/master
 		$anotherValidator = 'y';
 		while ($anotherValidator === 'y') {
 			if ($this->interactive) {
@@ -424,8 +475,11 @@ class ModelTask extends BakeTask {
 				$this->hr();
 			}
 
+<<<<<<< HEAD
 			$prompt = __d('cake_console', "... or enter in a valid regex validation string.\n");
 			$methods = array_flip($this->_validations);
+=======
+>>>>>>> origin/master
 			$guess = $defaultChoice;
 			if ($metaData['null'] != 1 && !in_array($fieldName, array($primaryKey, 'created', 'modified', 'updated'))) {
 				if ($fieldName === 'email') {
@@ -455,6 +509,13 @@ class ModelTask extends BakeTask {
 
 			if ($this->interactive === true) {
 				$choice = $this->in($prompt, null, $guess);
+<<<<<<< HEAD
+=======
+				if ($choice === 's') {
+					$validate['_skipFields'] = true;
+					return $validate;
+				}
+>>>>>>> origin/master
 				if (in_array($choice, $alreadyChosen)) {
 					$this->out(__d('cake_console', "You have already chosen that validation rule,\nplease choose again"));
 					continue;
@@ -482,7 +543,16 @@ class ModelTask extends BakeTask {
 			}
 			$anotherValidator = 'n';
 			if ($this->interactive && $choice != $defaultChoice) {
+<<<<<<< HEAD
 				$anotherValidator = $this->in(__d('cake_console', 'Would you like to add another validation rule?'), array('y', 'n'), 'n');
+=======
+				$anotherValidator = $this->in(__d('cake_console', "Would you like to add another validation rule\n" .
+					"or skip the rest of the fields?"), array('y', 'n', 's'), 'n');
+				if ($anotherValidator === 's') {
+					$validate['_skipFields'] = true;
+					return $validate;
+				}
+>>>>>>> origin/master
 			}
 		}
 		return $validate;
@@ -491,7 +561,11 @@ class ModelTask extends BakeTask {
 /**
  * Handles associations
  *
+<<<<<<< HEAD
  * @param Model $model
+=======
+ * @param Model $model The model object
+>>>>>>> origin/master
  * @return array Associations
  */
 	public function doAssociations($model) {
@@ -543,7 +617,11 @@ class ModelTask extends BakeTask {
 /**
  * Handles behaviors
  *
+<<<<<<< HEAD
  * @param Model $model
+=======
+ * @param Model $model The model object.
+>>>>>>> origin/master
  * @return array Behaviors
  */
 	public function doActsAs($model) {
@@ -574,7 +652,11 @@ class ModelTask extends BakeTask {
 	public function findBelongsTo(Model $model, $associations) {
 		$fieldNames = array_keys($model->schema(true));
 		foreach ($fieldNames as $fieldName) {
+<<<<<<< HEAD
 			$offset = strpos($fieldName, '_id');
+=======
+			$offset = substr($fieldName, -3) === '_id';
+>>>>>>> origin/master
 			if ($fieldName != $model->primaryKey && $fieldName !== 'parent_id' && $offset !== false) {
 				$tmpModelName = $this->_modelNameFromKey($fieldName);
 				$associations['belongsTo'][] = array(
@@ -613,13 +695,21 @@ class ModelTask extends BakeTask {
 			}
 			foreach ($tempFieldNames as $fieldName) {
 				$assoc = false;
+<<<<<<< HEAD
 				if ($fieldName != $model->primaryKey && $fieldName == $foreignKey) {
+=======
+				if ($fieldName !== $model->primaryKey && $fieldName === $foreignKey) {
+>>>>>>> origin/master
 					$assoc = array(
 						'alias' => $tempOtherModel->name,
 						'className' => $tempOtherModel->name,
 						'foreignKey' => $fieldName
 					);
+<<<<<<< HEAD
 				} elseif ($otherTable == $model->table && $fieldName === 'parent_id') {
+=======
+				} elseif ($otherTable === $model->table && $fieldName === 'parent_id') {
+>>>>>>> origin/master
 					$assoc = array(
 						'alias' => 'Child' . $model->name,
 						'className' => $model->name,
@@ -793,7 +883,11 @@ class ModelTask extends BakeTask {
  * Assembles and writes a Model file.
  *
  * @param string|object $name Model name or object
+<<<<<<< HEAD
  * @param array|boolean $data if array and $name is not an object assume bake data, otherwise boolean.
+=======
+ * @param array|bool $data if array and $name is not an object assume bake data, otherwise boolean.
+>>>>>>> origin/master
  * @return string
  */
 	public function bake($name, $data = array()) {
@@ -863,7 +957,11 @@ class ModelTask extends BakeTask {
  * @return array
  */
 	public function listAll($useDbConfig = null) {
+<<<<<<< HEAD
 		$this->_tables = (array)$this->getAllTables($useDbConfig);
+=======
+		$this->_tables = $this->getAllTables($useDbConfig);
+>>>>>>> origin/master
 
 		$this->_modelNames = array();
 		$count = count($this->_tables);
@@ -942,6 +1040,10 @@ class ModelTask extends BakeTask {
 			$this->err(__d('cake_console', 'Your database does not have any tables.'));
 			return $this->_stop();
 		}
+<<<<<<< HEAD
+=======
+		sort($tables);
+>>>>>>> origin/master
 		return $tables;
 	}
 
@@ -979,6 +1081,7 @@ class ModelTask extends BakeTask {
 	}
 
 /**
+<<<<<<< HEAD
  * get the option parser.
  *
  * @return void
@@ -1004,6 +1107,38 @@ class ModelTask extends BakeTask {
 				'short' => 'f',
 				'help' => __d('cake_console', 'Force overwriting existing files without prompting.')
 			))->epilog(__d('cake_console', 'Omitting all arguments and options will enter into an interactive mode.'));
+=======
+ * Gets the option parser instance and configures it.
+ *
+ * @return ConsoleOptionParser
+ */
+	public function getOptionParser() {
+		$parser = parent::getOptionParser();
+
+		$parser->description(
+			__d('cake_console', 'Bake models.')
+		)->addArgument('name', array(
+			'help' => __d('cake_console', 'Name of the model to bake. Can use Plugin.name to bake plugin models.')
+		))->addSubcommand('all', array(
+			'help' => __d('cake_console', 'Bake all model files with associations and validation.')
+		))->addOption('plugin', array(
+			'short' => 'p',
+			'help' => __d('cake_console', 'Plugin to bake the model into.')
+		))->addOption('theme', array(
+			'short' => 't',
+			'help' => __d('cake_console', 'Theme to use when baking code.')
+		))->addOption('connection', array(
+			'short' => 'c',
+			'help' => __d('cake_console', 'The connection the model table is on.')
+		))->addOption('force', array(
+			'short' => 'f',
+			'help' => __d('cake_console', 'Force overwriting existing files without prompting.')
+		))->epilog(
+			__d('cake_console', 'Omitting all arguments and options will enter into an interactive mode.')
+		);
+
+		return $parser;
+>>>>>>> origin/master
 	}
 
 /**

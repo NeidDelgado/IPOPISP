@@ -8,8 +8,11 @@
  * You should also use this file to include any files that provide global functions/constants
  * that your application uses.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * @link          http://cakephp.org CakePHP(tm) Project
  * @package       app.Config
  * @since         CakePHP(tm) v 0.10.8.2117
@@ -45,7 +48,11 @@ Cache::config('default', array('engine' => 'File'));
  */
 
 /**
+<<<<<<< HEAD
  * Custom Inflector rules, can be set to correctly pluralize or singularize table, model, controller names or whatever other
+=======
+ * Custom Inflector rules can be set to correctly pluralize or singularize table, model, controller names or whatever other
+>>>>>>> origin/master
  * string is passed to the inflection functions
  *
  * Inflector::rules('singular', array('rules' => array(), 'irregular' => array(), 'uninflected' => array()));
@@ -55,7 +62,11 @@ Cache::config('default', array('engine' => 'File'));
 
 /**
  * Plugins need to be loaded manually, you can either load them one by one or all of them in a single call
+<<<<<<< HEAD
  * Uncomment one of the lines below, as you need. make sure you read the documentation on CakePlugin to use more
+=======
+ * Uncomment one of the lines below, as you need. Make sure you read the documentation on CakePlugin to use more
+>>>>>>> origin/master
  * advanced ways of loading plugins
  *
  * CakePlugin::loadAll(); // Loads all plugins at once
@@ -64,7 +75,11 @@ Cache::config('default', array('engine' => 'File'));
  */
 
 /**
+<<<<<<< HEAD
  * You can attach event listeners to the request lifecycle as Dispatcher Filter . By Default CakePHP bundles two filters:
+=======
+ * You can attach event listeners to the request lifecycle as Dispatcher Filter . By default CakePHP bundles two filters:
+>>>>>>> origin/master
  *
  * - AssetDispatcher filter will serve your asset files (css, images, js, etc) from your themes and plugins
  * - CacheDispatcher filter will read the Cache.check configure variable and try to serve cached content generated from controllers

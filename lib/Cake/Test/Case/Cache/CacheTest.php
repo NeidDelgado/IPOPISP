@@ -2,8 +2,11 @@
 /**
  * CacheTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -27,6 +30,11 @@ App::uses('Cache', 'Cache');
  */
 class CacheTest extends CakeTestCase {
 
+<<<<<<< HEAD
+=======
+	protected $_count = 0;
+
+>>>>>>> origin/master
 /**
  * setUp method
  *
@@ -248,6 +256,11 @@ class CacheTest extends CakeTestCase {
 
 /**
  * testGroupConfigs method
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testGroupConfigs() {
 		Cache::config('latest', array(
@@ -301,7 +314,13 @@ class CacheTest extends CakeTestCase {
 
 /**
  * testGroupConfigsThrowsException method
+<<<<<<< HEAD
  * @expectedException CacheException
+=======
+ *
+ * @expectedException CacheException
+ * @return void
+>>>>>>> origin/master
  */
 	public function testGroupConfigsThrowsException() {
 		Cache::groupConfigs('bogus');
@@ -491,4 +510,31 @@ class CacheTest extends CakeTestCase {
 		$this->assertEquals('test_file_', $settings['prefix']);
 		$this->assertEquals(strtotime('+1 year') - time(), $settings['duration']);
 	}
+<<<<<<< HEAD
+=======
+
+/**
+ * test remember method.
+ *
+ * @return void
+ */
+	public function testRemember() {
+		$expected = 'This is some data 0';
+		$result = Cache::remember('test_key', array($this, 'cacher'), 'default');
+		$this->assertEquals($expected, $result);
+
+		$this->_count = 1;
+		$result = Cache::remember('test_key', array($this, 'cacher'), 'default');
+		$this->assertEquals($expected, $result);
+	}
+
+/**
+ * Method for testing Cache::remember()
+ *
+ * @return string
+ */
+	public function cacher() {
+		return 'This is some data ' . $this->_count;
+	}
+>>>>>>> origin/master
 }

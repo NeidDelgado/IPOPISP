@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container"> <br><br><br><br><br><br><br><br>
     <span class="title sixteen columns">
         <h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?></h1>
@@ -9,6 +10,17 @@
                   <th colspan="4"><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Transportation and Energy</font></th>
                 <tr bgcolor="#0099ff"> 
                     <th><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Invention</font></th>
+=======
+
+                <td valign="top"> <p align="justify"><strong>MARKS OF ESTEEM<br>
+                    <font color="#CC9900" size="2" face="Verdana, Arial, Helvetica, sans-serif">INVENTIONS THAT MODIFIED OUR LIFE</font></strong></p>
+                  <table border=1 width=100% bordercolor="#000000">
+                    <tr bgcolor="#004C97"> 
+                      <th colspan="4"> <div align="center"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><font color="#FFFFFF" size="1">Transportation</font><font size="1"></a><font color="#FFFFFF"> 
+                          and Energy</a></font></b></font></font></div></th>
+                    <tr bgcolor="#666666"> 
+                      <th><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Invention</font></th>
+>>>>>>> origin/master
                       <th><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Date</font></th>
                       <th><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Inventor</font></th>
                       <th><font face="Verdana, Arial, Helvetica, sans-serif" size="1" color="#FFFFFF">Nationality</font></th>
@@ -462,6 +474,7 @@
                       <td bordercolor="#CCCCCC"><font face="Verdana, Arial, Helvetica, sans-serif" size="1"> 
                         English</font></td>
                     </tr>
+<<<<<<< HEAD
             </table>
         </div>
         <div class="destaq">
@@ -478,3 +491,6 @@
         </div>
     </div><!--FIM DE CONTEUDO -->
 </div>  
+=======
+                  </table>
+>>>>>>> origin/master

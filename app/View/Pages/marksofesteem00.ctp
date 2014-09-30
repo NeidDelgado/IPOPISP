@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 <div class="container"> <br><br><br><br><br><br><br><br>
     <span class="title sixteen columns">
         <h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?></h1>
         <strong><h3>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('History Of The Microcomputer Revolution'); ?> </h3></strong></span><br>
     <div class="row section_featured_texts section_featured_texts_no_m">
         <div class="nine columns">
+=======
+<div class="container">
+    <span class="title sixteen columns"><h1>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('MARKS OF ESTEEM'); ?> </h1>
+        <strong><h3>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;<?php echo __('History Of The Microcomputer Revolution'); ?> </h3></strong></span><br>
+    <div class="row section_featured_texts section_featured_texts_no_m">
+        <div class="sixteen columns">
+>>>>>>> origin/master
             <h5>
                 <strong>&nbsp; &nbsp; &nbsp; &nbsp; <?php echo __('History Of The Microcomputer 
                 Revolution &quot;Raw Bytes Computer News&quot; Frank Delaney, 
@@ -87,6 +95,7 @@
                     <?php echo $this->Html->image('setinha.png'); ?><?php echo $this->Html->link(__('Bibliographye.'),'/http://www.old-computers.com/', array('escape' => false)); ?></p>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="destaq">
             <h4><?php echo $this->Html->link('&nbsp; &nbsp; Pricing/Quotation', '/pricing', array('escape'=> false)); ?></h4>
             <h4><?php echo $this->Html->link('&nbsp; &nbsp; Marks Of Esteem', '/marksofesteem', array('escape'=> false)); ?></h4>
@@ -99,5 +108,7 @@
                 <?php echo $this->Html->link('&nbsp; &nbsp; * IPOPEDU', '/ipopedu', array('escape'=> false)); ?></br>
             </h5>
         </div>
+=======
+>>>>>>> origin/master
     </div><!--FIM DE CONTEUDO -->
 </div>  

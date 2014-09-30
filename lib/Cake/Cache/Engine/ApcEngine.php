@@ -2,9 +2,12 @@
 /**
  * APC storage engine for cache.
  *
+<<<<<<< HEAD
  *
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -41,7 +44,11 @@ class ApcEngine extends CacheEngine {
  * To reinitialize the settings call Cache::engine('EngineName', [optional] settings = array());
  *
  * @param array $settings array of setting for the engine
+<<<<<<< HEAD
  * @return boolean True if the engine has been successfully initialized, false if not
+=======
+ * @return bool True if the engine has been successfully initialized, false if not
+>>>>>>> origin/master
  * @see CacheEngine::__defaults
  */
 	public function init($settings = array()) {
@@ -58,8 +65,13 @@ class ApcEngine extends CacheEngine {
  *
  * @param string $key Identifier for the data
  * @param mixed $value Data to be cached
+<<<<<<< HEAD
  * @param integer $duration How long to cache the data, in seconds
  * @return boolean True if the data was successfully cached, false on failure
+=======
+ * @param int $duration How long to cache the data, in seconds
+ * @return bool True if the data was successfully cached, false on failure
+>>>>>>> origin/master
  */
 	public function write($key, $value, $duration) {
 		$expires = 0;
@@ -89,7 +101,11 @@ class ApcEngine extends CacheEngine {
  * Increments the value of an integer cached key
  *
  * @param string $key Identifier for the data
+<<<<<<< HEAD
  * @param integer $offset How much to increment
+=======
+ * @param int $offset How much to increment
+>>>>>>> origin/master
  * @return New incremented value, false otherwise
  */
 	public function increment($key, $offset = 1) {
@@ -100,7 +116,11 @@ class ApcEngine extends CacheEngine {
  * Decrements the value of an integer cached key
  *
  * @param string $key Identifier for the data
+<<<<<<< HEAD
  * @param integer $offset How much to subtract
+=======
+ * @param int $offset How much to subtract
+>>>>>>> origin/master
  * @return New decremented value, false otherwise
  */
 	public function decrement($key, $offset = 1) {
@@ -111,7 +131,11 @@ class ApcEngine extends CacheEngine {
  * Delete a key from the cache
  *
  * @param string $key Identifier for the data
+<<<<<<< HEAD
  * @return boolean True if the value was successfully deleted, false if it didn't exist or couldn't be removed
+=======
+ * @return bool True if the value was successfully deleted, false if it didn't exist or couldn't be removed
+>>>>>>> origin/master
  */
 	public function delete($key) {
 		return apc_delete($key);
@@ -120,18 +144,38 @@ class ApcEngine extends CacheEngine {
 /**
  * Delete all keys from the cache. This will clear every cache config using APC.
  *
+<<<<<<< HEAD
  * @param boolean $check If true, nothing will be cleared, as entries are removed
  *    from APC as they expired. This flag is really only used by FileEngine.
  * @return boolean True Returns true.
+=======
+ * @param bool $check If true, nothing will be cleared, as entries are removed
+ *    from APC as they expired. This flag is really only used by FileEngine.
+ * @return bool True Returns true.
+>>>>>>> origin/master
  */
 	public function clear($check) {
 		if ($check) {
 			return true;
 		}
+<<<<<<< HEAD
 		$info = apc_cache_info('user');
 		$cacheKeys = $info['cache_list'];
 		unset($info);
 		foreach ($cacheKeys as $key) {
+=======
+		if (class_exists('APCIterator', false)) {
+			$iterator = new APCIterator(
+				'user',
+				'/^' . preg_quote($this->settings['prefix'], '/') . '/',
+				APC_ITER_NONE
+			);
+			apc_delete($iterator);
+			return true;
+		}
+		$cache = apc_cache_info('user');
+		foreach ($cache['cache_list'] as $key) {
+>>>>>>> origin/master
 			if (strpos($key['info'], $this->settings['prefix']) === 0) {
 				apc_delete($key['info']);
 			}
@@ -176,7 +220,12 @@ class ApcEngine extends CacheEngine {
  * Increments the group value to simulate deletion of all keys under a group
  * old values will remain in storage until they expire.
  *
+<<<<<<< HEAD
  * @return boolean success
+=======
+ * @param string $group The group to clear.
+ * @return bool success
+>>>>>>> origin/master
  */
 	public function clearGroup($group) {
 		apc_inc($this->settings['prefix'] . $group, 1, $success);

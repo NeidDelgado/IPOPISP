@@ -2,8 +2,11 @@
 /**
  * TestRunner for CakePHP Test suite.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -37,7 +40,11 @@ class CakeTestSuiteCommand extends PHPUnit_TextUI_Command {
 /**
  * Construct method
  *
+<<<<<<< HEAD
  * @param mixed $loader
+=======
+ * @param mixed $loader The loader instance to use.
+>>>>>>> origin/master
  * @param array $params list of options to be used for this run
  * @throws MissingTestLoaderException When a loader class could not be found.
  */
@@ -55,10 +62,18 @@ class CakeTestSuiteCommand extends PHPUnit_TextUI_Command {
 	}
 
 /**
+<<<<<<< HEAD
  * Ugly hack to get around PHPUnit having a hard coded classname for the Runner. :(
  *
  * @param array   $argv
  * @param boolean $exit
+=======
+ * Ugly hack to get around PHPUnit having a hard coded class name for the Runner. :(
+ *
+ * @param array $argv The command arguments
+ * @param bool $exit The exit mode.
+ * @return void
+>>>>>>> origin/master
  */
 	public function run(array $argv, $exit = true) {
 		$this->handleArguments($argv);
@@ -132,7 +147,11 @@ class CakeTestSuiteCommand extends PHPUnit_TextUI_Command {
 /**
  * Handles output flag used to change printing on webrunner.
  *
+<<<<<<< HEAD
  * @param string $reporter
+=======
+ * @param string $reporter The reporter class to use.
+>>>>>>> origin/master
  * @return void
  */
 	public function handleReporter($reporter) {

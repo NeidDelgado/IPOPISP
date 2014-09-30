@@ -2,8 +2,11 @@
 /**
  * ConsoleInputSubcommand file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -83,7 +86,11 @@ class ConsoleInputSubcommand {
 /**
  * Generate the help for this this subcommand.
  *
+<<<<<<< HEAD
  * @param integer $width The width to make the name of the subcommand.
+=======
+ * @param int $width The width to make the name of the subcommand.
+>>>>>>> origin/master
  * @return string
  */
 	public function help($width = 0) {

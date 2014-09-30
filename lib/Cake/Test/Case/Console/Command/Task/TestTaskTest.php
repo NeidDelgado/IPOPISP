@@ -4,8 +4,11 @@
  *
  * Test Case for test generation shell task
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP :  Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -324,7 +327,11 @@ class TestTaskTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
  * test that getClassName returns the user choice as a classname.
+=======
+ * test that getClassName returns the user choice as a class name.
+>>>>>>> origin/master
  *
  * @return void
  */
@@ -359,7 +366,11 @@ class TestTaskTest extends CakeTestCase {
 	}
 
 /**
+<<<<<<< HEAD
  * test that resolving classnames works
+=======
+ * test that resolving class names works
+>>>>>>> origin/master
  *
  * @return void
  */
@@ -394,7 +405,11 @@ class TestTaskTest extends CakeTestCase {
 
 /**
  * test baking files. The conditionally run tests are known to fail in PHP4
+<<<<<<< HEAD
  * as PHP4 classnames are all lower case, breaking the plugin path inflection.
+=======
+ * as PHP4 class names are all lower case, breaking the plugin path inflection.
+>>>>>>> origin/master
  *
  * @return void
  */
@@ -415,6 +430,11 @@ class TestTaskTest extends CakeTestCase {
 
 		$this->assertContains('function testDoSomething()', $result);
 		$this->assertContains('function testDoSomethingElse()', $result);
+<<<<<<< HEAD
+=======
+		$this->assertContains('$this->markTestIncomplete(\'testDoSomething not implemented.\')', $result);
+		$this->assertContains('$this->markTestIncomplete(\'testDoSomethingElse not implemented.\')', $result);
+>>>>>>> origin/master
 
 		$this->assertContains("'app.test_task_article'", $result);
 		$this->assertContains("'app.test_task_comment'", $result);
@@ -534,6 +554,11 @@ class TestTaskTest extends CakeTestCase {
 
 /**
  * Test generateUses()
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testGenerateUses() {
 		$result = $this->Task->generateUses('model', 'Model', 'Post');

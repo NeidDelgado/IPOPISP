@@ -2,8 +2,11 @@
 /**
  * HTTP Response from HttpSocket.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -55,7 +58,11 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * Response code
  *
+<<<<<<< HEAD
  * @var integer
+=======
+ * @var int
+>>>>>>> origin/master
  */
 	public $code = 0;
 
@@ -84,7 +91,11 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * Constructor
  *
+<<<<<<< HEAD
  * @param string $message
+=======
+ * @param string $message Message to parse.
+>>>>>>> origin/master
  */
 	public function __construct($message = null) {
 		if ($message !== null) {
@@ -104,8 +115,13 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * Get header in case insensitive
  *
+<<<<<<< HEAD
  * @param string $name Header name
  * @param array $headers
+=======
+ * @param string $name Header name.
+ * @param array $headers Headers to format.
+>>>>>>> origin/master
  * @return mixed String if header exists or null
  */
 	public function getHeader($name, $headers = null) {
@@ -126,7 +142,11 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * If return is 200 (OK)
  *
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	public function isOk() {
 		return in_array($this->code, array(200, 201, 202, 203, 204, 205, 206));
@@ -135,7 +155,11 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * If return is a valid 3xx (Redirection)
  *
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	public function isRedirect() {
 		return in_array($this->code, array(301, 302, 303, 307)) && $this->getHeader('Location') !== null;
@@ -161,10 +185,19 @@ class HttpSocketResponse implements ArrayAccess {
 		$this->raw = $message;
 		$this->body = (string)substr($message, strlen($match[0]));
 
+<<<<<<< HEAD
 		if (preg_match("/(.+) ([0-9]{3}) (.+)\r\n/DU", $statusLine, $match)) {
 			$this->httpVersion = $match[1];
 			$this->code = $match[2];
 			$this->reasonPhrase = $match[3];
+=======
+		if (preg_match("/(.+) ([0-9]{3})(?:\s+(\w.+))?\s*\r\n/DU", $statusLine, $match)) {
+			$this->httpVersion = $match[1];
+			$this->code = $match[2];
+			if (isset($match[3])) {
+				$this->reasonPhrase = $match[3];
+			}
+>>>>>>> origin/master
 		}
 
 		$this->headers = $this->_parseHeader($header);
@@ -186,7 +219,11 @@ class HttpSocketResponse implements ArrayAccess {
  * 'body' and 'header' or false on failure.
  *
  * @param string $body A string containing the body to decode.
+<<<<<<< HEAD
  * @param string|boolean $encoding Can be false in case no encoding is being used, or a string representing the encoding.
+=======
+ * @param string|bool $encoding Can be false in case no encoding is being used, or a string representing the encoding.
+>>>>>>> origin/master
  * @return mixed Array of response headers and body or false.
  */
 	protected function _decodeBody($body, $encoding = 'chunked') {
@@ -331,8 +368,13 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * Unescapes a given $token according to RFC 2616 (HTTP 1.1 specs)
  *
+<<<<<<< HEAD
  * @param string $token Token to unescape
  * @param array $chars
+=======
+ * @param string $token Token to unescape.
+ * @param array $chars Characters to unescape.
+>>>>>>> origin/master
  * @return string Unescaped token
  */
 	protected function _unescapeToken($token, $chars = null) {
@@ -344,8 +386,13 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * Gets escape chars according to RFC 2616 (HTTP 1.1 specs).
  *
+<<<<<<< HEAD
  * @param boolean $hex true to get them as HEX values, false otherwise
  * @param array $chars
+=======
+ * @param bool $hex True to get them as HEX values, false otherwise.
+ * @param array $chars Characters to uescape.
+>>>>>>> origin/master
  * @return array Escape chars
  */
 	protected function _tokenEscapeChars($hex = true, $chars = null) {
@@ -371,8 +418,13 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * ArrayAccess - Offset Exists
  *
+<<<<<<< HEAD
  * @param string $offset
  * @return boolean
+=======
+ * @param string $offset Offset to check.
+ * @return bool
+>>>>>>> origin/master
  */
 	public function offsetExists($offset) {
 		return in_array($offset, array('raw', 'status', 'header', 'body', 'cookies'));
@@ -381,7 +433,11 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * ArrayAccess - Offset Get
  *
+<<<<<<< HEAD
  * @param string $offset
+=======
+ * @param string $offset Offset to get.
+>>>>>>> origin/master
  * @return mixed
  */
 	public function offsetGet($offset) {
@@ -418,8 +474,13 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * ArrayAccess - Offset Set
  *
+<<<<<<< HEAD
  * @param string $offset
  * @param mixed $value
+=======
+ * @param string $offset Offset to set.
+ * @param mixed $value Value.
+>>>>>>> origin/master
  * @return void
  */
 	public function offsetSet($offset, $value) {
@@ -428,7 +489,11 @@ class HttpSocketResponse implements ArrayAccess {
 /**
  * ArrayAccess - Offset Unset
  *
+<<<<<<< HEAD
  * @param string $offset
+=======
+ * @param string $offset Offset to unset.
+>>>>>>> origin/master
  * @return void
  */
 	public function offsetUnset($offset) {

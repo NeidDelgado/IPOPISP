@@ -2,8 +2,11 @@
 /**
  * Short description for file.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -30,7 +33,11 @@ class ArmorFixture extends CakeTestFixture {
  *
  * Used for Multi database fixture test
  *
+<<<<<<< HEAD
  * @var string 'test2'
+=======
+ * @var string
+>>>>>>> origin/master
  */
 	public $useDbConfig = 'test2';
 

@@ -4,8 +4,11 @@
  *
  * Test Case for ControllerTestCase class
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -147,6 +150,11 @@ class ControllerTestCaseTest extends CakeTestCase {
 
 /**
  * Test that ControllerTestCase::generate() creates mock objects correctly
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testGenerate() {
 		if (defined('APP_CONTROLLER_EXISTS')) {
@@ -212,6 +220,11 @@ class ControllerTestCaseTest extends CakeTestCase {
 
 /**
  * testGenerateWithComponentConfig
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testGenerateWithComponentConfig() {
 		$Tests = $this->Case->generate('TestConfigs', array(
@@ -234,6 +247,11 @@ class ControllerTestCaseTest extends CakeTestCase {
 
 /**
  * Tests ControllerTestCase::generate() using classes from plugins
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testGenerateWithPlugin() {
 		$Tests = $this->Case->generate('TestPlugin.Tests', array(
@@ -268,6 +286,11 @@ class ControllerTestCaseTest extends CakeTestCase {
 
 /**
  * Tests testAction
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testTestAction() {
 		$Controller = $this->Case->generate('TestsApps');
@@ -329,6 +352,10 @@ class ControllerTestCaseTest extends CakeTestCase {
  * Tests not using loaded routes during tests
  *
  * @expectedException MissingActionException
+<<<<<<< HEAD
+=======
+ * @return void
+>>>>>>> origin/master
  */
 	public function testSkipRoutes() {
 		Router::connect('/:controller/:action/*');
@@ -340,6 +367,11 @@ class ControllerTestCaseTest extends CakeTestCase {
 
 /**
  * Tests backwards compatibility with setting the return type
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testBCSetReturn() {
 		$this->Case->autoMock = true;
@@ -369,6 +401,11 @@ class ControllerTestCaseTest extends CakeTestCase {
 
 /**
  * Tests sending POST data to testAction
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testTestActionPostData() {
 		$this->Case->autoMock = true;
@@ -411,6 +448,11 @@ class ControllerTestCaseTest extends CakeTestCase {
 
 /**
  * Tests sending GET data to testAction
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testTestActionGetData() {
 		$this->Case->autoMock = true;
@@ -467,6 +509,11 @@ class ControllerTestCaseTest extends CakeTestCase {
 
 /**
  * Tests autoMock ability
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testAutoMock() {
 		$this->Case->autoMock = true;
@@ -480,6 +527,11 @@ class ControllerTestCaseTest extends CakeTestCase {
 
 /**
  * Test using testAction and not mocking
+<<<<<<< HEAD
+=======
+ *
+ * @return void
+>>>>>>> origin/master
  */
 	public function testNoMocking() {
 		$result = $this->Case->testAction('/tests_apps/some_method');

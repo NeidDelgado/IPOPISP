@@ -2,8 +2,11 @@
 /**
  * Localization
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -137,6 +140,10 @@ class L10n {
 		/* Kalaallisut (Greenlandic) */ 'kal' => 'kl',
 		/* Korean */ 'kor' => 'ko',
 		/* Latvian */ 'lav' => 'lv',
+<<<<<<< HEAD
+=======
+		/* Limburgish */ 'lim' => 'li',
+>>>>>>> origin/master
 		/* Lithuanian */ 'lit' => 'lt',
 		/* Macedonian */ 'mkd' => 'mk',
 		/* Macedonian - bibliographic */ 'mac' => 'mk',
@@ -279,6 +286,10 @@ class L10n {
 		'ko-kp' => array('language' => 'Korea (North)', 'locale' => 'ko_kp', 'localeFallback' => 'kor', 'charset' => 'kr', 'direction' => 'ltr'),
 		'ko-kr' => array('language' => 'Korea (South)', 'locale' => 'ko_kr', 'localeFallback' => 'kor', 'charset' => 'kr', 'direction' => 'ltr'),
 		'koi8-r' => array('language' => 'Russian', 'locale' => 'koi8_r', 'localeFallback' => 'rus', 'charset' => 'koi8-r', 'direction' => 'ltr'),
+<<<<<<< HEAD
+=======
+		'li' => array('language' => 'Limburgish', 'locale' => 'lim', 'localeFallback' => 'nld', 'charset' => 'utf-8', 'direction' => 'ltr'),
+>>>>>>> origin/master
 		'lt' => array('language' => 'Lithuanian', 'locale' => 'lit', 'localeFallback' => 'lit', 'charset' => 'utf-8', 'direction' => 'ltr'),
 		'lv' => array('language' => 'Latvian', 'locale' => 'lav', 'localeFallback' => 'lav', 'charset' => 'utf-8', 'direction' => 'ltr'),
 		'mk' => array('language' => 'FYRO Macedonian', 'locale' => 'mkd', 'localeFallback' => 'mkd', 'charset' => 'utf-8', 'direction' => 'ltr'),
@@ -410,7 +421,11 @@ class L10n {
 /**
  * Attempts to find the locale settings based on the HTTP_ACCEPT_LANGUAGE variable
  *
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	protected function _autoLanguage() {
 		$_detectableLanguages = CakeRequest::acceptLanguage();
@@ -434,7 +449,11 @@ class L10n {
  * Attempts to find locale for language, or language for locale
  *
  * @param string|array $mixed 2/3 char string (language/locale), array of those strings, or null
+<<<<<<< HEAD
  * @return string|array|boolean string language/locale, array of those values, whole map as an array,
+=======
+ * @return string|array|bool string language/locale, array of those values, whole map as an array,
+>>>>>>> origin/master
  *    or false when language/locale doesn't exist
  */
 	public function map($mixed = null) {
@@ -463,7 +482,11 @@ class L10n {
  * Attempts to find catalog record for requested language
  *
  * @param string|array $language string requested language, array of requested languages, or null for whole catalog
+<<<<<<< HEAD
  * @return array|boolean array catalog record for requested language, array of catalog records, whole catalog,
+=======
+ * @return array|bool array catalog record for requested language, array of catalog records, whole catalog,
+>>>>>>> origin/master
  *    or false when language doesn't exist
  */
 	public function catalog($language = null) {

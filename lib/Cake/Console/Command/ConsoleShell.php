@@ -105,19 +105,34 @@ class ConsoleShell extends AppShell {
 	}
 
 /**
+<<<<<<< HEAD
  * getOptionParser
  *
  * @return void
  */
 	public function getOptionParser() {
 		$description = array(
+=======
+ * Gets the option parser instance and configures it.
+ *
+ * @return ConsoleOptionParser
+ */
+	public function getOptionParser() {
+		$parser = parent::getOptionParser();
+
+		$parser->description(array(
+>>>>>>> origin/master
 			'The interactive console is a tool for testing parts of your',
 			'app before you write code.',
 			'',
 			'See below for a list of supported commands.'
+<<<<<<< HEAD
 		);
 
 		$epilog = array(
+=======
+		))->epilog(array(
+>>>>>>> origin/master
 			'<info>Model testing</info>',
 			'',
 			'To test model results, use the name of your model without a leading $',
@@ -176,10 +191,16 @@ class ConsoleShell extends AppShell {
 			'To show all connected routes, do the following:',
 			'',
 			"\tRoutes show",
+<<<<<<< HEAD
 		);
 		return parent::getOptionParser()
 			->description($description)
 			->epilog($epilog);
+=======
+		));
+
+		return $parser;
+>>>>>>> origin/master
 	}
 /**
  * Prints the help message
@@ -194,7 +215,11 @@ class ConsoleShell extends AppShell {
 /**
  * Override main() to handle action
  *
+<<<<<<< HEAD
  * @param string $command
+=======
+ * @param string $command The command to run.
+>>>>>>> origin/master
  * @return void
  */
 	public function main($command = null) {
@@ -219,7 +244,11 @@ class ConsoleShell extends AppShell {
 /**
  * Determine the method to process the current command
  *
+<<<<<<< HEAD
  * @param string $command
+=======
+ * @param string $command The command to run.
+>>>>>>> origin/master
  * @return string or false
  */
 	protected function _method($command) {
@@ -257,7 +286,11 @@ class ConsoleShell extends AppShell {
 /**
  * Bind an association
  *
+<<<<<<< HEAD
  * @param mixed $command
+=======
+ * @param mixed $command The command to run.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _bind($command) {
@@ -284,7 +317,11 @@ class ConsoleShell extends AppShell {
 /**
  * Unbind an association
  *
+<<<<<<< HEAD
  * @param mixed $command
+=======
+ * @param mixed $command The command to run.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _unbind($command) {
@@ -304,7 +341,11 @@ class ConsoleShell extends AppShell {
 		$validCurrentAssociation = false;
 
 		foreach ($currentAssociations as $model => $currentAssociation) {
+<<<<<<< HEAD
 			if ($model == $modelB && $association == $currentAssociation) {
+=======
+			if ($model === $modelB && $association === $currentAssociation) {
+>>>>>>> origin/master
 				$validCurrentAssociation = true;
 			}
 		}
@@ -321,7 +362,11 @@ class ConsoleShell extends AppShell {
 /**
  * Perform a find
  *
+<<<<<<< HEAD
  * @param mixed $command
+=======
+ * @param mixed $command The command to run.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _find($command) {
@@ -329,7 +374,11 @@ class ConsoleShell extends AppShell {
 		$command = str_replace($this->badCommandChars, "", $command);
 
 		// Do we have a valid model?
+<<<<<<< HEAD
 		list($modelToCheck, $tmp) = explode('->', $command);
+=======
+		list($modelToCheck) = explode('->', $command);
+>>>>>>> origin/master
 
 		if ($this->_isValidModel($modelToCheck)) {
 			$findCommand = "\$data = \$this->$command;";
@@ -383,14 +432,22 @@ class ConsoleShell extends AppShell {
 /**
  * Save a record
  *
+<<<<<<< HEAD
  * @param mixed $command
+=======
+ * @param mixed $command The command to run.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _save($command) {
 		// Validate the model we're trying to save here
 		$command = strip_tags($command);
 		$command = str_replace($this->badCommandChars, "", $command);
+<<<<<<< HEAD
 		list($modelToSave, $tmp) = explode("->", $command);
+=======
+		list($modelToSave) = explode("->", $command);
+>>>>>>> origin/master
 
 		if ($this->_isValidModel($modelToSave)) {
 			// Extract the array of data we are trying to build
@@ -407,7 +464,11 @@ class ConsoleShell extends AppShell {
 /**
  * Show the columns for a model
  *
+<<<<<<< HEAD
  * @param mixed $command
+=======
+ * @param mixed $command The command to run.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _columns($command) {
@@ -456,7 +517,11 @@ class ConsoleShell extends AppShell {
 /**
  * Parse an array URL and show the equivalent URL as a string
  *
+<<<<<<< HEAD
  * @param mixed $command
+=======
+ * @param mixed $command The command to run.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _routeToString($command) {
@@ -472,7 +537,11 @@ class ConsoleShell extends AppShell {
 /**
  * Parse a string URL and show as an array
  *
+<<<<<<< HEAD
  * @param mixed $command
+=======
+ * @param mixed $command The command to run.
+>>>>>>> origin/master
  * @return void
  */
 	protected function _routeToArray($command) {
@@ -484,8 +553,13 @@ class ConsoleShell extends AppShell {
 /**
  * Tells if the specified model is included in the list of available models
  *
+<<<<<<< HEAD
  * @param string $modelToCheck
  * @return boolean true if is an available model, false otherwise
+=======
+ * @param string $modelToCheck The model to check.
+ * @return bool true if is an available model, false otherwise
+>>>>>>> origin/master
  */
 	protected function _isValidModel($modelToCheck) {
 		return in_array($modelToCheck, $this->models);
@@ -495,7 +569,11 @@ class ConsoleShell extends AppShell {
  * Reloads the routes configuration from app/Config/routes.php, and compiles
  * all routes found
  *
+<<<<<<< HEAD
  * @return boolean True if config reload was a success, otherwise false
+=======
+ * @return bool True if config reload was a success, otherwise false
+>>>>>>> origin/master
  */
 	protected function _loadRoutes() {
 		Router::reload();

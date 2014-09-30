@@ -2,8 +2,11 @@
 /**
  * MediaViewTest file
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) Tests <http://book.cakephp.org/2.0/en/development/testing.html>
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -82,8 +85,12 @@ class MediaViewTest extends CakeTestCase {
 		$this->MediaView->response->expects($this->once())
 			->method('send');
 
+<<<<<<< HEAD
 		$result = $this->MediaView->render();
 		$this->assertTrue($result);
+=======
+		$this->MediaView->render();
+>>>>>>> origin/master
 	}
 
 /**
@@ -121,8 +128,12 @@ class MediaViewTest extends CakeTestCase {
 		$this->MediaView->response->expects($this->once())
 			->method('send');
 
+<<<<<<< HEAD
 		$result = $this->MediaView->render();
 		$this->assertTrue($result);
+=======
+		$this->MediaView->render();
+>>>>>>> origin/master
 	}
 
 /**

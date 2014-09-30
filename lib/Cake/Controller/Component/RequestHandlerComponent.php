@@ -47,7 +47,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Determines whether or not callbacks will be fired on this component
  *
+<<<<<<< HEAD
  * @var boolean
+=======
+ * @var bool
+>>>>>>> origin/master
  */
 	public $enabled = true;
 
@@ -159,7 +163,11 @@ class RequestHandlerComponent extends Component {
 			return;
 		}
 
+<<<<<<< HEAD
 		$accepts = $this->response->mapType($this->request->parseAccept());
+=======
+		$accepts = $this->response->mapType($accept);
+>>>>>>> origin/master
 		$preferedTypes = current($accepts);
 		if (array_intersect($preferedTypes, array('html', 'xhtml'))) {
 			return null;
@@ -224,7 +232,11 @@ class RequestHandlerComponent extends Component {
  * Helper method to parse xml input data, due to lack of anonymous functions
  * this lives here.
  *
+<<<<<<< HEAD
  * @param string $xml
+=======
+ * @param string $xml XML string.
+>>>>>>> origin/master
  * @return array Xml array data
  */
 	public function convertXml($xml) {
@@ -245,8 +257,13 @@ class RequestHandlerComponent extends Component {
  *
  * @param Controller $controller A reference to the controller
  * @param string|array $url A string or array containing the redirect location
+<<<<<<< HEAD
  * @param integer|array $status HTTP Status for redirect
  * @param boolean $exit
+=======
+ * @param int|array $status HTTP Status for redirect
+ * @param bool $exit Whether to exit script, defaults to `true`.
+>>>>>>> origin/master
  * @return void
  */
 	public function beforeRedirect(Controller $controller, $url, $status = null, $exit = true) {
@@ -279,8 +296,13 @@ class RequestHandlerComponent extends Component {
  * render process is skipped. And the client will get a blank response with a
  * "304 Not Modified" header.
  *
+<<<<<<< HEAD
  * @params Controller $controller
  * @return boolean false if the render process should be aborted
+=======
+ * @param Controller $controller Controller instance.
+ * @return bool false if the render process should be aborted
+>>>>>>> origin/master
  */
 	public function beforeRender(Controller $controller) {
 		if ($this->settings['checkHttpCache'] && $this->response->checkNotModified($this->request)) {
@@ -291,7 +313,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current HTTP request is Ajax, false otherwise
  *
+<<<<<<< HEAD
  * @return boolean True if call is Ajax
+=======
+ * @return bool True if call is Ajax
+>>>>>>> origin/master
  * @deprecated use `$this->request->is('ajax')` instead.
  */
 	public function isAjax() {
@@ -301,7 +327,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current HTTP request is coming from a Flash-based client
  *
+<<<<<<< HEAD
  * @return boolean True if call is from Flash
+=======
+ * @return bool True if call is from Flash
+>>>>>>> origin/master
  * @deprecated use `$this->request->is('flash')` instead.
  */
 	public function isFlash() {
@@ -311,7 +341,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current request is over HTTPS, false otherwise.
  *
+<<<<<<< HEAD
  * @return boolean True if call is over HTTPS
+=======
+ * @return bool True if call is over HTTPS
+>>>>>>> origin/master
  * @deprecated use `$this->request->is('ssl')` instead.
  */
 	public function isSSL() {
@@ -321,7 +355,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current call accepts an XML response, false otherwise
  *
+<<<<<<< HEAD
  * @return boolean True if client accepts an XML response
+=======
+ * @return bool True if client accepts an XML response
+>>>>>>> origin/master
  */
 	public function isXml() {
 		return $this->prefers('xml');
@@ -330,7 +368,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current call accepts an RSS response, false otherwise
  *
+<<<<<<< HEAD
  * @return boolean True if client accepts an RSS response
+=======
+ * @return bool True if client accepts an RSS response
+>>>>>>> origin/master
  */
 	public function isRss() {
 		return $this->prefers('rss');
@@ -339,7 +381,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current call accepts an Atom response, false otherwise
  *
+<<<<<<< HEAD
  * @return boolean True if client accepts an RSS response
+=======
+ * @return bool True if client accepts an RSS response
+>>>>>>> origin/master
  */
 	public function isAtom() {
 		return $this->prefers('atom');
@@ -349,7 +395,11 @@ class RequestHandlerComponent extends Component {
  * Returns true if user agent string matches a mobile web browser, or if the
  * client accepts WAP content.
  *
+<<<<<<< HEAD
  * @return boolean True if user agent is a mobile web browser
+=======
+ * @return bool True if user agent is a mobile web browser
+>>>>>>> origin/master
  */
 	public function isMobile() {
 		return $this->request->is('mobile') || $this->accepts('wap');
@@ -358,7 +408,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the client accepts WAP content
  *
+<<<<<<< HEAD
  * @return boolean
+=======
+ * @return bool
+>>>>>>> origin/master
  */
 	public function isWap() {
 		return $this->prefers('wap');
@@ -367,7 +421,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current call a POST request
  *
+<<<<<<< HEAD
  * @return boolean True if call is a POST
+=======
+ * @return bool True if call is a POST
+>>>>>>> origin/master
  * @deprecated Use $this->request->is('post'); from your controller.
  */
 	public function isPost() {
@@ -377,7 +435,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current call a PUT request
  *
+<<<<<<< HEAD
  * @return boolean True if call is a PUT
+=======
+ * @return bool True if call is a PUT
+>>>>>>> origin/master
  * @deprecated Use $this->request->is('put'); from your controller.
  */
 	public function isPut() {
@@ -387,7 +449,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current call a GET request
  *
+<<<<<<< HEAD
  * @return boolean True if call is a GET
+=======
+ * @return bool True if call is a GET
+>>>>>>> origin/master
  * @deprecated Use $this->request->is('get'); from your controller.
  */
 	public function isGet() {
@@ -397,7 +463,11 @@ class RequestHandlerComponent extends Component {
 /**
  * Returns true if the current call a DELETE request
  *
+<<<<<<< HEAD
  * @return boolean True if call is a DELETE
+=======
+ * @return bool True if call is a DELETE
+>>>>>>> origin/master
  * @deprecated Use $this->request->is('delete'); from your controller.
  */
 	public function isDelete() {
@@ -408,7 +478,11 @@ class RequestHandlerComponent extends Component {
  * Gets Prototype version if call is Ajax, otherwise empty string.
  * The Prototype library sets a special "Prototype version" HTTP header.
  *
+<<<<<<< HEAD
  * @return string|boolean When Ajax the prototype version of component making the call otherwise false
+=======
+ * @return string|bool When Ajax the prototype version of component making the call otherwise false
+>>>>>>> origin/master
  */
 	public function getAjaxVersion() {
 		$httpX = env('HTTP_X_PROTOTYPE_VERSION');
@@ -444,9 +518,16 @@ class RequestHandlerComponent extends Component {
 /**
  * Gets remote client IP
  *
+<<<<<<< HEAD
  * @param boolean $safe
  * @return string Client IP address
  * @deprecated use $this->request->clientIp() from your,  controller instead.
+=======
+ * @param bool $safe Use safe = false when you think the user might manipulate
+ *   their HTTP_CLIENT_IP header. Setting $safe = false will also look at HTTP_X_FORWARDED_FOR
+ * @return string Client IP address
+ * @deprecated use $this->request->clientIp() from your, controller instead.
+>>>>>>> origin/master
  */
 	public function getClientIP($safe = true) {
 		return $this->request->clientIp($safe);
@@ -525,7 +606,11 @@ class RequestHandlerComponent extends Component {
 			return $this->mapType($contentType);
 		}
 		if (is_string($type)) {
+<<<<<<< HEAD
 			return ($type == $this->mapType($contentType));
+=======
+			return ($type === $this->mapType($contentType));
+>>>>>>> origin/master
 		}
 	}
 
@@ -603,13 +688,20 @@ class RequestHandlerComponent extends Component {
 		if (Configure::read('App.encoding') !== null) {
 			$defaults['charset'] = Configure::read('App.encoding');
 		}
+<<<<<<< HEAD
 		$options = array_merge($defaults, $options);
+=======
+		$options += $defaults;
+>>>>>>> origin/master
 
 		if ($type === 'ajax') {
 			$controller->layout = $this->ajaxLayout;
 			return $this->respondAs('html', $options);
 		}
+<<<<<<< HEAD
 		$controller->ext = '.ctp';
+=======
+>>>>>>> origin/master
 
 		$pluginDot = null;
 		$viewClassMap = $this->viewClassMap();
@@ -659,7 +751,11 @@ class RequestHandlerComponent extends Component {
  *    like 'application/x-shockwave'.
  * @param array $options If $type is a friendly type name that is associated with
  *    more than one type of content, $index is used to select which content-type to use.
+<<<<<<< HEAD
  * @return boolean Returns false if the friendly type name given in $type does
+=======
+ * @return bool Returns false if the friendly type name given in $type does
+>>>>>>> origin/master
  *    not exist in the type map, or if the Content-type header has
  *    already been set by this method.
  * @see RequestHandlerComponent::setContent()

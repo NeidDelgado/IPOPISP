@@ -21,8 +21,13 @@ App::uses('AclInterface', 'Controller/Component/Acl');
  * Access Control List factory class.
  *
  * Uses a strategy pattern to allow custom ACL implementations to be used with the same component interface.
+<<<<<<< HEAD
  * You can define by changing `Configure::write('Acl.classname', 'DbAcl');` in your core.php. Concrete ACL
  * implementations should extend `AclBase` and implement the methods it defines.
+=======
+ * You can define by changing `Configure::write('Acl.classname', 'DbAcl');` in your core.php. The adapter
+ * you specify must implement `AclInterface`
+>>>>>>> origin/master
  *
  * @package       Cake.Controller.Component
  * @link http://book.cakephp.org/2.0/en/core-libraries/components/access-control-lists.html
@@ -53,8 +58,13 @@ class AclComponent extends Component {
 /**
  * Constructor. Will return an instance of the correct ACL class as defined in `Configure::read('Acl.classname')`
  *
+<<<<<<< HEAD
  * @param ComponentCollection $collection
  * @param array $settings
+=======
+ * @param ComponentCollection $collection Collection instance.
+ * @param array $settings Settings list.
+>>>>>>> origin/master
  * @throws CakeException when Acl.classname could not be loaded.
  */
 	public function __construct(ComponentCollection $collection, $settings = array()) {
@@ -104,7 +114,11 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function check($aro, $aco, $action = "*") {
 		return $this->_Instance->check($aro, $aco, $action);
@@ -117,7 +131,11 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function allow($aro, $aco, $action = "*") {
 		return $this->_Instance->allow($aro, $aco, $action);
@@ -130,7 +148,11 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function deny($aro, $aco, $action = "*") {
 		return $this->_Instance->deny($aro, $aco, $action);
@@ -143,7 +165,11 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  */
 	public function inherit($aro, $aco, $action = "*") {
 		return $this->_Instance->inherit($aro, $aco, $action);
@@ -155,7 +181,11 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  * @deprecated Will be removed in 3.0.
  */
 	public function grant($aro, $aco, $action = "*") {
@@ -169,7 +199,11 @@ class AclComponent extends Component {
  * @param array|string|Model $aro ARO The requesting object identifier. See `AclNode::node()` for possible formats
  * @param array|string|Model $aco ACO The controlled object identifier. See `AclNode::node()` for possible formats
  * @param string $action Action (defaults to *)
+<<<<<<< HEAD
  * @return boolean Success
+=======
+ * @return bool Success
+>>>>>>> origin/master
  * @deprecated Will be removed in 3.0.
  */
 	public function revoke($aro, $aco, $action = "*") {

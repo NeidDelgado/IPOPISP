@@ -4,8 +4,11 @@
  *
  * Automatic forms and actions generation for rapid web application development.
  *
+<<<<<<< HEAD
  * PHP 5
  *
+=======
+>>>>>>> origin/master
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
@@ -25,7 +28,12 @@ App::uses('View', 'View');
 /**
  * ScaffoldView provides specific view file loading features for scaffolded views.
  *
+<<<<<<< HEAD
  * @package       Cake.View
+=======
+ * @package Cake.View
+ * @deprecated Dynamic scaffolding will be removed and replaced in 3.0
+>>>>>>> origin/master
  */
 class ScaffoldView extends View {
 

@@ -38,4 +38,19 @@ CREATE TABLE aros (
   lft INTEGER(10) DEFAULT NULL,
   rght INTEGER(10) DEFAULT NULL,
   PRIMARY KEY  (id)
+<<<<<<< HEAD
 );
+=======
+);
+
+/* this indexes will improve acl perfomance */
+CREATE INDEX idx_acos_lft_rght ON `acos` (`lft`, `rhgt`);
+
+CREATE INDEX idx_acos_alias ON `acos` (`alias`);
+
+CREATE INDEX idx_aros_lft_rght ON `aros` (`lft`, `rhgt`);
+
+CREATE INDEX idx_aros_alias ON `aros` (`alias`);
+
+CREATE INDEX idx_aco_id ON `aros_acos` (`aco_id`);
+>>>>>>> origin/master
