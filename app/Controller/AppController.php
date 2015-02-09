@@ -43,13 +43,6 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 <<<<<<< HEAD
-
-	public function beforeFilter(){
-		if (isset($_GET['lang'])){
-		   $this->Session->write('Config.language', $_GET['lang']);
-		}
-	}
-
 =======
 >>>>>>> origin/master
 }
